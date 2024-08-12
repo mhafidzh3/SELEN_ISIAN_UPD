@@ -1,0 +1,29 @@
+import time
+import pymongo
+from pymongo import MongoClient
+
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# Database Name
+db = client["piiclone"]
+ 
+# Collection Name
+col = db["users"]
+ 
+x = col.find({},{'_id': 1,})
+ 
+for data in x:
+    print(data)
+
+#try test
+dbtest = client["TESTDB"]
+
+coltest = dbtest["test"]
+
+testdoc = {"Name":"Shark", "Testid":"0097", "Class":"Beast"}
+
+x = coltest.insert_one(testdoc)
+
+print(x.inserted_id) 
+
+
