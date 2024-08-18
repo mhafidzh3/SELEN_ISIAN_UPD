@@ -22,49 +22,14 @@ action = ActionChains(driver)
 #Database META
 # client = pymongo.MongoClient("mongodb://192.168.195.241:27017/")
 client = pymongo.MongoClient("mongodb://localhost:27017/")
-# Database Name
+#Database Name
 db = client["piiclone"]
-# Collection Name
+#Collection Name
 col = db["form_penilaian"]
 
+#Database Key
 PID = "formM-gONh9yHYwFgjZt5fb9dKQ"
 Student_ID = "21060124190767"
-
-#Experimental Database
-# PID = "formM-WijTbj_AvcPpJZ0p7BVh1"
-# Student_ID = "56473829"
-# tiga = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_tiga':1})
-
-# # print(tiga) 
-# print(type(tiga))
-# I_3 = tiga['form_i_tiga']
-# print(type(I_3))
-
-# print(len(I_3))
-
-# I_31 = I_3[0]
-# print(type(I_31["key"]))
-# print(I_31["key"])
-
-# print(type(I_31["klaimKompetensiWSatu"]))
-# print(len(I_31["klaimKompetensiWSatu"]))
-# print(I_31["klaimKompetensiWSatu"])
-
-# satu = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_satu':1})
-# #dictionary
-# print(type(satu))
-# print(satu)
-# #dict
-# I1 = satu['form_i_satu']
-# print(type(I1))
-# print(I1)
-# #list
-# I1_Alamat = I1["alamat"]
-# I1_Lembaga = I1["lembaga"]
-# I1_Phone = I1["komunikasi"]
-# print(type(I1_Alamat))
-# print(type(I1_Lembaga))
-# print(type(I1_Phone))
 
 #Enter FAIP
 driver.get("http://updmember.pii.or.id/index.php")
