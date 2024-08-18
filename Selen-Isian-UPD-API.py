@@ -1135,6 +1135,6 @@ def test():
         FormI5()
         FormI6()
 
-    # Allform()
+    Allform()
 
     return {"Hello": "World"}
