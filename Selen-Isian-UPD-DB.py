@@ -154,7 +154,7 @@ def FormI1():
         Counter_Alamat_I1 += 1
         DB_CountAlamat_I1 += 1
         ID_Count_Alamat_I1 += 1
-        print("Row " + Alamat_Row_I1 + " telah diisi")
+        print("\nRow " + Alamat_Row_I1 + " telah diisi")
 
         Check()
 
@@ -236,11 +236,10 @@ def FormI1():
             print("- ExpZip I1: KeyError")
 
         #End/retry point of loop
-        print("Counter Row = " + str(Counter_Lembaga_I1))
         Counter_Lembaga_I1 += 1
         DB_CountLembaga_I1 += 1
         ID_Count_Lembaga_I1 += 1
-        print("Row " + Lembaga_Row_I1 + " telah diisi")
+        print("\nRow " + Lembaga_Row_I1 + " telah diisi")
 
         Check()
 
@@ -312,11 +311,10 @@ def FormI1():
         Check()
 
         #End/retry point of loop
-        print("Counter Row = " + str(Counter_Phone_I1))
         Counter_Phone_I1 += 1
         DB_CountPhone_I1 += 1
         ID_Count_Phone_I1 += 1
-        print("Row " + Phone_Row_I1 + " telah diisi")
+        print("\nRow " + Phone_Row_I1 + " telah diisi")
 
         Check()
     print("\n") 
@@ -483,9 +481,10 @@ def FormI2():
         Counter_I2 += 1
         DB_Count_I2 += 1
         ID_Count_I2 += 1
-        print("Row " + Row_I2 + " telah diisi")
+        print("\nRow " + Row_I2 + " telah diisi")
 
         Check()
+    print("\n") 
 
 #PENGISIAN I3   
 def FormI3():
