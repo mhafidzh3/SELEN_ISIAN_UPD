@@ -381,6 +381,7 @@ def trigger_selenium(req: terimaJSON):
                 DB_CountPhone_I1 += 1
                 ID_Count_Phone_I1 += 1
                 print("\nRow " + Phone_Row_I1 + " telah diisi")
+            driver.refresh()
             print("\n") 
 
         #PENGISIAN I2
@@ -554,6 +555,7 @@ def trigger_selenium(req: terimaJSON):
                 DB_Count_I2 += 1
                 ID_Count_I2 += 1
                 print("\nRow " + Row_I2 + " telah diisi")
+            driver.refresh()
             print("\n") 
 
         #PENGISIAN I3   
@@ -784,6 +786,7 @@ def trigger_selenium(req: terimaJSON):
                 DB_Count_I3 += 1
                 ID_Count_I3 += 1
                 print("\nRow " + Row_I3 + " telah diisi")
+            driver.refresh()
             print("\n")
 
         #PENGISIAN I4
@@ -966,6 +969,7 @@ def trigger_selenium(req: terimaJSON):
                 DB_Count_I4 += 1
                 ID_Count_I4 += 1
                 print("\nRow " + Row_I4 + " telah diisi")
+            driver.refresh()
             print("\n")
 
         #PENGISIAN I5
@@ -1210,6 +1214,7 @@ def trigger_selenium(req: terimaJSON):
                 DB_Count_I5 += 1
                 ID_Count_I5 += 1
                 print("\nRow " + Row_I5 + " telah diisi")
+            driver.refresh()
             print("\n")
 
         #PENGISIAN I6
@@ -1445,6 +1450,7 @@ def trigger_selenium(req: terimaJSON):
                 DB_Count_I6 += 1
                 ID_Count_I6 += 1
                 print("\nRow " + Row_I6 + " telah diisi")
+            driver.refresh()
             print("\n")
 
         # def Allform():
