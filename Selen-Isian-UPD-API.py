@@ -23,6 +23,12 @@ load_dotenv()
 import time
 import pymongo
 
+#pip install selenium == 4.19
+#pip install fastapi
+#pip install uvicorn
+#pip install pydantic
+#pip install pymongo
+#pip install cryptography
 
 # baca body JSON
 class terimaJSON(BaseModel):
