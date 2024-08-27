@@ -50,6 +50,7 @@ def trigger_selenium(req: terimaJSON):
         # client = pymongo.MongoClient("mongodb://192.168.195.241:27017/")
         client = pymongo.MongoClient("mongodb://localhost:27017/")
         # client = pymongo.MongoClient("mongodb://192.168.195.245:27017/")
+
         #Database Name
         # db = client["pii-reborn"]
         db = client["piiclone"]
@@ -57,6 +58,7 @@ def trigger_selenium(req: terimaJSON):
         col = db["form_penilaian"]
         col_user = db["users_selenium"]
 
+        #Return Log Error Dictionary
         Log_Error = {}
 
         #Database Key
@@ -91,16 +93,11 @@ def trigger_selenium(req: terimaJSON):
             # The decrypted data is in bytes, decode it to a UTF-8 string
             return decrypted_data.decode('utf-8')
 
-        # key
-        # key = os.getenv('ENCRYPTION_KEY')  # Load the encryption key from environment variable
-
         ID_Student = col_user.find_one({'user_info':Student_ID},{'_id': 0})
         username = ID_Student["alt_user_info"]
         encrypted_data = ID_Student["alt_password"]
         iv = ID_Student["alt_iv"]
         key = os.getenv("ENC_PSS")
-        # print(key)
-        # print(type(key))
         
         decrypted_password = decrypt_password(encrypted_data, iv, key)
         print('Decrypted Password:', decrypted_password)
@@ -1453,15 +1450,19 @@ def trigger_selenium(req: terimaJSON):
             driver.refresh()
             print("\n")
 
-        # def Allform():
-        #     FormI1()
-        #     FormI2()
-        #     FormI3()
-        #     FormI4()
-        #     FormI5()
-        #     FormI6()
+        def Allform():
+            FormI1()
+            FormI2()
+            FormI3()
+            FormI4()
+            FormI5()
+            FormI6()
 
-        # Allform()
+        Allform()
+        
+        # driver.find_element(By.LINK_TEXT, "Save & Continue").click()
+        # WebDriverWait(driver, 10).until(EC.alert_is_present())
+        # driver.switch_to.alert.accept()
 
         return {"Log Error": Log_Error}
 
