@@ -36,7 +36,6 @@ class terimaJSON(BaseModel):
     url: str
     student_id: str
 
-
 app = FastAPI()
 
 @app.post("/trigger-selenium")
@@ -45,8 +44,8 @@ def trigger_selenium(req: terimaJSON):
 
         #Akun test
         #delete setelah selesai
-        # username = "yosua@live.undip.ac.id"
-        # password = "insinyurj4y4"
+        username = "yosua@live.undip.ac.id"
+        password = "insinyurj4y4"
 
         #Driver
         driver = webdriver.Chrome()
@@ -68,12 +67,12 @@ def trigger_selenium(req: terimaJSON):
         Log_Error = {}
 
         #Database Key
-        # PID = "formM-gONh9yHYwFgjZt5fb9dKQ"
-        # Student_ID = "21060124190767" 
+        PID = "formM-gONh9yHYwFgjZt5fb9dKQ"
+        Student_ID = "21060124190767" 
         # PID = "formU-WANDEREERE"
         # Student_ID = "56473829"
-        PID = req.process_id
-        Student_ID = req.student_id
+        # PID = req.process_id
+        # Student_ID = req.student_id
 
         def decrypt_password(encrypted_data, iv, key):
             # Convert the 64-character hex key back to 32 bytes
@@ -99,23 +98,30 @@ def trigger_selenium(req: terimaJSON):
             # The decrypted data is in bytes, decode it to a UTF-8 string
             return decrypted_data.decode('utf-8')
 
-        ID_Student = col_user.find_one({'user_info':Student_ID},{'_id': 0})
-        username = ID_Student["alt_user_info"]
-        encrypted_data = ID_Student["alt_password"]
-        iv = ID_Student["alt_iv"]
-        key = os.getenv("ENC_PSS")
+        #Username Req
+        # ID_Student = col_user.find_one({'user_info':Student_ID},{'_id': 0})
+        # username = ID_Student["alt_user_info"]
+        # encrypted_data = ID_Student["alt_password"]
+        # iv = ID_Student["alt_iv"]
+        # key = os.getenv("ENC_PSS")
         
-        decrypted_password = decrypt_password(encrypted_data, iv, key)
-        print('Decrypted Password:', decrypted_password)
+        # decrypted_password = decrypt_password(encrypted_data, iv, key)
+        # print('Decrypted Password:', decrypted_password)
 
         #Enter FAIP
         driver.get(req.url)
         driver.maximize_window()
 
+        #Temporary-Record-Sleep-Time
+        time.sleep(10)
+
         #input username & password
         driver.find_element(By.ID, "email").send_keys(username)
-        # driver.find_element(By.ID, "password").send_keys(password)
-        driver.find_element(By.ID, "password").send_keys(decrypted_password)
+        driver.find_element(By.ID, "password").send_keys(password)
+        # driver.find_element(By.ID, "password").send_keys(decrypted_password)
+
+        #Temporary-Record-Sleep-Time
+        time.sleep(10)
 
         #masuk login
         driver.find_element(By.ID, "m_login_signin_submit").click()
@@ -124,6 +130,9 @@ def trigger_selenium(req: terimaJSON):
 
         driver.find_element(By.LINK_TEXT, "FAIP").click()
         driver.find_element(By.LINK_TEXT, "Edit").click()
+
+        #Temporary-Record-Sleep-Time
+        # time.sleep(2)
 
         # driver.find_element(By.LINK_TEXT, "BUAT FAIP BARU").click()
 
@@ -135,7 +144,7 @@ def trigger_selenium(req: terimaJSON):
             driver.find_element(By.LINK_TEXT, "I.1").click()
             driver.implicitly_wait(5)
 
-            print("================================================\nFormI1")
+            print("================================================\n\nFormI1\n")
 
             #Database
             Dict_I1 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_satu':1})
@@ -145,18 +154,21 @@ def trigger_selenium(req: terimaJSON):
             ID_Count_Alamat_I1 = 0
             print("\nAlamat I1\n")
 
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+
             try:
                 while ID_Count_Alamat_I1 < 100:
                     Row_Alamat_ID_I1 = f'//*[@class=" ala-item"][@data-id="{str(ID_Count_Alamat_I1)}"]'    
                     Check_Row_Alamat_I1 = driver.find_element(By.XPATH, Row_Alamat_ID_I1)
                     
                     if Check_Row_Alamat_I1.is_enabled:
-                        print("Row " + str(ID_Count_Alamat_I1) + " ada") 
+                        print("Row " + str(ID_Count_Alamat_I1) + " Alamat I1 ada") 
                     else:
                         break
                     ID_Count_Alamat_I1 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_Alamat_I1) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_Alamat_I1) + " Alamat I1 tidak ada\n") 
             
             Counter_Alamat_I1 = 1
             DB_CountAlamat_I1 = 0
@@ -228,11 +240,14 @@ def trigger_selenium(req: terimaJSON):
                 Counter_Alamat_I1 += 1
                 DB_CountAlamat_I1 += 1
                 ID_Count_Alamat_I1 += 1
-                print("\nRow " + Alamat_Row_I1 + " telah diisi")
+                print("\nRow " + Alamat_Row_I1 + " Alamat I1 telah diisi\n")
 
             #add lembaga
             ID_Count_Lembaga_I1 = 1
             print("Lembaga I1\n")
+
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
 
             try:
                 while ID_Count_Lembaga_I1 < 100:
@@ -240,12 +255,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_Lembaga_I1 = driver.find_element(By.XPATH, Row_Lembaga_ID_I1)
                     
                     if Check_Row_Lembaga_I1.is_enabled:
-                        print("Row " + str(ID_Count_Lembaga_I1) + " ada") 
+                        print("Row " + str(ID_Count_Lembaga_I1) + " Lembaga I1 ada") 
                     else:
                         break
                     ID_Count_Lembaga_I1 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_Lembaga_I1) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_Lembaga_I1) + " Lembaga I1 tidak ada\n") 
             
             Counter_Lembaga_I1 = 1
             DB_CountLembaga_I1 = 0
@@ -312,11 +327,14 @@ def trigger_selenium(req: terimaJSON):
                 Counter_Lembaga_I1 += 1
                 DB_CountLembaga_I1 += 1
                 ID_Count_Lembaga_I1 += 1
-                print("\nRow " + Lembaga_Row_I1 + " telah diisi")
+                print("\nRow " + Lembaga_Row_I1 + " Lembaga I1 telah diisi\n")
 
             #add phone number
             ID_Count_Phone_I1 = 0
             print("Phone I1\n")
+
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
 
             try:
                 while ID_Count_Phone_I1 < 100:
@@ -324,12 +342,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_Phone_I1 = driver.find_element(By.XPATH, Row_Phone_ID_I1)
                     
                     if Check_Row_Phone_I1.is_enabled:
-                        print("Row " + str(ID_Count_Phone_I1) + " ada") 
+                        print("Row " + str(ID_Count_Phone_I1) + " Phone I1 ada") 
                     else:
                         break
                     ID_Count_Phone_I1 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_Phone_I1) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_Phone_I1) + " Phone I1 tidak ada\n") 
 
             Counter_Phone_I1 = 1
             DB_CountPhone_I1 = 0
@@ -383,9 +401,11 @@ def trigger_selenium(req: terimaJSON):
                 Counter_Phone_I1 += 1
                 DB_CountPhone_I1 += 1
                 ID_Count_Phone_I1 += 1
-                print("\nRow " + Phone_Row_I1 + " telah diisi")
+                print("\nRow " + Phone_Row_I1 + " Phone I1 telah diisi\n")
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+
             driver.refresh()
-            print("\n") 
 
         #PENGISIAN I2
         def FormI2():
@@ -393,7 +413,10 @@ def trigger_selenium(req: terimaJSON):
             driver.implicitly_wait(5)
 
             ID_Count_I2 = 1
-            print("================================================\nFormI2")  
+            print("================================================\n\nFormI2\n")  
+
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
             
             try:
                 while ID_Count_I2 < 100:
@@ -401,12 +424,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_I2 = driver.find_element(By.XPATH, Row_ID_I2)
                     
                     if Check_Row_I2.is_enabled:
-                        print("Row " + str(ID_Count_I2) + " ada") 
+                        print("Row " + str(ID_Count_I2) + " I2 ada") 
                     else:
                         break
                     ID_Count_I2 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_I2) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_I2) + " I2 tidak ada\n") 
             
             Counter_I2 = 1
             DB_Count_I2 = 0
@@ -557,9 +580,11 @@ def trigger_selenium(req: terimaJSON):
                 Counter_I2 += 1
                 DB_Count_I2 += 1
                 ID_Count_I2 += 1
-                print("\nRow " + Row_I2 + " telah diisi")
+                print("\nRow " + Row_I2 + " I2 telah diisi\n")
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+            
             driver.refresh()
-            print("\n") 
 
         #PENGISIAN I3   
         def FormI3():
@@ -567,7 +592,10 @@ def trigger_selenium(req: terimaJSON):
             driver.implicitly_wait(5)
 
             ID_Count_I3 = 1  
-            print("================================================\nFormI3")
+            print("================================================\n\nFormI3\n")
+
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
 
             try:
                 while ID_Count_I3 < 100:
@@ -575,12 +603,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_I3 = driver.find_element(By.XPATH, Row_ID_I3)
                     
                     if Check_Row_I3.is_enabled:
-                        print("Row " + str(ID_Count_I3) + " ada") 
+                        print("Row " + str(ID_Count_I3) + " I3 ada") 
                     else:
                         break
                     ID_Count_I3 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_I3) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_I3) + " I3 tidak ada\n") 
             
             Counter_I3 = 1
             DB_Count_I3 = 0
@@ -788,9 +816,11 @@ def trigger_selenium(req: terimaJSON):
                 Counter_I3 += 1
                 DB_Count_I3 += 1
                 ID_Count_I3 += 1
-                print("\nRow " + Row_I3 + " telah diisi")
+                print("\nRow " + Row_I3 + " I3 telah diisi\n")
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+            
             driver.refresh()
-            print("\n")
 
         #PENGISIAN I4
         def FormI4():
@@ -798,8 +828,10 @@ def trigger_selenium(req: terimaJSON):
             driver.implicitly_wait(5)
 
             ID_Count_I4 = 1  
-            print("================================================\nFormI4")
+            print("================================================\n\nFormI4\n")
 
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
 
             try:
                 while ID_Count_I4 < 100:
@@ -807,12 +839,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_I4 = driver.find_element(By.XPATH, Row_ID_I4)
                     
                     if Check_Row_I4.is_enabled:
-                        print("Row " + str(ID_Count_I4) + " ada") 
+                        print("Row " + str(ID_Count_I4) + " I4 ada") 
                     else:
                         break
                     ID_Count_I4 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_I4) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_I4) + " I4 tidak ada\n") 
 
             Counter_I4 = 1
             DB_Count_I4 = 0
@@ -971,9 +1003,11 @@ def trigger_selenium(req: terimaJSON):
                 Counter_I4 += 1
                 DB_Count_I4 += 1
                 ID_Count_I4 += 1
-                print("\nRow " + Row_I4 + " telah diisi")
+                print("\nRow " + Row_I4 + " I4 telah diisi\n")
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+            
             driver.refresh()
-            print("\n")
 
         #PENGISIAN I5
         def FormI5():
@@ -981,7 +1015,10 @@ def trigger_selenium(req: terimaJSON):
             driver.implicitly_wait(5)
 
             ID_Count_I5 = 1  
-            print("================================================\nFormI5")
+            print("================================================\n\nFormI5\n")
+
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
 
             try:
                 while ID_Count_I5 < 100:
@@ -989,12 +1026,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_I5 = driver.find_element(By.XPATH, Row_ID_I5)
                     
                     if Check_Row_I5.is_enabled:
-                        print("Row " + str(ID_Count_I5) + " ada") 
+                        print("Row " + str(ID_Count_I5) + " I5 ada") 
                     else:
                         break
                     ID_Count_I5 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_I5) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_I5) + " I5 tidak ada\n") 
             
             Counter_I5 = 1
             DB_Count_I5 = 0
@@ -1216,9 +1253,11 @@ def trigger_selenium(req: terimaJSON):
                 Counter_I5 += 1
                 DB_Count_I5 += 1
                 ID_Count_I5 += 1
-                print("\nRow " + Row_I5 + " telah diisi")
+                print("\nRow " + Row_I5 + " I5 telah diisi\n")
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+            
             driver.refresh()
-            print("\n")
 
         #PENGISIAN I6
         def FormI6():
@@ -1226,7 +1265,10 @@ def trigger_selenium(req: terimaJSON):
             driver.implicitly_wait(5)
 
             ID_Count_I6 = 1  
-            print("================================================\nFormI6")
+            print("================================================\n\nFormI6\n")
+
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
 
             try:
                 while ID_Count_I6 < 100:
@@ -1234,12 +1276,12 @@ def trigger_selenium(req: terimaJSON):
                     Check_Row_I6 = driver.find_element(By.XPATH, Row_ID_I6)
                     
                     if Check_Row_I6.is_enabled:
-                        print("Row " + str(ID_Count_I6) + " ada") 
+                        print("Row " + str(ID_Count_I6) + " I6 ada") 
                     else:
                         break
                     ID_Count_I6 += 1
             except NSEE:
-                print ("Row " + str(ID_Count_I6) + " tidak ada\n") 
+                print ("Row " + str(ID_Count_I6) + " I6 tidak ada\n") 
             
             Counter_I6 = 1
             DB_Count_I6 = 0
@@ -1410,7 +1452,7 @@ def trigger_selenium(req: terimaJSON):
                 action.move_to_element(Scroll_Komp_I6).perform()
 
                 try:
-                    Komp_W1_I6 = Isi_I6["klaimKompetensiWSatu"]
+                    Komp_W1_I6 = Isi_I6["klaimKompetensiWsatu"]
                     print("- Komp W1 I6: " + str(len(Komp_W1_I6)))
                     for Komp_Value_W1_I6 in Komp_W1_I6:
                         Komp_Label_W1_I6 = Komp_Value_W1_I6[slice(5)]
@@ -1452,9 +1494,11 @@ def trigger_selenium(req: terimaJSON):
                 Counter_I6 += 1
                 DB_Count_I6 += 1
                 ID_Count_I6 += 1
-                print("\nRow " + Row_I6 + " telah diisi")
+                print("\nRow " + Row_I6 + " I6 telah diisi\n")
+            #Temporary-Record-Sleep-Time
+            #time.sleep(2)
+            
             driver.refresh()
-            print("\n")
 
         def Allform():
             FormI1()
@@ -1479,4 +1523,6 @@ def trigger_selenium(req: terimaJSON):
         # return {"Error:": "Error Occured"}
     
 #uvicorn Selen-Isian-UPD-API:app --reload
+#{"process_id":"formM-gONh9yHYwFgjZt5fb9dKQ", "url":"https://updmember.pii.or.id/index.php", "student_id":"21060124190767"}
+
 #uvicorn Selen-Isian-UPD-API:app --host 0.0.0.0 --port 8000 --reload
