@@ -43,17 +43,14 @@ driver.find_element(By.ID, "m_login_signin_submit").click()
 driver.implicitly_wait(2)
 
 driver.find_element(By.LINK_TEXT, "FAIP").click()
+
 driver.find_element(By.LINK_TEXT, "Edit").click()
 
 # driver.find_element(By.LINK_TEXT, "BUAT FAIP BARU").click()
-
 # WebDriverWait(driver, 10).until(EC.alert_is_present())
 # driver.switch_to.alert.accept()
 
 time.sleep(2)
-def Check():
-    time.sleep(1)
-    print("\n===Checkpoint===\n")
 
 #PENGISIAN I1
 def FormI1():
@@ -64,19 +61,16 @@ def FormI1():
 
     #Database
     Dict_I1 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_satu':1})
-    print("Metadata Database I1")
-    print(type(Dict_I1))
-    Object_I1 = Dict_I1['form_i_satu']
-    print(type(Object_I1))
+    Object_I1 = Dict_I1["form_i_satu"]
 
     #add alamat
     ID_Count_Alamat_I1 = 0
     print("\nAlamat I1\n")
+
     try:
         while ID_Count_Alamat_I1 < 100:
             Row_Alamat_ID_I1 = f'//*[@class=" ala-item"][@data-id="{str(ID_Count_Alamat_I1)}"]'    
             Check_Row_Alamat_I1 = driver.find_element(By.XPATH, Row_Alamat_ID_I1)
-            
             if Check_Row_Alamat_I1.is_enabled:
                 print("Row " + str(ID_Count_Alamat_I1) + " ada") 
             else:
@@ -89,14 +83,13 @@ def FormI1():
     DB_CountAlamat_I1 = 0
 
     #Database Alamat
-    print("Metadata Database Alamat I1")
-    Alamat_I1 = Object_I1['alamat']
-    print(type(Alamat_I1))
+    Alamat_I1 = Object_I1["alamat"]
     n_Alamat_I1 = len(Alamat_I1)
+
     print("Jumlah Document: " + str(n_Alamat_I1) + "\n")
 
-    print("Start from Row = " + str(ID_Count_Alamat_I1))
-    print("Row Ditambah = " + str(n_Alamat_I1) + "\n")
+    print("Start from Row: " + str(ID_Count_Alamat_I1))
+    print("Row Ditambah: " + str(n_Alamat_I1) + "\n")
 
     while Counter_Alamat_I1 <= n_Alamat_I1:
         #add row
@@ -108,10 +101,7 @@ def FormI1():
 
         #Document I1 Alamat
         Isi_Alamat_I1 = Alamat_I1[DB_CountAlamat_I1]
-        print("Counter Row = " + str(Counter_Alamat_I1))
-        print("Metadata Document Alamat I1")
-        print(type(Isi_Alamat_I1))
-        print(type(Isi_Alamat_I1["key"]))
+        print("Counter Row: " + str(Counter_Alamat_I1))
         print("Key Document: " + Isi_Alamat_I1["key"] + "\n")
 
         try:
@@ -156,16 +146,14 @@ def FormI1():
         ID_Count_Alamat_I1 += 1
         print("\nRow " + Alamat_Row_I1 + " telah diisi")
 
-        Check()
-
     #add lembaga
     ID_Count_Lembaga_I1 = 1
     print("Lembaga I1\n")
+
     try:
         while ID_Count_Lembaga_I1 < 100:
             Row_Lembaga_ID_I1 = f'//*[@class=" wor-item"][@data-id="{str(ID_Count_Lembaga_I1)}"]'    
             Check_Row_Lembaga_I1 = driver.find_element(By.XPATH, Row_Lembaga_ID_I1)
-            
             if Check_Row_Lembaga_I1.is_enabled:
                 print("Row " + str(ID_Count_Lembaga_I1) + " ada") 
             else:
@@ -178,14 +166,13 @@ def FormI1():
     DB_CountLembaga_I1 = 0
 
     #Database Lembaga
-    print("Metadata Database Lembaga I1")
-    Lembaga_I1 = Object_I1['lembaga']
-    print(type(Lembaga_I1))
+    Lembaga_I1 = Object_I1["lembaga"]
     n_Lembaga_I1 = len(Lembaga_I1)
+
     print("Jumlah Document: " + str(n_Lembaga_I1) + "\n")
 
-    print("Start from Row = " + str(ID_Count_Lembaga_I1))
-    print("Row Ditambah = " + str(n_Lembaga_I1) + "\n")
+    print("Start from Row: " + str(ID_Count_Lembaga_I1))
+    print("Row Ditambah: " + str(n_Lembaga_I1) + "\n")
 
     while Counter_Lembaga_I1 <= n_Lembaga_I1:
         #add row
@@ -197,10 +184,7 @@ def FormI1():
 
         #Document I1 Lembaga
         Isi_Lembaga_I1 = Lembaga_I1[DB_CountLembaga_I1]
-        print("Counter Row = " + str(Counter_Lembaga_I1))
-        print("Metadata Document Lembaga I1")
-        print(type(Isi_Lembaga_I1))
-        print(type(Isi_Lembaga_I1["key"]))
+        print("Counter Row: " + str(Counter_Lembaga_I1))
         print("Key Document: " + Isi_Lembaga_I1["key"] + "\n")
 
         try:
@@ -241,16 +225,14 @@ def FormI1():
         ID_Count_Lembaga_I1 += 1
         print("\nRow " + Lembaga_Row_I1 + " telah diisi")
 
-        Check()
-
     #add phone number
     ID_Count_Phone_I1 = 0
     print("Phone I1\n")
+
     try:
         while ID_Count_Phone_I1 < 100:
             Row_Phone_ID_I1 = f'//*[@class=" pho-item"][@data-id="{str(ID_Count_Phone_I1)}"]'    
             Check_Row_Phone_I1 = driver.find_element(By.XPATH, Row_Phone_ID_I1)
-            
             if Check_Row_Phone_I1.is_enabled:
                 print("Row " + str(ID_Count_Phone_I1) + " ada") 
             else:
@@ -263,14 +245,13 @@ def FormI1():
     DB_CountPhone_I1 = 0
 
     #Database Phone
-    print("Metadata Database Phone I1")
-    Phone_I1 = Object_I1['komunikasi']
-    print(type(Phone_I1))
+    Phone_I1 = Object_I1["komunikasi"]
     n_Phone_I1 = len(Phone_I1)
+
     print("Jumlah Document: " + str(n_Phone_I1) + "\n")
     
-    print("Start from Row = " + str(ID_Count_Phone_I1))
-    print("Row Ditambah = " + str(n_Phone_I1) + "\n")
+    print("Start from Row: " + str(ID_Count_Phone_I1))
+    print("Row Ditambah: " + str(n_Phone_I1) + "\n")
 
     while Counter_Phone_I1 <= n_Phone_I1:
         #add row
@@ -282,10 +263,7 @@ def FormI1():
 
         #Document I1 Phone
         Isi_Phone_I1 = Phone_I1[DB_CountPhone_I1]
-        print("Counter Row = " + str(Counter_Phone_I1))
-        print("Metadata Document Phone I1")
-        print(type(Isi_Phone_I1))
-        print(type(Isi_Phone_I1["key"]))
+        print("Counter Row: " + str(Counter_Phone_I1))
         print("Key Document: " + Isi_Phone_I1["key"] + "\n")
 
         try:
@@ -308,16 +286,11 @@ def FormI1():
         except KeyError:
             print("- PhoneValue I1: KeyError")
 
-        Check()
-
         #End/retry point of loop
         Counter_Phone_I1 += 1
         DB_CountPhone_I1 += 1
         ID_Count_Phone_I1 += 1
         print("\nRow " + Phone_Row_I1 + " telah diisi")
-
-        Check()
-    print("\n") 
 
 #PENGISIAN I2
 def FormI2():
@@ -331,7 +304,6 @@ def FormI2():
         while ID_Count_I2 < 100:
             Row_ID_I2 = f'//*[@class=" edu-item"][@data-id="{str(ID_Count_I2)}"]'    
             Check_Row_I2 = driver.find_element(By.XPATH, Row_ID_I2)
-            
             if Check_Row_I2.is_enabled:
                 print("Row " + str(ID_Count_I2) + " ada") 
             else:
@@ -345,15 +317,13 @@ def FormI2():
 
     #Database
     Dict_I2 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_dua':1})
-    print("Metadata Database I2")
-    print(type(Dict_I2))
-    List_I2 = Dict_I2['form_i_dua']
-    print(type(List_I2))
+    List_I2 = Dict_I2["form_i_dua"]
     n_I2 = len(List_I2)
+
     print("Jumlah Document: " + str(n_I2) + "\n")
 
-    print("Start from Row = " + str(ID_Count_I2))
-    print("Row Ditambah = " + str(n_I2) + "\n")
+    print("Start from Row: " + str(ID_Count_I2))
+    print("Row Ditambah: " + str(n_I2) + "\n")
 
     while Counter_I2 <= n_I2:
         #add row
@@ -365,10 +335,7 @@ def FormI2():
 
         #Document I2
         Isi_I2 = List_I2[DB_Count_I2]
-        print("Counter Row = " + str(Counter_I2))
-        print("Metadata Document I2")
-        print(type(Isi_I2))
-        print(type(Isi_I2["key"]))
+        print("Counter Row: " + str(Counter_I2))
         print("Key Document: " + Isi_I2["key"] + "\n")
 
         try:
@@ -483,9 +450,6 @@ def FormI2():
         ID_Count_I2 += 1
         print("\nRow " + Row_I2 + " telah diisi")
 
-        Check()
-    print("\n") 
-
 #PENGISIAN I3   
 def FormI3():
     driver.find_element(By.LINK_TEXT, "I.3").click()
@@ -498,7 +462,6 @@ def FormI3():
         while ID_Count_I3 < 100:
             Row_ID_I3 = f'//*[@class=" org-item"][@data-id="{str(ID_Count_I3)}"]'    
             Check_Row_I3 = driver.find_element(By.XPATH, Row_ID_I3)
-            
             if Check_Row_I3.is_enabled:
                 print("Row " + str(ID_Count_I3) + " ada") 
             else:
@@ -512,15 +475,13 @@ def FormI3():
 
     #Database
     Dict_I3 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_tiga':1})
-    print("Metadata Database I3")
-    print(type(Dict_I3))
-    List_I3 = Dict_I3['form_i_tiga']
-    print(type(List_I3))
+    List_I3 = Dict_I3["form_i_tiga"]
     n_I3 = len(List_I3)
+
     print("Jumlah Document: " + str(n_I3) + "\n")
 
-    print("Start from Row = " + str(ID_Count_I3))
-    print("Row Ditambah = " + str(n_I3) + "\n")
+    print("Start from Row: " + str(ID_Count_I3))
+    print("Row Ditambah: " + str(n_I3) + "\n")
 
     while Counter_I3 <= n_I3:
         #add row
@@ -532,10 +493,7 @@ def FormI3():
 
         #Document I3
         Isi_I3 = List_I3[DB_Count_I3]
-        print("Counter Row = " + str(Counter_I3))
-        print("Metadata Document I3")
-        print(type(Isi_I3))
-        print(type(Isi_I3["key"]))
+        print("Counter Row: " + str(Counter_I3))
         print("Key Document: " + Isi_I3["key"] + "\n")
 
         try:
@@ -602,11 +560,10 @@ def FormI3():
         except KeyError:
             print("- Tahun Mulai I3: KeyError")
 
-        #Periode I3
         ID_Anggota_I3 = "13_work" + Row_I3
         Angggota_I3 = driver.find_element(By.ID, ID_Anggota_I3)
         if Isi_I3["masihAnggota"] == True:
-            action.move_to_element_with_offset(Angggota_I3, 0, -20).click().perform()
+            action.move_to_element_with_offset(Angggota_I3, 0, 0).click().perform()
             print("- Masih Anggota I3: True")
         else:
             print("- Masih Anggota I3: False")
@@ -683,24 +640,25 @@ def FormI3():
         Scroll_Komp_I3 = driver.find_element(By.ID, ID_Komp_I3)
         action.move_to_element(Scroll_Komp_I3).perform()
         try:
-            Komp_I3 = Isi_I3["klaimKompetensiWSatu"]
+            Komp_I3 = Isi_I3["klaimKompetensiWsatu"]
             print("- Komp W1 I3: " + str(len(Komp_I3)))
-            for Komp_Value_I3 in Komp_I3:
-                Komp_Label_I3 = Komp_Value_I3[slice(5)]
-                Komp_Call_I3 = f'//*[@id="{ID_Komp_I3}"]//optgroup[contains(@label, "{Komp_Label_I3}")]/option[@value="{Komp_Value_I3}."]'
-                Komp_Find_I3 = driver.find_element(By.XPATH, Komp_Call_I3)
-                action.move_to_element_with_offset(Komp_Find_I3, 0, -15).click().perform()
-                print("-", Komp_Value_I3)
+            try:
+                for Komp_Value_I3 in Komp_I3:
+                    Komp_Label_I3 = Komp_Value_I3[slice(5)]
+                    Komp_Call_I3 = f'//*[@id="{ID_Komp_I3}"]//optgroup[contains(@label, "{Komp_Label_I3}")]/option[@value="{Komp_Value_I3}."]'
+                    Komp_Find_I3 = driver.find_element(By.XPATH, Komp_Call_I3)
+                    action.move_to_element_with_offset(Komp_Find_I3, 0, -15).click().perform()
+                    print("-", Komp_Value_I3)
+            except NSEE:
+                print("- Komp W1 I3: NSEE")
         except KeyError:
-            print(" Komp W1 I3: KeyError")
+            print("- Komp W1 I3: KeyError")
 
         #End/retry point of loop
         Counter_I3 += 1
         DB_Count_I3 += 1
         ID_Count_I3 += 1
         print("\nRow " + Row_I3 + " telah diisi")
-
-        Check()
 
 #PENGISIAN I4
 def FormI4():
@@ -714,7 +672,6 @@ def FormI4():
         while ID_Count_I4 < 100:
             Row_ID_I4 = f'//*[@class=" phg-item"][@data-id="{str(ID_Count_I4)}"]'    
             Check_Row_I4 = driver.find_element(By.XPATH, Row_ID_I4)
-            
             if Check_Row_I4.is_enabled:
                 print("Row " + str(ID_Count_I4) + " ada") 
             else:
@@ -728,15 +685,13 @@ def FormI4():
 
     #Database
     Dict_I4 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_empat':1})
-    print("Metadata Database I4")
-    print(type(Dict_I4))
-    List_I4 = Dict_I4['form_i_empat']
-    print(type(List_I4))
+    List_I4 = Dict_I4["form_i_empat"]
     n_I4 = len(List_I4)
+
     print("Jumlah Document: " + str(n_I4) + "\n")
     
-    print("Start from Row = " + str(ID_Count_I4))
-    print("Row Ditambah = " + str(n_I4) + "\n")
+    print("Start from Row: " + str(ID_Count_I4))
+    print("Row Ditambah: " + str(n_I4) + "\n")
 
     while Counter_I4 <= n_I4:
         #add row
@@ -746,10 +701,7 @@ def FormI4():
 
         #Document I4
         Isi_I4 = List_I4[DB_Count_I4]
-        print("Counter Row = " + str(Counter_I4))
-        print("Metadata Document I4")
-        print(type(Isi_I4))
-        print(type(Isi_I4["key"]))
+        print("Counter Row: " + str(Counter_I4))
         print("Key Document: " + Isi_I4["key"] + "\n")
 
         Row_I4 = str(ID_Count_I4)
@@ -854,17 +806,17 @@ def FormI4():
         action.move_to_element(Scroll_Komp_I4).perform()
 
         try:
-            Komp_I4 = Isi_I4["klaimKompetensiWSatu"]
+            Komp_I4 = Isi_I4["klaimKompetensiWsatu"]
             print("- Komp W1 I4: " + str(len(Komp_I4)))
-            for Komp_Value_I4 in Komp_I4:
-                Komp_Label_I4 = Komp_Value_I4[slice(5)]
-                Komp_Call_I4 = f'//*[@id="{ID_Komp_I4}"]//optgroup[contains(@label, "{Komp_Label_I4}")]/option[@value="{Komp_Value_I4}."]'
-                Komp_Find_I4 = driver.find_element(By.XPATH, Komp_Call_I4)
-                if Row_I4 == "1":
-                    action.move_to_element_with_offset(Komp_Find_I4, 0, -30).click().perform()
-                else:
-                    action.move_to_element_with_offset(Komp_Find_I4, 0, -20).click().perform()
-                print("-", Komp_Value_I4)   
+            try:
+                for Komp_Value_I4 in Komp_I4:
+                    Komp_Label_I4 = Komp_Value_I4[slice(5)]
+                    Komp_Call_I4 = f'//*[@id="{ID_Komp_I4}"]//optgroup[contains(@label, "{Komp_Label_I4}")]/option[@value="{Komp_Value_I4}."]'
+                    Komp_Find_I4 = driver.find_element(By.XPATH, Komp_Call_I4)
+                    action.move_to_element_with_offset(Komp_Find_I4, 0, -15).click().perform()
+                    print("-", Komp_Value_I4)
+            except NSEE:
+                print("- Komp W1 I4: NSEE")   
         except KeyError:
             print("- Komp W1 I4: KeyError")
             
@@ -873,8 +825,6 @@ def FormI4():
         DB_Count_I4 += 1
         ID_Count_I4 += 1
         print("Row " + Row_I4 + " telah diisi")
-
-        Check()
 
 #PENGISIAN I5
 def FormI5():
@@ -888,7 +838,6 @@ def FormI5():
         while ID_Count_I5 < 100:
             Row_ID_I5 = f'//*[@class=" pdd-item"][@data-id="{str(ID_Count_I5)}"]'    
             Check_Row_I5 = driver.find_element(By.XPATH, Row_ID_I5)
-            
             if Check_Row_I5.is_enabled:
                 print("Row " + str(ID_Count_I5) + " ada") 
             else:
@@ -902,15 +851,13 @@ def FormI5():
 
     #Database
     Dict_I5 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_lima':1})
-    print("Metadata Database I5")
-    print(type(Dict_I5))
-    List_I5 = Dict_I5['form_i_lima']
-    print(type(List_I5))
+    List_I5 = Dict_I5["form_i_lima"]
     n_I5 = len(List_I5)
+
     print("Jumlah Document: " + str(n_I5) + "\n")
 
-    print("Start from Row = " + str(ID_Count_I5))
-    print("Row Ditambah = " + str(n_I5) + "\n")
+    print("Start from Row: " + str(ID_Count_I5))
+    print("Row Ditambah: " + str(n_I5) + "\n")
 
     while Counter_I5 <= n_I5:
         #add row
@@ -920,10 +867,7 @@ def FormI5():
 
         #Document I5
         Isi_I5 = List_I5[DB_Count_I5]
-        print("Counter Row = " + str(Counter_I5))
-        print("Metadata Document I5")
-        print(type(Isi_I5))
-        print(type(Isi_I5["key"]))
+        print("Counter Row: " + str(Counter_I5))
         print("Key Document: " + Isi_I5["key"] + "\n")
 
         Row_I5 = str(ID_Count_I5)
@@ -988,7 +932,6 @@ def FormI5():
         except KeyError:
             print("- Tahun Mulai I5: KeyError")
 
-        #Periode I5
         ID_Anggota_I5 = "15_work" + Row_I5
         Angggota_I5 = driver.find_element(By.ID, ID_Anggota_I5)
         if Isi_I5["masihAnggota"] == True:
@@ -1058,45 +1001,45 @@ def FormI5():
         try:
             Komp_W2_I5 = Isi_I5["klaimKompetensiWdua"]
             print("- Komp W2 I5: " + str(len(Komp_W2_I5)))
-            for Komp_Value_W2_I5 in Komp_W2_I5:
-                Komp_Label_W2_I5 = Komp_Value_W2_I5[slice(5)]
-                Komp_Call_W2_I5 = f'//*[@id="{ID_Komp_I5}"]//optgroup[contains(@label, "{Komp_Label_W2_I5}")]/option[@value="{Komp_Value_W2_I5}."]'
-                Komp_Find_W2_I5 = driver.find_element(By.XPATH, Komp_Call_W2_I5)
-                if Row_I5 == "1":
-                    action.move_to_element_with_offset(Komp_Find_W2_I5, 0, -30).click().perform()
-                else:
-                    action.move_to_element_with_offset(Komp_Find_W2_I5, 0, -20).click().perform()
-                print("-", Komp_Value_W2_I5)
+            try:
+                for Komp_Value_W2_I5 in Komp_W2_I5:
+                    Komp_Label_W2_I5 = Komp_Value_W2_I5[slice(5)]
+                    Komp_Call_W2_I5 = f'//*[@id="{ID_Komp_I5}"]//optgroup[contains(@label, "{Komp_Label_W2_I5}")]/option[@value="{Komp_Value_W2_I5}."]'
+                    Komp_Find_W2_I5 = driver.find_element(By.XPATH, Komp_Call_W2_I5)
+                    action.move_to_element_with_offset(Komp_Find_W2_I5, 0, -15).click().perform()
+                    print("-", Komp_Value_W2_I5)
+            except NSEE:
+                print("- Komp W2 I5: NSEE")
         except KeyError:
             print("- Komp W2 I5: KeyError")
 
         try:
             Komp_W4_I5 = Isi_I5["klaimKompetensiWempat"]
             print("- Komp W4 I5: " + str(len(Komp_W4_I5)))
-            for Komp_Value_W4_I5 in Komp_W4_I5:
-                Komp_Label_W4_I5 = Komp_Value_W4_I5[slice(5)]
-                Komp_Call_W4_I5 = f'//*[@id="{ID_Komp_I5}"]//optgroup[contains(@label, "{Komp_Label_W4_I5}")]/option[@value="{Komp_Value_W4_I5}."]'
-                Komp_Find_W4_I5 = driver.find_element(By.XPATH, Komp_Call_W4_I5)
-                if Row_I5 == "1":
-                    action.move_to_element_with_offset(Komp_Find_W4_I5, 0, -30).click().perform()
-                else:
-                    action.move_to_element_with_offset(Komp_Find_W4_I5, 0, -20).click().perform()
-                print("-", Komp_Value_W4_I5) 
+            try:
+                for Komp_Value_W4_I5 in Komp_W4_I5:
+                    Komp_Label_W4_I5 = Komp_Value_W4_I5[slice(5)]
+                    Komp_Call_W4_I5 = f'//*[@id="{ID_Komp_I5}"]//optgroup[contains(@label, "{Komp_Label_W4_I5}")]/option[@value="{Komp_Value_W4_I5}."]'
+                    Komp_Find_W4_I5 = driver.find_element(By.XPATH, Komp_Call_W4_I5)
+                    action.move_to_element_with_offset(Komp_Find_W4_I5, 0, -15).click().perform()
+                    print("-", Komp_Value_W4_I5) 
+            except NSEE:
+                print("- Komp W4 I5: NSEE")
         except KeyError:
             print("- Komp W4 I5: KeyError")
 
         try:
             Komp_P10_I5 = Isi_I5["klaimKompetensiPsepuluh"]
             print("- Komp P10 I5: " + str(len(Komp_P10_I5))) 
-            for Komp_Value_P10_I5 in Komp_P10_I5:
-                Komp_Label_P10_I5 = Komp_Value_P10_I5[slice(5)]
-                Komp_Call_P10_I5 = f'//*[@id="{ID_Komp_I5}"]//optgroup[contains(@label, "{Komp_Label_P10_I5}")]/option[@value="{Komp_Value_P10_I5}."]'
-                Komp_Find_P10_I5 = driver.find_element(By.XPATH, Komp_Call_P10_I5)
-                if Row_I5 == "1":
-                    action.move_to_element_with_offset(Komp_Find_P10_I5, 0, -30).click().perform()
-                else:
-                    action.move_to_element_with_offset(Komp_Find_P10_I5, 0, -20).click().perform()
-                print("-", Komp_Value_P10_I5)  
+            try:
+                for Komp_Value_P10_I5 in Komp_P10_I5:
+                    Komp_Label_P10_I5 = Komp_Value_P10_I5[slice(5)]
+                    Komp_Call_P10_I5 = f'//*[@id="{ID_Komp_I5}"]//optgroup[contains(@label, "{Komp_Label_P10_I5}")]/option[@value="{Komp_Value_P10_I5}."]'
+                    Komp_Find_P10_I5 = driver.find_element(By.XPATH, Komp_Call_P10_I5)
+                    action.move_to_element_with_offset(Komp_Find_P10_I5, 0, -15).click().perform()
+                    print("-", Komp_Value_P10_I5) 
+            except NSEE:
+                print("- Komp P10 I5: NSEE") 
         except KeyError:
             print("- Komp P10 I5: KeyError")
 
@@ -1105,8 +1048,6 @@ def FormI5():
         DB_Count_I5 += 1
         ID_Count_I5 += 1
         print("Row " + Row_I5 + " telah diisi")
-
-        Check()
 
 #PENGISIAN I6
 def FormI6():
@@ -1120,7 +1061,6 @@ def FormI6():
         while ID_Count_I6 < 100:
             Row_ID_I6 = f'//*[@class=" ppm-item"][@data-id="{str(ID_Count_I6)}"]'    
             Check_Row_I6 = driver.find_element(By.XPATH, Row_ID_I6)
-            
             if Check_Row_I6.is_enabled:
                 print("Row " + str(ID_Count_I6) + " ada") 
             else:
@@ -1134,15 +1074,13 @@ def FormI6():
 
     #Database
     Dict_I6 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_i_enam':1})
-    print("Metadata Database I6")
-    print(type(Dict_I6))
-    List_I6 = Dict_I6['form_i_enam']
-    print(type(List_I6))
+    List_I6 = Dict_I6["form_i_enam"]
     n_I6 = len(List_I6)
+
     print("Jumlah Document: " + str(n_I6) + "\n")
 
-    print("Start from Row = " + str(ID_Count_I6))
-    print("Row Ditambah = " + str(n_I6) + "\n")
+    print("Start from Row: " + str(ID_Count_I6))
+    print("Row Ditambah: " + str(n_I6) + "\n")
 
     while Counter_I6 <= n_I6:
         #add row
@@ -1152,10 +1090,7 @@ def FormI6():
 
         #Document I6
         Isi_I6 = List_I6[DB_Count_I6]
-        print("Counter Row = " + str(Counter_I6))
-        print("Metadata Document I6")
-        print(type(Isi_I6))
-        print(type(Isi_I6["key"]))
+        print("Counter Row: " + str(Counter_I6))
         print("Key Document: " + Isi_I6["key"] + "\n")
 
         Row_I6 = str(ID_Count_I6)
@@ -1220,7 +1155,6 @@ def FormI6():
         except KeyError:
             print("- Tahun Mulai I6: KeyError")
 
-        #Periode I6
         ID_Anggota_I6 = "16_work" + Row_I6
         Angggota_I6 = driver.find_element(By.ID, ID_Anggota_I6)
         if Isi_I6["masihAnggota"] == True:
@@ -1288,38 +1222,47 @@ def FormI6():
         action.move_to_element(Scroll_Komp_I6).perform()
 
         try:
-            Komp_W1_I6 = Isi_I6["klaimKompetensiWSatu"]
+            Komp_W1_I6 = Isi_I6["klaimKompetensiWsatu"]
             print("- Komp W1 I6: " + str(len(Komp_W1_I6)))
-            for Komp_Value_W1_I6 in Komp_W1_I6:
-                Komp_Label_W1_I6 = Komp_Value_W1_I6[slice(5)]
-                Komp_Call_W1_I6 = f'//*[@id="{ID_Komp_I6}"]//optgroup[contains(@label, "{Komp_Label_W1_I6}")]/option[@value="{Komp_Value_W1_I6}."]'
-                Komp_Find_W1_I6 = driver.find_element(By.XPATH, Komp_Call_W1_I6)
-                action.move_to_element_with_offset(Komp_Find_W1_I6, 0, -15).click().perform()
-                print("-", Komp_Value_W1_I6)
+            try:
+                for Komp_Value_W1_I6 in Komp_W1_I6:
+                    Komp_Label_W1_I6 = Komp_Value_W1_I6[slice(5)]
+                    Komp_Call_W1_I6 = f'//*[@id="{ID_Komp_I6}"]//optgroup[contains(@label, "{Komp_Label_W1_I6}")]/option[@value="{Komp_Value_W1_I6}."]'
+                    Komp_Find_W1_I6 = driver.find_element(By.XPATH, Komp_Call_W1_I6)
+                    action.move_to_element_with_offset(Komp_Find_W1_I6, 0, -15).click().perform()
+                    print("-", Komp_Value_W1_I6)
+            except NSEE:
+                print("- Komp W1 I6: NSEE")
         except KeyError:
             print("- Komp W1 I6: KeyError")           
 
         try:
             Komp_W4_I6 = Isi_I6["klaimKompetensiWempat"]
             print("- Komp W4 I6: " + str(len(Komp_W4_I6)))
-            for Komp_Value_W4_I6 in Komp_W4_I6:
-                Komp_Label_W4_I6 = Komp_Value_W4_I6[slice(5)]
-                Komp_Call_W4_I6 = f'//*[@id="{ID_Komp_I6}"]//optgroup[contains(@label, "{Komp_Label_W4_I6}")]/option[@value="{Komp_Value_W4_I6}."]'
-                Komp_Find_W4_I6 = driver.find_element(By.XPATH, Komp_Call_W4_I6)
-                action.move_to_element_with_offset(Komp_Find_W4_I6, 0, -15).click().perform()
-                print("-", Komp_Value_W4_I6)  
+            try:
+                for Komp_Value_W4_I6 in Komp_W4_I6:
+                    Komp_Label_W4_I6 = Komp_Value_W4_I6[slice(5)]
+                    Komp_Call_W4_I6 = f'//*[@id="{ID_Komp_I6}"]//optgroup[contains(@label, "{Komp_Label_W4_I6}")]/option[@value="{Komp_Value_W4_I6}."]'
+                    Komp_Find_W4_I6 = driver.find_element(By.XPATH, Komp_Call_W4_I6)
+                    action.move_to_element_with_offset(Komp_Find_W4_I6, 0, -15).click().perform()
+                    print("-", Komp_Value_W4_I6) 
+            except NSEE:
+                print("- Komp W4 I6: NSEE") 
         except KeyError:
             print("- Komp W4 I6: KeyError") 
 
         try:
             Komp_P10_I6 = Isi_I6["klaimKompetensiPsepuluh"]
             print("- Komp P10 I6: " + str(len(Komp_P10_I6)))
-            for Komp_Value_P10_I6 in Komp_P10_I6:
-                Komp_Label_P10_I6 = Komp_Value_P10_I6[slice(5)]
-                Komp_Call_P10_I6 = f'//*[@id="{ID_Komp_I6}"]//optgroup[contains(@label, "{Komp_Label_P10_I6}")]/option[@value="{Komp_Value_P10_I6}."]'
-                Komp_Find_P10_I6 = driver.find_element(By.XPATH, Komp_Call_P10_I6)
-                action.move_to_element_with_offset(Komp_Find_P10_I6, 0, -15).click().perform()
-                print("-", Komp_Value_P10_I6)  
+            try:
+                for Komp_Value_P10_I6 in Komp_P10_I6:
+                    Komp_Label_P10_I6 = Komp_Value_P10_I6[slice(5)]
+                    Komp_Call_P10_I6 = f'//*[@id="{ID_Komp_I6}"]//optgroup[contains(@label, "{Komp_Label_P10_I6}")]/option[@value="{Komp_Value_P10_I6}."]'
+                    Komp_Find_P10_I6 = driver.find_element(By.XPATH, Komp_Call_P10_I6)
+                    action.move_to_element_with_offset(Komp_Find_P10_I6, 0, -15).click().perform()
+                    print("-", Komp_Value_P10_I6)  
+            except NSEE:
+                print("- Komp P10 I6: NSEE")
         except KeyError:
             print("- Komp P10 I6: KeyError") 
 
@@ -1329,14 +1272,1498 @@ def FormI6():
         ID_Count_I6 += 1
         print("Row " + Row_I6 + " telah diisi")
 
-        Check()
+#PENGISIAN II1
+def FormII1():
+    driver.find_element(By.LINK_TEXT, "II.1").click()
+    driver.implicitly_wait(5)
 
-def Allform():
+    ID_Count_II1 = 1  
+    print("================================================\nFormII1")
+    
+    try:
+        while ID_Count_II1 < 100:
+            Row_ID_II1 = f'//*[@class=" ref-item"][@data-id="{str(ID_Count_II1)}"]'    
+            Check_Row_II1 = driver.find_element(By.XPATH, Row_ID_II1)
+            if Check_Row_II1.is_enabled:
+                print("Row " + str(ID_Count_II1) + " ada") 
+            else:
+                break
+            ID_Count_II1 += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_II1) + " tidak ada") 
+
+    Counter_II1 = 1
+    DB_Count_II1 = 0
+
+    #Database
+    Dict_II1 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_ii_satu':1})
+    List_II1 = Dict_II1["form_ii_satu"]
+    n_II1 = len(List_II1)
+    
+    print("Start from Row: " + str(ID_Count_II1))
+    print("Row Ditambah: " + str(n_II1) + "\n")
+
+    while Counter_II1 <= n_II1:
+        #add row
+        TambahII1 = driver.find_element(By.XPATH, '//button[@onclick="add21(\'ref\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahII1)
+        action.move_to_element(TambahII1).perform()
+        TambahII1.send_keys(Keys.ENTER)
+
+        Row_II1 = str(ID_Count_II1)
+
+        #Document II1
+        Isi_II1 = List_II1[DB_Count_II1]
+        print("Counter Row: " + str(Counter_II1))
+        print("Key Document: " + Isi_II1["key"] + "\n")
+
+        try:
+            Nama_II1 = Isi_II1["namaKualifikasiEtik"]          
+            ID_Nama_II1 = "21_nama" + Row_II1
+            driver.find_element(By.ID, ID_Nama_II1).send_keys(Nama_II1)
+            print("- Nama II1: " + Nama_II1)
+        except KeyError:
+            print("- Nama II1: KeyError")
+
+        try:
+            Lembaga_II1 = Isi_II1["lembaga"] 
+            ID_Lembaga_II1 = "21_lembaga" + Row_II1
+            driver.find_element(By.ID, ID_Lembaga_II1).send_keys(Lembaga_II1)
+            print("- Lembaga II1: " + Lembaga_II1)
+        except KeyError:
+            print("- Lembaga II1: KeyError")
+
+        try:
+            Alamat_II1 = Isi_II1["alamat"] 
+            ID_Alamat_II1 = "21_alamat" + Row_II1
+            driver.find_element(By.ID, ID_Alamat_II1).send_keys(Alamat_II1)
+            print("- Alamat II1: " + Alamat_II1)
+        except KeyError:
+            print("- Alamat II1: KeyError")
+
+        try:
+            Kota_II1 = Isi_II1["kota"] 
+            ID_Kota_II1 = "21_kota" + Row_II1
+            driver.find_element(By.ID, ID_Kota_II1).send_keys(Kota_II1)
+            print("- Kota II1: " + Kota_II1)
+        except KeyError:
+            print("- Kota II1: KeyError")
+
+        try:
+            Provinsi_II1 = Isi_II1["provinsi"] 
+            ID_Provinsi_II1 = "21_provinsi" + Row_II1
+            driver.find_element(By.ID, ID_Provinsi_II1).send_keys(Provinsi_II1)
+            print("- Provinsi II1: " + Provinsi_II1)
+        except KeyError:
+            print("- Provinsi II1: KeyError")
+
+        try:
+            Negara_II1 = Isi_II1["negara"]     
+            ID_Negara_II1 = "21_negara" + Row_II1
+            driver.find_element(By.ID, ID_Negara_II1).send_keys(Negara_II1)
+            print("- Negara II1: " + Negara_II1)
+        except KeyError:
+            print("- Negara II1: KeyError")
+        
+        try:
+            NoTelp_II1 = Isi_II1["noTelp"] 
+            ID_NoTelp_II1 = "21_notelp" + Row_II1
+            driver.find_element(By.ID, ID_NoTelp_II1).send_keys(NoTelp_II1)
+            print("- NoTelp II1: " + NoTelp_II1)
+        except KeyError:
+            print("- NoTelp II1: KeyError")
+
+        try:
+            Email_II1 = Isi_II1["email"] 
+            ID_Email_II1 = "21_email" + Row_II1
+            driver.find_element(By.ID, ID_Email_II1).send_keys(Email_II1)
+            print("- Email II1: " + Email_II1)
+        except KeyError:
+            print("- Email II1: KeyError")
+
+        try:
+            Hubungan_II1 = Isi_II1["hubungan"] 
+            ID_Hubungan_II1 = "21_hubungan" + Row_II1
+            Select_Hubungan_II1 = Select(driver.find_element(By.ID, ID_Hubungan_II1))
+            try:
+                Select_Hubungan_II1.select_by_visible_text(Hubungan_II1)
+                print("- Hubungan II1: " + Hubungan_II1)
+            except NSEE:
+                ("- Hubungan II1: NSEE")
+        except KeyError:
+            print("- Hubungan II1: KeyError")
+
+        #End/retry point of loop
+        Counter_II1 += 1
+        ID_Count_II1 += 1
+        print("Row " + Row_II1 + " telah diisi")
+
+#PENGISIAN II2
+def FormII2():
+    driver.find_element(By.LINK_TEXT, "II.2").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_II2 = 1  
+    print("================================================\nFormII2")
+    
+    try:
+        while ID_Count_II2 < 100:
+            Row_ID_II2 = f'//*[@class=" eti-item"][@data-id="{str(ID_Count_II2)}"]'    
+            Check_Row_II2 = driver.find_element(By.XPATH, Row_ID_II2)
+            if Check_Row_II2.is_enabled:
+                print("Row " + str(ID_Count_II2) + " ada") 
+            else:
+                break
+            ID_Count_II2 += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_II2) + " tidak ada") 
+
+    Counter_II2 = 1
+    DB_Count_II2 = 0
+
+    #Database
+    Dict_II2 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_ii_dua':1})
+    List_II2 = Dict_II2["form_ii_dua"]
+    n_II2 = len(List_II2)
+    
+    print("Start from Row: " + str(ID_Count_II2))
+    print("Row Ditambah: " + str(n_II2) + "\n")
+
+    while Counter_II2 <= n_II2:
+        #add row
+        TambahII2 = driver.find_element(By.XPATH, '//button[@onclick="add22(\'eti\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahII2)
+        action.move_to_element(TambahII2).perform()
+        TambahII2.send_keys(Keys.ENTER)
+
+        Row_II2 = str(ID_Count_II2)
+
+        #Document II2
+        Isi_II2 = List_II2[DB_Count_II2]
+        print("Counter Row: " + str(Counter_II2))
+        print("Key Document: " + Isi_II2["key"] + "\n")
+
+        try:
+            Uraian_II2 = Isi_II2["pendapatEtik"]  
+            ID_Uraian_II2 = "22_uraian" + Row_II2
+            driver.find_element(By.ID, ID_Uraian_II2).send_keys(Uraian_II2)
+            print("- Uraian II2: " + Uraian_II2)
+        except KeyError:
+            print("- Uraian II2: KeyError")
+
+        #End/retry point of loop
+        Counter_II2 += 1
+        ID_Count_II2 += 1
+        print("Row " + Row_II2 + " telah diisi")
+
+#PENGISIAN III
+def FormIII():
+    driver.find_element(By.LINK_TEXT, "III").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_III = 1  
+    print("================================================\nFormIII")
+    
+    try:
+        while ID_Count_III < 100:
+            Row_ID_III = f'//*[@class=" kup-item"][@data-id="{str(ID_Count_III)}"]'    
+            Check_Row_III = driver.find_element(By.XPATH, Row_ID_III)
+            if Check_Row_III.is_enabled:
+                print("Row " + str(ID_Count_III) + " ada") 
+            else:
+                break
+            ID_Count_III += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_III) + " tidak ada") 
+ 
+    Counter_III = 1
+    DB_Count_III = 0
+
+    #Database
+    Dict_III = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_iii':1})
+    List_III = Dict_III["form_iii"]
+    n_III = len(List_III)
+   
+    print("Start from Row: " + str(ID_Count_III))
+    print("Row Ditambah: " + str(n_III) + "\n")
+
+    while Counter_III <= n_III:
+        #add row
+        TambahIII = driver.find_element(By.XPATH, '//button[@onclick="add3(\'kup\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahIII)
+        action.move_to_element(TambahIII).perform()
+        TambahIII.send_keys(Keys.ENTER)
+
+        Row_III = str(ID_Count_III)
+
+        #Document III
+        Isi_III = List_III[DB_Count_III]
+        print("Counter Row: " + str(Counter_III))
+        print("Key Document: " + Isi_III["key"] + "\n")
+
+        try:
+            BulanMulai_III = Isi_III["bulanMulai"]  
+            ID_BulanMulai_III = "3_startdate" + Row_III
+            Select_BulanMulai_III = Select(driver.find_element(By.ID, ID_BulanMulai_III))
+            try:
+                Select_BulanMulai_III.select_by_visible_text(BulanMulai_III)
+                print("- BulanMulai III: " + BulanMulai_III)
+            except NSEE:
+                ("- BulanMulai III: NSEE")
+        except KeyError:
+            print("- BulanMulai III: KeyError")
+
+        try:
+            TahunMulai_III = Isi_III["tahunMulai"]  
+            ID_TahunMulai_III = "3_startyear" + Row_III
+            driver.find_element(By.ID, ID_TahunMulai_III).send_keys(TahunMulai_III)
+            print("- TahunMulai III: " + TahunMulai_III)
+        except KeyError:
+            print("- TahunMulai III: KeyError")
+
+        ID_Anggota_III = "3_work" + Row_III
+        Angggota_III = driver.find_element(By.ID, ID_Anggota_III)
+        if Isi_III["masihdiInstansi"] == True:
+            action.move_to_element_with_offset(Angggota_III, 0, -20).click().perform()
+            print("- Masih Anggota III: True")
+        else:
+            print("- Masih Anggota III: False")
+            try:
+                BulanSelesai_III = Isi_III["bulanBerakhir"]  
+                ID_BulanSelesai_III = "3_enddate" + Row_III
+                Select_BulanSelesai_III = Select(driver.find_element(By.ID, ID_BulanSelesai_III))
+                try:
+                    Select_BulanSelesai_III.select_by_visible_text(BulanSelesai_III)
+                    print("- BulanSelesai III: " + BulanSelesai_III)
+                except NSEE:
+                    ("- BulanSelesai III: NSEE")
+            except KeyError:
+                print("- BulanSelesai III: KeyError")    
+
+            try:
+                TahunSelesai_III = Isi_III["tahunBerakhir"]  
+                ID_TahunSelesai_III = "3_endyear" + Row_III
+                driver.find_element(By.ID, ID_TahunSelesai_III).send_keys(TahunSelesai_III)
+                print("- TahunSelesai III: " + TahunSelesai_III)
+            except KeyError:
+                print("- TahunSelesai III: KeyError")
+
+        try:
+            Instansi_III = Isi_III["namaInstansi"]  
+            ID_Instansi_III = "3_instansi" + Row_III
+            driver.find_element(By.ID, ID_Instansi_III).send_keys(Instansi_III)
+            print("- Instansi III: " + Instansi_III)
+        except KeyError:
+            print("- Instansi III: KeyError")
+
+        try:
+            Jabatan_III = Isi_III["jabatandiInstansi"]  
+            ID_Jabatan_III = "3_title" + Row_III
+            driver.find_element(By.ID, ID_Jabatan_III).send_keys(Jabatan_III)
+            print("- Jabatan III: " + Jabatan_III)
+        except KeyError:
+            print("- Jabatan III: KeyError")
+
+        try:        
+            Proyek_III = Isi_III["namaProyek"]  
+            ID_Proyek_III = "3_namaproyek" + Row_III
+            driver.find_element(By.ID, ID_Proyek_III).send_keys(Proyek_III)
+            print("- Proyek III: " + Proyek_III)
+        except KeyError:
+            print("- Proyek III: KeyError")
+
+        try:
+            Penugas_III = Isi_III["pemberiTugas"]  
+            ID_Penugas_III = "3_pemberitugas" + Row_III
+            driver.find_element(By.ID, ID_Penugas_III).send_keys(Penugas_III)
+            print("- Penugas III: " + Penugas_III)
+        except KeyError:
+            print("- Penugas III: KeyError")
+
+        try:
+            Kota_III = Isi_III["kotaProyek"]  
+            ID_Kota_III = "3_location" + Row_III
+            driver.find_element(By.ID, ID_Kota_III).send_keys(Kota_III)
+            print("- Kota III: " + Kota_III)
+        except KeyError:
+            print("- Kota III: KeyError")
+
+        try:
+            Provinsi_III = Isi_III["provinsiProyek"]  
+            ID_Provinsi_III = "3_provinsi" + Row_III
+            driver.find_element(By.ID, ID_Provinsi_III).send_keys(Provinsi_III)
+            print("- Provinsi III: " +  Provinsi_III)
+        except KeyError:
+            print("- Provinsi III: KeyError")
+
+        try:
+            Negara_III = Isi_III["negaraProyek"]  
+            ID_Negara_III = "3_negara" + Row_III
+            driver.find_element(By.ID, ID_Negara_III).send_keys(Negara_III)
+            print("- Negara III : " + Negara_III)
+        except KeyError:
+            print("- Negara III: KeyError")
+
+        try:
+            Periode_III = Isi_III["durasi"]  
+            ID_Periode_III = "3_periode" + Row_III
+            Select_Periode_III = Select(driver.find_element(By.ID, ID_Periode_III))
+            try:
+                Select_Periode_III.select_by_visible_text(Periode_III)
+                print("- Periode_III: " + Periode_III)
+            except NSEE:
+                ("- Periode_III: NSEE")
+        except KeyError:
+            print("- Periode_III: KeyError")
+
+        try:        
+            Posisi_III = Isi_III["jabatan"]  
+            ID_Posisi_III = "3_posisi" + Row_III
+            Select_Posisi_III = Select(driver.find_element(By.ID, ID_Posisi_III))
+            try:
+                Select_Posisi_III.select_by_visible_text(Posisi_III)
+                print("- Posisi_III: " + Posisi_III)
+            except NSEE:
+                ("- Posisi_III: NSEE")
+        except KeyError:
+            print("- Posisi_III: KeyError")
+
+        try:
+            Nilai_III = Isi_III["nilaiProyek"]  
+            ID_Nilai_III = "3_nilaipry" + Row_III
+            Scroll_Nilai_III = driver.find_element(By.ID, ID_Nilai_III)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_Nilai_III)
+            driver.find_element(By.ID, ID_Nilai_III).send_keys(Nilai_III)
+            print("- Nilai III: " + Nilai_III)
+        except KeyError:
+            print("- Nilai III: KeyError")
+
+        try:
+            TanggungJawab_III = Isi_III["nilaiTanggungJawab"]  
+            ID_TanggungJawab_III = "3_nilaijasa" + Row_III
+            Scroll_TanggungJawab_III = driver.find_element(By.ID, ID_TanggungJawab_III)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_TanggungJawab_III)
+            driver.find_element(By.ID, ID_TanggungJawab_III).send_keys(TanggungJawab_III)
+            print("- TanggungJawab III: " + TanggungJawab_III)
+        except KeyError:
+            print("- TanggungJawab III: KeyError")
+        
+        try:
+            SDM_III = Isi_III["sdmyangTerlibat"]  
+            ID_SDM_III = "3_nilaisdm" + Row_III
+            Scroll_SDM_III = driver.find_element(By.ID, ID_SDM_III)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_SDM_III)
+            Select_SDM_III = Select(driver.find_element(By.ID, ID_SDM_III))
+            try:
+                Select_SDM_III.select_by_visible_text(SDM_III)
+                print("- SDM_III: " + SDM_III)
+            except NSEE:
+                ("- SDM_III: NSEE")
+        except KeyError:
+            print("- SDM_III: KeyError")
+
+        try:
+            TingkatSulit_III = Isi_III["tingkatKesulitan"]  
+            ID_TingkatSulit_III = "3_nilaisulit" + Row_III
+            Scroll_TingkatSulit_III = driver.find_element(By.ID, ID_TingkatSulit_III)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_TingkatSulit_III)
+            Select_TingkatSulit_III = Select(driver.find_element(By.ID, ID_TingkatSulit_III))
+            try:
+                Select_TingkatSulit_III.select_by_visible_text(TingkatSulit_III)
+                print("- TingkatSulit III: " + TingkatSulit_III)
+            except NSEE:
+                ("- TingkatSulit III: NSEE")
+        except KeyError:
+            print("- TingkatSulit III: KeyError")
+
+        try:
+            NilaiProyek_III = Isi_III["skalaProyek"]  
+            ID_NilaiProyek_III = "3_nilaiproyek" + Row_III
+            Scroll_NilaiProyek_III = driver.find_element(By.ID, ID_NilaiProyek_III)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_NilaiProyek_III)
+            Select_NilaiProyek_III = Select(driver.find_element(By.ID, ID_NilaiProyek_III))
+            try:
+                Select_NilaiProyek_III.select_by_visible_text(NilaiProyek_III)
+                print("- NilaiProyek III: " + NilaiProyek_III)
+            except NSEE:
+                ("- NilaiProyek III: NSEE")
+        except KeyError:
+            print("- NilaiProyek III: KeyError")
+
+        try:
+            Uraian_III = Isi_III["uraianSingkatNSPK"]
+            ID_Uraian_III = "3_uraian" + Row_III
+            Scroll_Uraian_III = driver.find_element(By.ID, ID_Uraian_III)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_Uraian_III)
+            driver.find_element(By.ID, ID_Uraian_III).send_keys(Uraian_III)
+            print("- Uraian III: " + Uraian_III)
+        except KeyError:
+            print("- Uraian III: KeyError")
+
+        # Kompetisi III 
+        ID_Komp_III = "3_komp" + Row_III
+        Scroll_Komp_III = driver.find_element(By.ID, ID_Komp_III)
+        action.move_to_element(Scroll_Komp_III).perform()
+        
+        try:
+            Komp_W2_III = Isi_III["klaimKompetensiWdua"]
+            print("- Komp W2 III: " + str(len(Komp_W2_III)))
+            try:
+                for Komp_Value_W2_III in Komp_W2_III:
+                    Komp_Label_W2_III = Komp_Value_W2_III[slice(5)]
+                    Komp_Call_W2_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_W2_III}")]/option[@value="{Komp_Value_W2_III}."]'
+                    Komp_Find_W2_III = driver.find_element(By.XPATH, Komp_Call_W2_III)
+                    action.move_to_element_with_offset(Komp_Find_W2_III, 0, -15).click().perform()
+                    print("-", Komp_Value_W2_III)
+            except NSEE:
+                print("- Komp W2 III: NSEE")
+        except KeyError:
+            print("- Komp W2 III: KeyError") 
+        
+        try:
+            Komp_W3_III = Isi_III["klaimKompetensiWtiga"]
+            print("- Komp W3 III: " + str(len(Komp_W3_III)))
+            try:
+                for Komp_Value_W3_III in Komp_W3_III:
+                    Komp_Label_W3_III = Komp_Value_W3_III[slice(5)]
+                    Komp_Call_W3_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_W3_III}")]/option[@value="{Komp_Value_W3_III}."]'
+                    Komp_Find_W3_III = driver.find_element(By.XPATH, Komp_Call_W3_III)
+                    action.move_to_element_with_offset(Komp_Find_W3_III, 0, -15).click().perform()
+                    print("-", Komp_Value_W3_III)
+            except NSEE:
+                print("- Komp W3 III: NSEE")
+        except KeyError:
+            print("- Komp W3 III: KeyError") 
+
+        try:
+            Komp_W4_III = Isi_III["klaimKompetensiWempat"]
+            print("- Komp W4 III: " + str(len(Komp_W4_III)))
+            try:
+                for Komp_Value_W4_III in Komp_W4_III:
+                    Komp_Label_W4_III = Komp_Value_W4_III[slice(5)]
+                    Komp_Call_W4_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_W4_III}")]/option[@value="{Komp_Value_W4_III}."]'
+                    Komp_Find_W4_III = driver.find_element(By.XPATH, Komp_Call_W4_III)
+                    action.move_to_element_with_offset(Komp_Find_W4_III, 0, -15).click().perform()
+                    print("-", Komp_Value_W4_III)
+            except NSEE:
+                print("- Komp W4 III: NSEE")
+        except KeyError:
+            print("- Komp W4 III: KeyError") 
+
+        try:
+            Komp_P6_III = Isi_III["klaimKompetensiPenam"]
+            print("- Komp P6 III: " + str(len(Komp_P6_III)))
+            try:
+                for Komp_Value_P6_III in Komp_P6_III:
+                    Komp_Label_P6_III = Komp_Value_P6_III[slice(5)]
+                    Komp_Call_P6_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_P6_III}")]/option[@value="{Komp_Value_P6_III}."]'
+                    Komp_Find_P6_III = driver.find_element(By.XPATH, Komp_Call_P6_III)
+                    action.move_to_element_with_offset(Komp_Find_P6_III, 0, -15).click().perform()
+                    print("-", Komp_Value_P6_III)
+            except NSEE:
+                print("- Komp P6 III: NSEE")
+        except KeyError:
+            print("- Komp P6 III: KeyError") 
+
+        try:
+            Komp_P7_III = Isi_III["klaimKompetensiPtujuh"]
+            print("- Komp P7 III: " + str(len(Komp_P7_III)))
+            try:
+                for Komp_Value_P7_III in Komp_P7_III:
+                    Komp_Label_P7_III = Komp_Value_P7_III[slice(5)]
+                    Komp_Call_P7_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_P7_III}")]/option[@value="{Komp_Value_P7_III}."]'
+                    Komp_Find_P7_III = driver.find_element(By.XPATH, Komp_Call_P7_III)
+                    action.move_to_element_with_offset(Komp_Find_P7_III, 0, -15).click().perform()
+                    print("-", Komp_Value_P7_III)
+            except NSEE:
+                print("- Komp P7 III: NSEE")
+        except KeyError:
+            print("- Komp P7 III: KeyError") 
+
+        try:
+            Komp_P8_III = Isi_III["klaimKompetensiPdelapan"]
+            print("- Komp P8 III: " + str(len(Komp_P8_III)))
+            try:
+                for Komp_Value_P8_III in Komp_P8_III:
+                    Komp_Label_P8_III = Komp_Value_P8_III[slice(5)]
+                    Komp_Call_P8_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_P8_III}")]/option[@value="{Komp_Value_P8_III}."]'
+                    Komp_Find_P8_III = driver.find_element(By.XPATH, Komp_Call_P8_III)
+                    action.move_to_element_with_offset(Komp_Find_P8_III, 0, -15).click().perform()
+                    print("-", Komp_Value_P8_III)
+            except NSEE:
+                print("- Komp P8 III: NSEE")
+        except KeyError:
+            print("- Komp P8 III: KeyError") 
+
+        try:
+            Komp_P9_III = Isi_III["klaimKompetensiPsembilan"]
+            print("- Komp P9 III: " + str(len(Komp_P9_III)))
+            try:
+                for Komp_Value_P9_III in Komp_P9_III:
+                    Komp_Label_P9_III = Komp_Value_P9_III[slice(5)]
+                    Komp_Call_P9_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_P9_III}")]/option[@value="{Komp_Value_P9_III}."]'
+                    Komp_Find_P9_III = driver.find_element(By.XPATH, Komp_Call_P9_III)
+                    action.move_to_element_with_offset(Komp_Find_P9_III, 0, -15).click().perform()
+                    print("-", Komp_Value_P9_III)
+            except NSEE:
+                print("- Komp P9 III: NSEE")
+        except KeyError:
+            print("- Komp P9 III: KeyError") 
+
+        try:
+            Komp_P10_III = Isi_III["klaimKompetensiPsepuluh"]
+            print("- Komp P10 III: " + str(len(Komp_P10_III)))
+            try:
+                for Komp_Value_P10_III in Komp_P10_III:
+                    Komp_Label_P10_III = Komp_Value_P10_III[slice(5)]
+                    Komp_Call_P10_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_P10_III}")]/option[@value="{Komp_Value_P10_III}."]'
+                    Komp_Find_P10_III = driver.find_element(By.XPATH, Komp_Call_P10_III)
+                    action.move_to_element_with_offset(Komp_Find_P10_III, 0, -15).click().perform()
+                    print("-", Komp_Value_P10_III)
+            except NSEE:
+                print("- Komp P10 III: NSEE")    
+        except KeyError:
+            print("- Komp P10 III: KeyError") 
+
+        try:
+            Komp_P11_III = Isi_III["klaimKompetensiPsebelas"]
+            print("- Komp P11 III: " + str(len(Komp_P11_III)))
+            try:
+                for Komp_Value_P11_III in Komp_P11_III:
+                    Komp_Label_P11_III = Komp_Value_P11_III[slice(5)]
+                    Komp_Call_P11_III = f'//*[@id="{ID_Komp_III}"]//optgroup[contains(@label, "{Komp_Label_P11_III}")]/option[@value="{Komp_Value_P11_III}."]'
+                    Komp_Find_P11_III = driver.find_element(By.XPATH, Komp_Call_P11_III)
+                    action.move_to_element_with_offset(Komp_Find_P11_III, 0, -15).click().perform()
+                    print("-", Komp_Value_P11_III)
+            except NSEE:
+                print("- Komp P11 III: NSEE")
+        except KeyError:
+            print("- Komp P11 III: KeyError") 
+
+        #End/retry point of loop
+        Counter_III += 1
+        ID_Count_III += 1
+        print("Row " + Row_III + " telah diisi")
+
+#PENGISIAN IV
+def FormIV():
+    driver.find_element(By.LINK_TEXT, "IV").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_IV = 1  
+    print("================================================\nFormIV")
+    
+    try:
+        while ID_Count_IV < 100:
+            Row_ID_IV = f'//*[@class=" man-item"][@data-id="{str(ID_Count_IV)}"]'    
+            Check_Row_IV = driver.find_element(By.XPATH, Row_ID_IV)
+            if Check_Row_IV.is_enabled:
+                print("Row " + str(ID_Count_IV) + " ada") 
+            else:
+                break
+            ID_Count_IV += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_IV) + " tidak ada") 
+
+    Counter_IV = 1
+    DB_Count_IV = 0
+
+    #Database
+    Dict_IV = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_iv':1})
+    List_IV = Dict_IV["form_iv"]
+    n_IV = len(List_IV)
+    
+    print("Start from Row: " + str(ID_Count_IV))
+    print("Row Ditambah: " + str(n_IV) + "\n")
+
+    while Counter_IV <= n_IV:
+        #add row
+        TambahIV = driver.find_element(By.XPATH, '//button[@onclick="add4(\'man\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahIV)
+        action.move_to_element(TambahIV).perform()
+        TambahIV.send_keys(Keys.ENTER)
+
+        Row_IV = str(ID_Count_IV)
+
+        #Document IV
+        Isi_IV = List_IV[DB_Count_IV]
+        print("Counter Row: " + str(Counter_IV))
+        print("Key Document: " + Isi_IV["key"] + "\n")
+
+        try:
+            Instansi_IV = Isi_IV["namaPerguruan"]  
+            ID_Instansi_IV = "4_instansi" + Row_IV
+            driver.find_element(By.ID, ID_Instansi_IV).send_keys(Instansi_IV)
+            print("- Instansi IV: " + Instansi_IV)
+        except KeyError:
+            print("- Instansi IV: KeyError")
+
+        try:
+            NamaProyek_IV = Isi_IV["namaMataAjaran"]  
+            ID_NamaProyek_IV = "4_namaproyek" + Row_IV
+            driver.find_element(By.ID, ID_NamaProyek_IV).send_keys(NamaProyek_IV)
+            print("- NamaProyek IV: " + NamaProyek_IV)
+        except KeyError:
+            print("- NamaProyek IV: KeyError")
+        
+        try:
+            Kota_IV = Isi_IV["kota"]  
+            ID_Kota_IV = "4_location" + Row_IV
+            driver.find_element(By.ID, ID_Kota_IV).send_keys(Kota_IV)
+            print("- Kota IV: " + Kota_IV)
+        except KeyError:
+            print("- Kota IV: KeyError")
+
+        try:
+            Provinsi_IV = Isi_IV["provinsi"]  
+            ID_Provinsi_IV = "4_provinsi" + Row_IV
+            driver.find_element(By.ID, ID_Provinsi_IV).send_keys(Provinsi_IV)
+            print("- Provinsi I: " + Provinsi_IV)
+        except KeyError:
+            print("- Provinsi IV: KeyError")
+
+        try:
+            Negara_IV = Isi_IV["negara"]  
+            ID_Negara_IV = "4_negara" + Row_IV
+            driver.find_element(By.ID, ID_Negara_IV).send_keys(Negara_IV)
+            print("- Negara IV: " + Negara_IV)
+        except KeyError:
+            print("- Negara IV: KeyError")
+
+        try:
+            Periode_IV = Isi_IV["perioda"]  
+            ID_Periode_IV = "4_periode" + Row_IV
+            Select_Periode_IV = Select(driver.find_element(By.ID, ID_Periode_IV))
+            try:
+                Select_Periode_IV.select_by_visible_text(Periode_IV)
+                print("- Periode IV: " + Periode_IV)
+            except NSEE:
+                ("- Periode IV: NSEE")
+        except KeyError:
+            print("- Periode IV: KeyError")
+
+        try:
+            Posisi_IV = Isi_IV["jabatandiPerguruan"]  
+            ID_Posisi_IV = "4_posisi" + Row_IV
+            Select_Posisi_IV = Select(driver.find_element(By.ID, ID_Posisi_IV))
+            try:
+                Select_Posisi_IV.select_by_visible_text(Posisi_IV)
+                print("- Posisi IV: " + Posisi_IV)
+            except NSEE:
+                ("- Posisi IV: NSEE")
+        except KeyError:
+            print("- Posisi IV: KeyError")
+
+        try:
+            JumlahSKS_IV = Isi_IV["jumlahWaktu"]  
+            ID_JumlahSKS_IV = "4_jumlahsks" + Row_IV
+            Select_JumlahSKS_IV = Select(driver.find_element(By.ID, ID_JumlahSKS_IV))
+            try:
+                Select_JumlahSKS_IV.select_by_visible_text(JumlahSKS_IV)
+                print("- JumlahSKS IV: " + JumlahSKS_IV)
+            except NSEE:
+                ("- JumlahSKS IV: NSEE")
+        except KeyError:
+            print("- JumlahSKS IV: KeyError")
+
+        try:
+            Uraian_IV = Isi_IV["uraianSingkatAktifitas"]  
+            ID_Uraian_IV = "4_uraian" + Row_IV
+            Scroll_Uraian_IV = driver.find_element(By.ID, ID_Uraian_IV)
+            driver.execute_script("arguments[0].scrollIntoView();", Scroll_Uraian_IV)
+            driver.find_element(By.ID, ID_Uraian_IV).send_keys(Uraian_IV)
+            print("- Uraian IV: " + Uraian_IV)
+        except KeyError:
+            print("- Uraian IV: KeyError")
+
+        # Kompetisi IV 
+        ID_Komp_IV = "4_komp" + Row_IV
+        Scroll_Komp_IV = driver.find_element(By.ID, ID_Komp_IV)
+        action.move_to_element(Scroll_Komp_IV).perform()
+        
+        try:
+            Komp_P5_IV = Isi_IV["klaimKompetensiPlima"]
+            print("- Komp P5 IV: " + str(len(Komp_P5_IV)))
+            try:
+                for Komp_Value_P5_IV in Komp_P5_IV:
+                    Komp_Label_P5_IV = Komp_Value_P5_IV[slice(5)]
+                    Komp_Call_P5_IV = f'//*[@id="{ID_Komp_IV}"]//optgroup[contains(@label, "{Komp_Label_P5_IV}")]/option[@value="{Komp_Value_P5_IV}."]'
+                    Komp_Find_P5_IV = driver.find_element(By.XPATH, Komp_Call_P5_IV)
+                    action.move_to_element_with_offset(Komp_Find_P5_IV, 0, -15).click().perform()
+                    print("-", Komp_Value_P5_IV)
+            except NSEE:
+                print("- Komp P5 IV: NSEE")
+        except KeyError:
+            print("- Komp P5 IV: KeyError") 
+
+        #End/retry point of loop
+        Counter_IV += 1
+        ID_Count_IV += 1
+        print("Row " + Row_IV + " telah diisi")
+
+#PENGISIAN V1
+def FormV1():
+    driver.find_element(By.LINK_TEXT, "V.1").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_V1 = 1  
+    print("================================================\nFormV1")
+    
+    try:
+        while ID_Count_V1 < 100:
+            Row_ID_V1 = f'//*[@class=" pub-item"][@data-id="{str(ID_Count_V1)}"]'    
+            Check_Row_V1 = driver.find_element(By.XPATH, Row_ID_V1)
+            if Check_Row_V1.is_enabled:
+                print("Row " + str(ID_Count_V1) + " ada") 
+            else:
+                break
+            ID_Count_V1 += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_V1) + " tidak ada") 
+
+    Counter_V1 = 1
+    DB_Count_V1 = 0
+
+    #Database
+    Dict_V1 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_v_satu':1})
+    List_V1 = Dict_V1["form_v_satu"]
+    n_V1 = len(List_V1)
+    
+    print("Start from Row: " + str(ID_Count_V1))
+    print("Row Ditambah: " + str(n_V1) + "\n")
+
+    while Counter_V1 <= n_V1:
+        #add row
+        TambahV1 = driver.find_element(By.XPATH, '//button[@onclick="add51(\'pub\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahV1)
+        action.move_to_element(TambahV1).perform()
+        TambahV1.send_keys(Keys.ENTER)
+
+        Row_V1 = str(ID_Count_V1)
+
+        #Document V1
+        Isi_V1 = List_V1[DB_Count_V1]
+        print("Counter Row: " + str(Counter_V1))
+        print("Key Document: " + Isi_V1["key"] + "\n")
+
+        try:
+            Judul_V1 = Isi_V1["judulKaryaTulis"]  
+            ID_Judul_V1 = "51_nama" + Row_V1
+            driver.find_element(By.ID, ID_Judul_V1).send_keys(Judul_V1)
+            print("- Judul V1: " + Judul_V1)
+        except KeyError:
+            print("- Judul V1: KeyError")
+
+        try:
+            Media_V1 = Isi_V1["namaMedia"]  
+            ID_Media_V1 = "51_media" + Row_V1
+            driver.find_element(By.ID, ID_Media_V1).send_keys(Media_V1)
+            print("- Media V1: " + Media_V1)
+        except KeyError:
+            print("- Media V1: KeyError")
+
+        try:
+            Kota_V1 = Isi_V1["kota"]  
+            ID_Kota_V1 = "51_location" + Row_V1
+            driver.find_element(By.ID, ID_Kota_V1).send_keys(Kota_V1)
+            print("- Kota V1: " + Kota_V1)
+        except KeyError:
+            print("- Kota V1: KeyError")
+
+        try:
+            Provinsi_V1 = Isi_V1["provinsi"]  
+            ID_Provinsi_V1 = "51_provinsi" + Row_V1
+            driver.find_element(By.ID, ID_Provinsi_V1).send_keys(Provinsi_V1)
+            print("- Provinsi V1: " + Provinsi_V1)
+        except KeyError:
+            print("- Provinsi V1: KeyError")
+
+        try:
+            Negara_V1 = Isi_V1["negara"]  
+            ID_Negara_V1 = "51_negara" + Row_V1
+            driver.find_element(By.ID, ID_Negara_V1).send_keys(Negara_V1)
+            print("- Negara V1: " + Negara_V1)
+        except KeyError:
+            print("- Negara V1: KeyError")
+
+        try:
+            BulanPublikasi_V1 = Isi_V1["bulanTerbit"]  
+            ID_BulanPublikasi_V1 = "51_startdate" + Row_V1
+            Select_BulanPublikasi_V1 = Select(driver.find_element(By.ID, ID_BulanPublikasi_V1))
+            try:
+                Select_BulanPublikasi_V1.select_by_visible_text(BulanPublikasi_V1)
+                print("- BulanPublikasi_V1: " + BulanPublikasi_V1)
+            except NSEE:
+                ("- BulanPublikasi_V1: NSEE")
+        except KeyError:
+            print("- BulanPublikasi_V1: KeyError")
+
+        try:
+            TahunPublikasi_V1 = Isi_V1["tahunTerbit"]  
+            ID_TahunPublikasi_V1 = "51_startyear" + Row_V1
+            driver.find_element(By.ID, ID_TahunPublikasi_V1).send_keys(TahunPublikasi_V1)
+            print("- TahunPublikasi V1: " + TahunPublikasi_V1)
+        except KeyError:
+            print("- Tahun Publikasi V1: KeyError")
+
+        try:
+            TingkatMedia_V1 = Isi_V1["tingkatMediaPublikasi"]  
+            ID_TingkatMedia_V1 = "51_tingkatmedia" + Row_V1
+            Select_TingkatMedia_V1 = Select(driver.find_element(By.ID, ID_TingkatMedia_V1))
+            try:   
+                Select_TingkatMedia_V1.select_by_visible_text(TingkatMedia_V1)
+                print("- TingkatMedia V1: " + TingkatMedia_V1)
+            except NSEE:
+                ("- TingkatMedia V1: NSEE")
+        except KeyError:
+            print("- TingkatMedia V1: KeyError")
+
+        try:
+            Uraian_V1 = Isi_V1["uraianSingkatMateriPublikasi"]  
+            ID_Uraian_V1 = "51_uraian" + Row_V1
+            driver.find_element(By.ID, ID_Uraian_V1).send_keys(Uraian_V1)
+            print("- Uraian V1: " + Uraian_V1)
+        except KeyError:
+            print("- Uraian V1: KeyError")
+
+        try:        
+            Tingkat_V1 = Isi_V1["tingkatKesulitanPublikasi"]  
+            ID_Tingkat_V1 = "51_tingkat" + Row_V1
+            Select_Tingkat_V1 = Select(driver.find_element(By.ID, ID_Tingkat_V1))
+            try:
+                Select_Tingkat_V1.select_by_visible_text(Tingkat_V1)
+                print("- Tingkat V1: " + Tingkat_V1)
+            except NSEE:
+                ("- Tingkat V1: NSEE")
+        except KeyError:
+            print("- Tingkat V1: KeyError")
+
+        # Kompetisi V1 
+        ID_Komp_V1 = "51_komp" + Row_V1
+        Scroll_Komp_V1 = driver.find_element(By.ID, ID_Komp_V1)
+        action.move_to_element(Scroll_Komp_V1).perform()
+        
+        try:
+            Komp_W4_V1 = Isi_V1["klaimKompetensiWempat"]
+            print("- Komp W4 V1: " + str(len(Komp_W4_V1)))
+            try:
+                for Komp_Value_W4_V1 in Komp_W4_V1:
+                    Komp_Label_W4_V1 = Komp_Value_W4_V1[slice(5)]
+                    Komp_Call_W4_V1 = f'//*[@id="{ID_Komp_V1}"]//optgroup[contains(@label, "{Komp_Label_W4_V1}")]/option[@value="{Komp_Value_W4_V1}."]'
+                    Komp_Find_W4_V1 = driver.find_element(By.XPATH, Komp_Call_W4_V1)
+                    action.move_to_element_with_offset(Komp_Find_W4_V1, 0, -15).click().perform()
+                    print("-", Komp_Value_W4_V1)
+            except NSEE:
+                print("- Komp W4 V1: NSEE")
+        except KeyError:
+            print("- Komp W4 V1: KeyError") 
+
+        #End/retry point of loop
+        Counter_V1 += 1
+        ID_Count_V1 += 1
+        print("Row " + Row_V1 + " telah diisi")
+
+#PENGISIAN V2
+def FormV2():
+    driver.find_element(By.LINK_TEXT, "V.2").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_V2 = 1  
+    print("================================================\nFormV2")
+    
+    try:
+        while ID_Count_V2 < 100:
+            Row_ID_V2 = f'//*[@class=" lok-item"][@data-id="{str(ID_Count_V2)}"]'    
+            Check_Row_V2 = driver.find_element(By.XPATH, Row_ID_V2)
+            if Check_Row_V2.is_enabled:
+                print("Row " + str(ID_Count_V2) + " ada") 
+            else:
+                break
+            ID_Count_V2 += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_V2) + " tidak ada") 
+
+    Counter_V2 = 1
+    DB_Count_V2 = 0
+
+    #Database
+    Dict_V2 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_v_dua':1})
+    List_V2 = Dict_V2["form_v_dua"]
+    n_V2 = len(List_V2)
+    
+    print("Start from Row: " + str(ID_Count_V2))
+    print("Row Ditambah: " + str(n_V2) + "\n")
+
+    while Counter_V2 <= n_V2:
+        #add row
+        TambahV2 = driver.find_element(By.XPATH, '//button[@onclick="add52(\'lok\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahV2)
+        action.move_to_element(TambahV2).perform()
+        TambahV2.send_keys(Keys.ENTER)
+
+        Row_V2 = str(ID_Count_V2)
+
+        #Document V2
+        Isi_V2 = List_V2[DB_Count_V2]
+        print("Counter Row: " + str(Counter_V2))
+        print("Key Document: " + Isi_V2["key"] + "\n")
+
+        try:
+            Judul_V2 = Isi_V2["judulMakalah"]  
+            ID_Judul_V2 = "52_judul" + Row_V2
+            driver.find_element(By.ID, ID_Judul_V2).send_keys(Judul_V2)
+            print("- Judul V2: " + Judul_V2)
+        except KeyError:
+            print("- Judul V2: KeyError")
+
+        try:
+            Seminar_V2 = Isi_V2["namaSeminar"] 
+            ID_Seminar_V2 = "52_nama" + Row_V2
+            driver.find_element(By.ID, ID_Seminar_V2).send_keys(Seminar_V2)
+            print("- Seminar V2: " + Seminar_V2)
+        except KeyError:
+            print("- Seminar V2: KeyError")
+
+        try:
+            Penyelenggara_V2 = Isi_V2[""] 
+            ID_Penyelenggara_V2 = "52_penyelenggara" + Row_V2
+            driver.find_element(By.ID, ID_Penyelenggara_V2).send_keys(Penyelenggara_V2)
+            print("- Penyelenggara V2: " + Penyelenggara_V2)
+        except KeyError:
+            print("- Penyelenggara: KeyError")
+        
+        try:
+            Kota_V2 = Isi_V2["kota"] 
+            ID_Kota_V2 = "52_location" + Row_V2
+            driver.find_element(By.ID, ID_Kota_V2).send_keys(Kota_V2)
+            print("- Kota V2: " + Kota_V2)
+        except KeyError:
+            print("- Kota V2: KeyError")
+
+        try:
+            Provinsi_V2 = Isi_V2["provinsi"] 
+            ID_Provinsi_V2 = "52_provinsi" + Row_V2
+            driver.find_element(By.ID, ID_Provinsi_V2).send_keys(Provinsi_V2)
+            print("- Provinsi V2: " + Provinsi_V2)
+        except KeyError:
+            print("- Provinsi V2: KeyError")
+
+        try:
+            Negara_V2 = Isi_V2["negara"] 
+            ID_Negara_V2 = "52_negara" + Row_V2
+            driver.find_element(By.ID, ID_Negara_V2).send_keys(Negara_V2)
+            print("- Negara V2: " + Negara_V2)
+        except KeyError:
+            print("- Negara V2: KeyError")
+
+        try:        
+            BulanSeminar_V2 = Isi_V2["bulanPenyelenggaraSeminar"] 
+            ID_BulanSeminar_V2 = "52_startdate" + Row_V2
+            Select_BulanSeminar_V2 = Select(driver.find_element(By.ID, ID_BulanSeminar_V2))
+            try:
+                Select_BulanSeminar_V2.select_by_visible_text(BulanSeminar_V2)
+                print("- BulanSeminar_V2: " + BulanSeminar_V2)
+            except NSEE:
+                ("- BulanSeminar_V2: NSEE")
+        except KeyError:
+            print("- BulanSeminar_V2: KeyError")
+
+        try:
+            TahunSeminar_V2 = Isi_V2["tahunPenyelenggaraSeminar"] 
+            ID_TahunSeminar_V2 = "52_startyear" + Row_V2
+            driver.find_element(By.ID, ID_TahunSeminar_V2).send_keys(TahunSeminar_V2)
+            print("- TahunSeminar V2: " + TahunSeminar_V2)
+        except KeyError:
+            print("- TahunSeminar V2: KeyError")
+        
+        try:
+            TingkatSeminar_V2 = Isi_V2["tingkatSeminar"] 
+            ID_TingkatSeminar_V2 = "52_tingkatseminar" + Row_V2
+            Select_TingkatSeminar_V2 = Select(driver.find_element(By.ID, ID_TingkatSeminar_V2))
+            try:
+                Select_TingkatSeminar_V2.select_by_visible_text(TingkatSeminar_V2)
+                print("- TingkatSeminar V2: " + TingkatSeminar_V2)
+            except NSEE:
+                ("- TingkatSeminar V2: NSEE")
+        except KeyError:
+            print("- TingkatSeminar V2: KeyError")
+
+        try:
+            Uraian_V2 = Isi_V2["uraianSingkatMateriSeminar"] 
+            ID_Uraian_V2 = "52_uraian" + Row_V2
+            driver.find_element(By.ID, ID_Uraian_V2).send_keys(Uraian_V2)
+            print("- Uraian V2: " + Uraian_V2)
+        except KeyError:
+            print("- Uraian V2: KeyError")
+
+        try:        
+            Tingkat_V2 = Isi_V2["tingkatKesulitan"] 
+            ID_Tingkat_V2 = "52_tingkat" + Row_V2
+            Select_Tingkat_V2 = Select(driver.find_element(By.ID, ID_Tingkat_V2))
+            try:
+                Select_Tingkat_V2.select_by_visible_text(Tingkat_V2)
+                print("- Tingkat V2: " + Tingkat_V2)
+            except NSEE:
+                ("- Tingkat V2: NSEE")
+        except KeyError:
+            print("- Tingkat V2: KeyError")
+
+        # Kompetisi V2 
+        ID_Komp_V2 = "52_komp" + Row_V2
+        Scroll_Komp_V2 = driver.find_element(By.ID, ID_Komp_V2)
+        action.move_to_element(Scroll_Komp_V2).perform()
+
+        try:
+            Komp_W4_V2 = Isi_V2["klaimKompetensiWempat"]        
+            print("- Komp W4 V2: " + str(len(Komp_W4_V2)))
+            try:
+                for Komp_Value_W4_V2 in Komp_W4_V2:
+                    Komp_Label_W4_V2 = Komp_Value_W4_V2[slice(5)]
+                    Komp_Call_W4_V2 = f'//*[@id="{ID_Komp_V2}"]//optgroup[contains(@label, "{Komp_Label_W4_V2}")]/option[@value="{Komp_Value_W4_V2}."]'
+                    Komp_Find_W4_V2 = driver.find_element(By.XPATH, Komp_Call_W4_V2)
+                    action.move_to_element_with_offset(Komp_Find_W4_V2, 0, -15).click().perform()
+                    print("-", Komp_Value_W4_V2)
+            except NSEE:
+                print("- Komp W4 V2: NSEE")
+        except KeyError:
+            print("- Komp W4 V2: KeyError")
+
+        #End/retry point of loop
+        Counter_V2 += 1
+        ID_Count_V2 += 1
+        print("Row " + Row_V2 + " telah diisi")
+
+#PENGISIAN V3
+def FormV3():
+    driver.find_element(By.LINK_TEXT, "V.3").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_V3 = 1  
+    print("================================================\nFormV3")
+    
+    try:
+        while ID_Count_V3 < 100:
+            Row_ID_V3 = f'//*[@class=" sem-item"][@data-id="{str(ID_Count_V3)}"]'    
+            Check_Row_V3 = driver.find_element(By.XPATH, Row_ID_V3)
+            if Check_Row_V3.is_enabled:
+                print("Row " + str(ID_Count_V3) + " ada") 
+            else:
+                break
+            ID_Count_V3 += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_V3) + " tidak ada") 
+
+    Counter_V3 = 1
+    DB_Count_V3 = 0
+
+    #Database
+    Dict_V3 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_v_tiga':1})
+    List_V3 = Dict_V3["form_v_tiga"]
+    n_V3 = len(List_V3)
+    
+    print("Start from Row: " + str(ID_Count_V3))
+    print("Row Ditambah: " + str(n_V3) + "\n")
+
+    while Counter_V3 <= n_V3:
+        #add row
+        TambahV3 = driver.find_element(By.XPATH, '//button[@onclick="add53(\'sem\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahV3)
+        action.move_to_element(TambahV3).perform()
+        TambahV3.send_keys(Keys.ENTER)
+
+        Row_V3 = str(ID_Count_V3)
+
+        #Document V3
+        Isi_V3 = List_V3[DB_Count_V3]
+        print("Counter Row: " + str(Counter_V3))
+        print("Key Document: " + Isi_V3["key"] + "\n")
+
+        try:
+            NamaSeminar_V3 = Isi_V3["namaSeminar"] 
+            ID_NamaSeminar_V3 = "53_nama" + Row_V3
+            driver.find_element(By.ID, ID_NamaSeminar_V3).send_keys(NamaSeminar_V3)
+            print("- NamaSeminar V3: " + NamaSeminar_V3)
+        except KeyError:
+            print("- NamaSeminar V3: KeyError")
+
+        try:        
+            Penyelenggara_V3 = Isi_V3["namaPenyelenggara"] 
+            ID_Penyelenggara_V3 = "53_penyelenggara" + Row_V3
+            driver.find_element(By.ID, ID_Penyelenggara_V3).send_keys(Penyelenggara_V3)
+            print("- Penyelenggara V3: " + Penyelenggara_V3)
+        except KeyError:
+            print("- Penyelenggara V3: KeyError")
+
+        try:
+            Kota_V3 = Isi_V3["kota"] 
+            ID_Kota_V3 = "53_location" + Row_V3
+            driver.find_element(By.ID, ID_Kota_V3).send_keys(Kota_V3)
+            print("- Kota V3: " + Kota_V3)
+        except KeyError:
+            print("- Kota V3: KeyError")
+
+        try:
+            Provinsi_V3 = Isi_V3["provinsi"] 
+            ID_Provinsi_V3 = "53_provinsi" + Row_V3
+            driver.find_element(By.ID, ID_Provinsi_V3).send_keys(Provinsi_V3)
+            print("- Provinsi V3: " + Provinsi_V3)
+        except KeyError:
+            print("- Provinsi V3: KeyError")
+
+        try:
+            Negara_V3 = Isi_V3["negara"] 
+            ID_Negara_V3 = "53_negara" + Row_V3
+            driver.find_element(By.ID, ID_Negara_V3).send_keys(Negara_V3)
+            print("- Negara V3: " + Negara_V3)
+        except KeyError:
+            print("- Negara V3: KeyError")
+
+        try:        
+            BulanSeminar_V3 = Isi_V3["bulanPenyelenggaraSeminar"] 
+            ID_BulanSeminar_V3 = "53_startdate" + Row_V3
+            Select_BulanSeminar_V3 = Select(driver.find_element(By.ID, ID_BulanSeminar_V3))
+            try:
+                Select_BulanSeminar_V3.select_by_visible_text(BulanSeminar_V3)
+                print("- BulanSeminar V3: " + BulanSeminar_V3)
+            except NSEE:
+                ("- BulanSeminar V3: NSEE")
+        except KeyError:
+            print("- BulanSeminar V3: KeyError")
+
+        try:        
+            TahunSeminar_V3 = Isi_V3["tahunPenyelenggaraSeminar"] 
+            ID_TahunSeminar_V3 = "53_startyear" + Row_V3
+            driver.find_element(By.ID, ID_TahunSeminar_V3).send_keys(TahunSeminar_V3)
+            print("- TahunSeminar V3: " + TahunSeminar_V3)
+        except KeyError:
+            print("- TahunSeminar V3: KeyError")
+
+        try:        
+            TingkatSeminar_V3 = Isi_V3[""] 
+            ID_TingkatSeminar_V3 = "53_tingkatseminar" + Row_V3
+            Select_TingkatSeminar_V3 = Select(driver.find_element(By.ID, ID_TingkatSeminar_V3))
+            try:
+                Select_TingkatSeminar_V3.select_by_visible_text(TingkatSeminar_V3)
+                print("- TingkatSeminar V3: " + TingkatSeminar_V3)
+            except NSEE:
+                ("- TingkatSeminar V3: NSEE")
+        except KeyError:
+            print("- TingkatSeminar V3: KeyError")
+
+        try:
+            Uraian_V3 = Isi_V3["uraianSingkatMateriSeminar"] 
+            ID_Uraian_V3 = "53_uraian" + Row_V3
+            driver.find_element(By.ID, ID_Uraian_V3).send_keys(Uraian_V3)
+            print("- Uraian V3: " + Uraian_V3)
+        except KeyError:
+            print("- Uraian V3: KeyError")
+
+        try:        
+            Tingkat_V3 = Isi_V3["tingkatKesulitan"] 
+            ID_Tingkat_V3 = "53_tingkat" + Row_V3
+            Select_Tingkat_V3 = Select(driver.find_element(By.ID, ID_Tingkat_V3))
+            try:
+                Select_Tingkat_V3.select_by_visible_text(Tingkat_V3)
+                print("- Tingkat V3: " + Tingkat_V3)
+            except NSEE:
+                ("- Tingkat V3: NSEE")
+        except KeyError:
+            print("- Tingkat V3: KeyError")
+
+        # Kompetisi V3 
+        
+        ID_Komp_V3 = "53_komp" + Row_V3
+        Scroll_Komp_V3 = driver.find_element(By.ID, ID_Komp_V3)
+        action.move_to_element(Scroll_Komp_V3).perform()
+        
+        try:
+            Komp_W2_V3 = Isi_V3["klaimKompetensiWdua"]
+            print("- Komp W2 V3: " + str(len(Komp_W2_V3)))
+            try:
+                for Komp_Value_W2_V3 in Komp_W2_V3:
+                    Komp_Label_W2_V3 = Komp_Value_W2_V3[slice(5)]
+                    Komp_Call_W2_V3 = f'//*[@id="{ID_Komp_V3}"]//optgroup[contains(@label, "{Komp_Label_W2_V3}")]/option[@value="{Komp_Value_W2_V3}."]'
+                    Komp_Find_W2_V3 = driver.find_element(By.XPATH, Komp_Call_W2_V3)
+                    action.move_to_element_with_offset(Komp_Find_W2_V3, 0, -15).click().perform()
+                    print("-", Komp_Value_W2_V3)
+            except NSEE:
+                print("- Komp W2 V3: NSEE")  
+        except KeyError:
+            print("- Komp W2 V3: KeyError")
+
+        #End/retry point of loop
+        Counter_V3 += 1
+        ID_Count_V3 += 1
+        print("Row " + Row_V3 + " telah diisi")
+
+#PENGISIAN V4
+def FormV4():
+    driver.find_element(By.LINK_TEXT, "V.4").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_V4 = 1  
+    print("================================================\nFormV4")
+    
+    try:
+        while ID_Count_V4 < 100:
+            Row_ID_V4 = f'//*[@class=" ino-item"][@data-id="{str(ID_Count_V4)}"]'    
+            Check_Row_V4 = driver.find_element(By.XPATH, Row_ID_V4)
+            if Check_Row_V4.is_enabled:
+                print("Row " + str(ID_Count_V4) + " ada") 
+            else:
+                break
+            ID_Count_V4 += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_V4) + " tidak ada") 
+
+    Counter_V4 = 1
+    DB_Count_V4 = 0
+
+    #Database
+    Dict_V4 = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_v_empat':1})
+    List_V4 = Dict_V4["form_v_empat"]
+    n_V4 = len(List_V4)
+    
+    print("Start from Row: " + str(ID_Count_V4))
+    print("Row Ditambah: " + str(n_V4) + "\n")
+
+    while Counter_V4 <= n_V4:
+        #add row
+        TambahV4 = driver.find_element(By.XPATH, '//button[@onclick="add54(\'ino\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahV4)
+        action.move_to_element(TambahV4).perform()
+        TambahV4.send_keys(Keys.ENTER)
+
+        Row_V4 = str(ID_Count_V4)
+
+        #Document V4
+        Isi_V4 = List_V4[DB_Count_V4]
+        print("Counter Row: " + str(Counter_V4))
+        print("Key Document: " + Isi_V4["key"] + "\n")
+
+        try:
+            Judul_V4 = Isi_V4["namaInovasi"] 
+            ID_Judul_V4 = "54_nama" + Row_V4
+            driver.find_element(By.ID, ID_Judul_V4).send_keys(Judul_V4)
+            print("- Judul V4: " + Judul_V4)
+        except KeyError:
+            print("- Judul V4: KeyError")
+ 
+        try:        
+            Bulan_V4 = Isi_V4["bulan"] 
+            ID_Bulan_V4 = "54_startdate" + Row_V4
+            Select_Bulan_V4 = Select(driver.find_element(By.ID, ID_Bulan_V4))
+            try:
+                Select_Bulan_V4.select_by_visible_text(Bulan_V4)
+                print("- Bulan V4: " + Bulan_V4)
+            except NSEE:
+                ("- Bulan V4: NSEE")
+        except KeyError:
+            print("- Bulan V4: KeyError")
+
+        try:
+            Tahun_V4 = Isi_V4["tahun"] 
+            ID_Tahun_V4 = "54_startyear" + Row_V4
+            driver.find_element(By.ID, ID_Tahun_V4).send_keys(Tahun_V4)
+            print("- Tahun V4: " + Tahun_V4)
+        except KeyError:
+            print("- Tahun V4: KeyError")
+
+        try:
+            MediaPublikasi_V4 = Isi_V4["mediaPublikasi"]
+            ID_MediaPublikasi_V4 = "54_media_publikasi" + Row_V4
+            driver.find_element(By.ID, ID_MediaPublikasi_V4).send_keys(MediaPublikasi_V4)
+            print("- MediaPublikasi V4: " + MediaPublikasi_V4)
+        except KeyError:
+            print("- MediaPublikasi V4: KeyError")
+
+        try:        
+            TingkatMedia_V4 = Isi_V4[""] 
+            ID_TingkatMedia_V4 = "54_tingkatseminar" + Row_V4
+            Select_TingkatMedia_V4 = Select(driver.find_element(By.ID, ID_TingkatMedia_V4))
+            try:    
+                Select_TingkatMedia_V4.select_by_visible_text(TingkatMedia_V4)
+                print("- TingkatMedia V4: " + TingkatMedia_V4)
+            except NSEE:
+                ("- TingkatMedia V4: NSEE")
+        except KeyError:
+            print("- TingkatMedia V4: KeyError")
+
+        try:
+            Uraian_V4 = Isi_V4["uraianSingkatInovasi"] 
+            ID_Uraian_V4 = "54_uraian" + Row_V4
+            driver.find_element(By.ID, ID_Uraian_V4).send_keys(Uraian_V4)
+            print("- Uraian V4: " + Uraian_V4)
+        except KeyError:
+            print("- Uraian V4: KeyError")
+
+        try:        
+            Tingkat_V4 = Isi_V4["tingkatKesulitanInovasi"] 
+            ID_Tingkat_V4 = "54_tingkat" + Row_V4
+            Select_Tingkat_V4 = Select(driver.find_element(By.ID, ID_Tingkat_V4))
+            try:
+                Select_Tingkat_V4.select_by_visible_text(Tingkat_V4)
+                print("- Tingkat V4: " + Tingkat_V4)
+            except NSEE:
+                ("- Tingkat V4: NSEE")
+        except KeyError:
+            print("- Tingkat V4: KeyError")
+
+        # Kompetisi V4 
+        ID_Komp_V4 = "54_komp" + Row_V4
+        Scroll_Komp_V4 = driver.find_element(By.ID, ID_Komp_V4)
+        action.move_to_element(Scroll_Komp_V4).perform()
+        
+        try:
+            Komp_P6_V4 = Isi_V4["klaimKompetensiPenam"]
+            print("- Komp P6 V4: " + str(len(Komp_P6_V4)))
+            try:
+                for Komp_Value_P6_V4 in Komp_P6_V4:
+                    Komp_Label_P6_V4 = Komp_Value_P6_V4[slice(5)]
+                    Komp_Call_P6_V4 = f'//*[@id="{ID_Komp_V4}"]//optgroup[contains(@label, "{Komp_Label_P6_V4}")]/option[@value="{Komp_Value_P6_V4}."]'
+                    Komp_Find_P6_V4 = driver.find_element(By.XPATH, Komp_Call_P6_V4)
+                    action.move_to_element_with_offset(Komp_Find_P6_V4, 0, -15).click().perform()
+                    print("-", Komp_Value_P6_V4)
+            except NSEE:
+                print("- Komp P6 V4: NSEE")
+        except KeyError:
+            print("- Komp P6 V4: KeyError")
+
+        #End/retry point of loop
+        Counter_V4 += 1
+        ID_Count_V4 += 1
+        print("Row " + Row_V4 + " telah diisi")
+
+#PENGISIAN VI
+def FormVI():
+    driver.find_element(By.LINK_TEXT, "VI").click()
+    driver.implicitly_wait(5)
+
+    ID_Count_VI = 1  
+    print("================================================\nFormVI")
+    
+    try:
+        while ID_Count_VI < 100:
+            Row_ID_VI = f'//*[@class=" bah-item"][@data-id="{str(ID_Count_VI)}"]'    
+            Check_Row_VI = driver.find_element(By.XPATH, Row_ID_VI)
+            if Check_Row_VI.is_enabled:
+                print("Row " + str(ID_Count_VI) + " ada") 
+            else:
+                break
+            ID_Count_VI += 1
+    except NSEE:
+        print ("Row " + str(ID_Count_VI) + " tidak ada") 
+
+    Counter_VI = 1
+    DB_Count_VI = 0
+
+    #Database
+    Dict_VI = col.find_one({'pid':PID, 'student_id':Student_ID},{'_id': 0, 'form_vi':1})
+    List_VI = Dict_VI["form_vi"]
+    n_VI = len(List_VI)
+    
+    print("Start from Row: " + str(ID_Count_VI))
+    print("Row Ditambah: " + str(n_VI) + "\n")
+
+    while Counter_VI <= n_VI:
+        #add row
+        TambahVI = driver.find_element(By.XPATH, '//button[@onclick="add6(\'bah\')"]')
+        driver.execute_script("arguments[0].scrollIntoView();",TambahVI)
+        action.move_to_element(TambahVI).perform()
+        TambahVI.send_keys(Keys.ENTER)
+
+        Row_VI = str(ID_Count_VI)
+
+        #Document VI
+        Isi_VI = List_VI[DB_Count_VI]
+        print("Counter Row: " + str(Counter_VI))
+        print("Key Document: " + Isi_VI["key"] + "\n")
+
+        try:
+            Bahasa_VI = Isi_VI["namaBahasa"] 
+            ID_Bahasa_VI = "6_nama" + Row_VI
+            driver.find_element(By.ID, ID_Bahasa_VI).send_keys(Bahasa_VI)
+            print("- Bahasa VI: " + Bahasa_VI)
+        except KeyError:
+            print("- Bahasa VI: KeyError")
+
+        try:        
+            JenisBahasa_VI = Isi_VI["jenisBahasa"] 
+            ID_JenisBahasa_VI = "6_jenisbahasa" + Row_VI
+            Select_JenisBahasa_VI = Select(driver.find_element(By.ID, ID_JenisBahasa_VI))
+            try:
+                Select_JenisBahasa_VI.select_by_visible_text(JenisBahasa_VI)
+                print("- JenisBahasa VI: " + JenisBahasa_VI)
+            except NSEE:
+                ("- JenisBahasa VI: NSEE")
+        except KeyError:
+            print("- JenisBahasa VI: KeyError")
+
+        try:        
+            Verbal_VI = Isi_VI["kemampuanVerbalBahasa"] 
+            ID_Verbal_VI = "6_verbal" + Row_VI
+            Select_Verbal_VI = Select(driver.find_element(By.ID, ID_Verbal_VI))
+            try:
+                Select_Verbal_VI.select_by_visible_text(Verbal_VI)
+                print("- Verbal VI: " + Verbal_VI)
+            except NSEE:
+                ("- Verbal VI: NSEE")
+        except KeyError:
+            print("- Verbal VI: KeyError")
+
+        try:
+            JenisTulisan_VI = Isi_VI["jenisTulisan"] 
+            ID_JenisTulisan_VI = "6_jenistulisan" + Row_VI
+            Select_JenisTulisan_VI = Select(driver.find_element(By.ID, ID_JenisTulisan_VI))
+            try:
+                Select_JenisTulisan_VI.select_by_visible_text(JenisTulisan_VI)
+                print("- JenisTulisan VI: " + JenisTulisan_VI)
+            except NSEE:
+                ("- JenisTulisan VI: NSEE")
+        except KeyError:
+            print("- JenisTulisan VI: KeyError")
+        
+
+        # Kompetisi VI 
+        ID_Komp_VI = "6_komp" + Row_VI
+        Scroll_Komp_VI = driver.find_element(By.ID, ID_Komp_VI)
+        action.move_to_element(Scroll_Komp_VI).perform()
+
+        try:      
+            Komp_W4_VI = Isi_VI["klaimKompetensiWempat"]  
+            print("- Komp W4 VI: " + str(len(Komp_W4_VI)))
+            try:
+                for Komp_Value_W4_VI in Komp_W4_VI:
+                    Komp_Label_W4_VI = Komp_Value_W4_VI[slice(5)]
+                    Komp_Call_W4_VI = f'//*[@id="{ID_Komp_VI}"]//optgroup[contains(@label, "{Komp_Label_W4_VI}")]/option[@value="{Komp_Value_W4_VI}."]'
+                    Komp_Find_W4_VI = driver.find_element(By.XPATH, Komp_Call_W4_VI)
+                    action.move_to_element_with_offset(Komp_Find_W4_VI, 0, -15).click().perform()
+                    print("-", Komp_Value_W4_VI)
+            except NSEE:
+                print("- Komp W4 VI: NSEE")
+        except KeyError:
+            print("- Komp W4 VI: KeyError")
+
+        #End/retry point of loop
+        Counter_VI += 1
+        ID_Count_VI += 1
+        print("Row " + Row_VI + " telah diisi")
+
+def AllForm():
     FormI1()
     FormI2()
     FormI3()
     FormI4()
     FormI5()
     FormI6()
+    FormII1()
+    FormII2()
+    FormIII()
+    FormIV()
+    FormV1()
+    FormV2()
+    FormV3()
+    FormV4()
+    FormVI()
 
-Allform()
+AllForm()

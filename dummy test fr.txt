@@ -1,0 +1,496 @@
+{
+  "_id": {
+    "$oid": "66be2e3057f9352bdf699331"
+  },
+  "pid": "formM-gONh9yHYwFgjZt5fb9dKQ",
+  "student_id": "21060124190767",
+  "student_name": "MAHASISWA TERAKHIR",
+  "form_i_satu": {
+    "alamat": [
+      {
+        "key": "BFbtvG3b0KKDEDsHnBG1J",
+        "tipe": "Home",
+        "alamat": "tes11",
+        "kota": "tes11",
+        "kodePos": "tes11"
+      }
+    ],
+    "lembaga": [
+      {
+        "key": "Xw1lrXd20w_0QkhSEItjB",
+        "nama": "tes12",
+        "jabatan": "tes12",
+        "kota": "tes12",
+        "kodePos": "tes12"
+      },
+      {
+        "key": "WLgBz1dr0DUyhgMaQwyBr",
+        "nama": "",
+        "jabatan": "",
+        "kota": "",
+        "kodePos": ""
+      }
+    ],
+    "komunikasi": [
+      {
+        "key": "5HXF20RZPbBBYbbnIrZjO",
+        "tipe": "Work",
+        "nomor": "tes13"
+      }
+    ]
+  },
+  "form_i_dua": [
+    {
+      "key": "WXS6LNbcZl6J_NrEVkIsq",
+      "namaPerguruan": "tes 2",
+      "tingkatPendidikan": "S1",
+      "fakultas": "tes2",
+      "jurusan": "tes2",
+      "kotaPerguruan": "tes2",
+      "provinsi": "tes2",
+      "negara": "tes2",
+      "tahunLulus": "1998",
+      "gelar": "Hj.",
+      "judulTa": "tes2",
+      "uraianSingkat": "tes2",
+      "nilaiAkademikRata": "4.00"
+    }
+  ],
+  "form_i_tiga": [
+    {
+      "key": "sYVI37TsTf7n0kzaff-av",
+      "namaOrganisasi": "tes3",
+      "jenisOrganisasi": "Organisasi PII",
+      "kotaAsal": "tes3",
+      "provinsiAsal": "tes3",
+      "negaraAsal": "tes3",
+      "bulanMulai": "Januari",
+      "tahunMulai": "2005",
+      "masihAnggota": true,
+      "jabatanOrganisasi": "Anggota biasa",
+      "tingkatanOrganisasi": "Organisasi lokal (bukan Nasional)",
+      "kegiatanOrganisasi": "Asosiasi Profesi",
+      "uraianTugas": "tes3",
+      "klaimKompetensi": [],
+      "klaimKompetensiWsatu": [
+        "W.1.1.1",
+        "W.1.1.2",
+        "W.1.3.3"
+      ]
+    },
+    {
+      "key": "SCWsGjXofrBLDVJM1mwfH",
+      "namaOrganisasi": "",
+      "kotaAsal": "",
+      "provinsiAsal": "",
+      "negaraAsal": "",
+      "tahun": "",
+      "masihAnggota": false,
+      "uraianTugas": "",
+      "klaimKompetensi": [],
+      "klaimKompetensiWsatu": []
+    }
+  ],
+  "form_i_empat": [
+    {
+      "key": "q-p_HjIZYLIfDK-g4POsm",
+      "namaTandaPenghargaan": "tes4",
+      "namaLembaga": "tes4",
+      "kotaAsal": "tes4",
+      "provinsiAsal": "tes4",
+      "negaraAsal": "tes4",
+      "bulanTerbit": "Januari",
+      "tahunTerbit": "2002",
+      "tingkatPenghargaan": "Tingkatan Muda/pemula",
+      "jenisLembagaPenghargaan": "Penghargaan Nasional",
+      "uraianSingkatAktifitas": "tes4",
+      "klaimKompetensi": [],
+      "klaimKompetensiWsatu": [
+        "W.1.1.1",
+        "W.1.1.3",
+        "W.1.1.5",
+        "W.1.2.7",
+        "W.1.2.4",
+        "W.1.3.5"
+      ]
+    }
+  ],
+  "form_i_lima": [
+    {
+      "key": "8Sk_SUQEJnC-VZanDSU71",
+      "namaPendidikanTeknik": "tes5",
+      "penyelenggara": "tes5",
+      "kotaAsal": "tes5",
+      "provinsiAsal": "tes5",
+      "negaraAsal": "tes5",
+      "bulan": "Juli",
+      "tahun": "2003",
+      "bulanMulai": "Maret",
+      "tahunMulai": "2001",
+      "masihAnggota": false,
+      "tingkatanMateriPelatihan": "Tingkat Dasar (Fundamental)",
+      "jamPendidikanTeknik": "Lama pendidikan 36 – 100 Jam",
+      "uraianSingkatAktifitas": "tes5",
+      "klaimKompetensi": [],
+      "klaimKompetensiWdua": [
+        "W.2.1.2",
+        "W.2.1.4",
+        "W.2.2.3",
+        "W.2.2.2",
+        "W.2.3.5"
+      ],
+      "klaimKompetensiWempat": [
+        "W.4.2.1",
+        "W.4.2.3",
+        "W.4.3.2",
+        "W.4.3.4",
+        "W.4.5.4"
+      ],
+      "klaimKompetensiPsepuluh": [
+        "P.10.2.3",
+        "P.10.4.3",
+        "P.10.4.1",
+        "P.10.3.6",
+        "P.10.3.5"
+      ]
+    }
+  ],
+  "form_i_enam": [
+    {
+      "key": "zXDzH0C-OGrd6BfXxIYFR",
+      "namaPendidikanPelatihan": "tes6",
+      "penyelenggara": "tes6",
+      "kotaAsal": "tes6",
+      "provinsiAsal": "tes6",
+      "negaraAsal": "tes6",
+      "bulanMulai": "Januari",
+      "tahunMulai": "1999",
+      "masihAnggota": true,
+      "tingkatanMateriPendidikanManajemen": "Tingkat Dasar (Fundamental)",
+      "jamPendidikanTeknikManajemen": "Lama pendidikan 36 – 100 Jam",
+      "uraianSingkatAktifitas": "tes6",
+      "klaimKompetensi": [],
+      "klaimKompetensiWsatu": [
+        "W.1.1.3",
+        "W.1.2.3",
+        "W.1.3.2",
+        "W.1.3.1",
+        "W.1.2.7",
+        "W.1.2.8"
+      ],
+      "klaimKompetensiWempat": [
+        "W.4.5.1",
+        "W.4.5.3",
+        "W.4.4.6",
+        "W.4.4.2",
+        "W.4.4.5"
+      ],
+      "klaimKompetensiPsepuluh": [
+        "P.10.6.2",
+        "P.10.6.1",
+        "P.10.3.2",
+        "P.10.3.3",
+        "P.10.4.2"
+      ]
+    },
+    {
+      "key": "D6E7CmosJ5RvfB0dR6Npp",
+      "namaPendidikanPelatihan": "",
+      "penyelenggara": "",
+      "kotaAsal": "",
+      "provinsiAsal": "",
+      "negaraAsal": "",
+      "tahun": "",
+      "masihAnggota": false,
+      "uraianSingkatAktifitas": "",
+      "klaimKompetensi": [],
+      "klaimKompetensiWsatu": [],
+      "klaimKompetensiWempat": [],
+      "klaimKompetensiPsepuluh": []
+    }
+  ],
+  "form_ii_satu": [
+    {
+      "key": "LT_e93WpkN5VjVfRmYUby",
+      "namaKualifikasiEtik": "tes7",
+      "lembaga": "tes7",
+      "alamat": "tes7",
+      "kota": "tes7",
+      "provinsi": "tes7",
+      "negara": "tes7",
+      "noTelp": "tes7",
+      "email": "tes7",
+      "hubungan": "atasan"
+    }
+  ],
+  "form_ii_dua": [
+    {
+      "key": "GlhW2epQ2AlCYWkQzgyhq",
+      "pendapatEtik": "tes8"
+    }
+  ],
+  "form_iii": [
+    {
+      "key": "M52A8ajLRA2dQsBiIG5YZ",
+      "tahunMulai": "2018",
+      "bulanMulai": "April",
+      "tahunBerakhir": "2023",
+      "bulanBerakhir": "April",
+      "masihdiInstansi": false,
+      "namaInstansi": "Fotocopy Tri Warna",
+      "jabatandiInstansi": "Kasubag",
+      "namaProyek": "Rekrutmen dan Training",
+      "pemberiTugas": "Basuki",
+      "kotaProyek": "Boyolali",
+      "provinsiProyek": "Jawa Tengah",
+      "negaraProyek": "Indonesia",
+      "durasi": "kurang7tahun",
+      "jabatan": "setarasupervisor",
+      "nilaiProyek": "25 Juta Rupiah",
+      "nilaiTanggungJawab": "5 Juta Rupiah",
+      "sdmyangTerlibat": "banyak",
+      "tingkatKesulitan": "tinggi",
+      "skalaProyek": "sedang",
+      "uraianSingkatNSPK": "Mengkaji aplikan, mentraining aplikan, menguji aplikan",
+      "klaimKompetensi": [],
+      "klaimKompetensiWdua": [
+        "W.2.1.6",
+        "W.2.2.3",
+        "W.2.3.1",
+        "W.2.4.1",
+        "W.2.6.1",
+        "W.2.1.4",
+        "W.2.3.4",
+        "W.2.6.4",
+        "W.2.6.3",
+        "W.2.5.3"
+      ],
+      "klaimKompetensiWtiga": [
+        "W.3.1.2",
+        "W.3.2.1",
+        "W.3.3.3",
+        "W.3.5.2",
+        "W.3.6.4",
+        "W.3.4.2"
+      ],
+      "klaimKompetensiWempat": [
+        "W.4.1.1",
+        "W.4.1.5",
+        "W.4.3.6",
+        "W.4.5.2"
+      ],
+      "klaimKompetensiPenam": [
+        "P.6.1.3",
+        "P.6.1.4",
+        "P.6.3.3",
+        "P.6.4.3",
+        "P.6.5.4",
+        "P.6.4.1"
+      ],
+      "klaimKompetensiPtujuh": [
+        "P.7.1.1",
+        "P.7.1.6",
+        "P.7.2.3",
+        "P.7.2.4",
+        "P.7.3.5",
+        "P.7.5.2",
+        "P.7.4.4",
+        "P.7.4.1"
+      ],
+      "klaimKompetensiPdelapan": [
+        "P.8.1.1",
+        "P.8.2.1",
+        "P.8.2.4",
+        "P.8.3.6",
+        "P.8.4.3",
+        "P.8.5.3",
+        "P.8.3.3",
+        "P.8.3.2"
+      ],
+      "klaimKompetensiPsembilan": [
+        "P.9.1.1",
+        "P.9.3.1",
+        "P.9.4.2",
+        "P.9.4.1",
+        "P.9.5.4",
+        "P.9.4.6"
+      ],
+      "klaimKompetensiPsepuluh": [
+        "P.10.1.1",
+        "P.10.2.1",
+        "P.10.3.1",
+        "P.10.3.5",
+        "P.10.4.4",
+        "P.10.6.1"
+      ],
+      "klaimKompetensiPsebelas": [
+        "P.11.3.1",
+        "P.11.4.4",
+        "P.11.5.3",
+        "P.11.5.1",
+        "P.11.6.8",
+        "P.11.7.4"
+      ]
+    }
+  ],
+  "form_iv": [
+    {
+      "key": "kZs1U4-TRLusdMhbHOOGg",
+      "namaPerguruan": "UIPM",
+      "namaMataAjaran": "Event Management and Global Digital Development",
+      "kota": "Bangkok",
+      "provinsi": "Bangkok Metropolis",
+      "negara": "Thailand",
+      "perioda": "kurang9tahun",
+      "jabatandiPerguruan": "staff",
+      "jumlahWaktu": "2sampai3sks",
+      "uraianSingkatAktifitas": "",
+      "klaimKompetensi": [],
+      "klaimKompetensiPlima": [
+        "P.5.2.9",
+        "P.5.2.7",
+        "P.5.2.1",
+        "P.5.1.3",
+        "P.5.1.1",
+        "P.5.2.2"
+      ]
+    }
+  ],
+  "form_v_satu": [
+    {
+      "key": "dF6BZ37FpIaRZEp9tF0aC",
+      "judulKaryaTulis": "Menulis Bahasa Natural Pada Tingkat SD",
+      "namaMedia": "Sinar Harapan Future Investment",
+      "kota": "Yogyakarta",
+      "provinsi": "DIY Yogyakarta",
+      "negara": "Indonesia",
+      "bulanTerbit": "Juli",
+      "tahunTerbit": "2010",
+      "tingkatMediaPublikasi": "nasional",
+      "uraianSingkatMateriPublikasi": "Mengkaji materi Natural Language agar bisa disajikan dan dipahami pada siswa tingkat SD",
+      "tingkatKesulitanPublikasi": "luas",
+      "klaimKompetensi": [],
+      "klaimKompetensiWempat": [
+        "W.4.1.3",
+        "W.4.1.5",
+        "W.4.3.6",
+        "W.4.5.9"
+      ]
+    }
+  ],
+  "form_v_dua": [
+    {
+      "key": "TY3-jtVjSSQiCZ-L4Kyfh",
+      "judulMakalah": "Memahami Lokakarya",
+      "namaSeminar": "Lokakarya Lokakarya",
+      "kota": "Semarang",
+      "provinsi": "Jawa Tengah",
+      "negara": "Indonesia",
+      "bulanPenyelenggaraSeminar": "Agustus",
+      "tahunPenyelenggaraSeminar": "2018",
+      "tingkatSeminar": "lokal",
+      "uraianSingkatMateriSeminar": "Uraian Singkat Tulisan Makalah yang Disajikan",
+      "tingkatKesulitan": "sedang",
+      "klaimKompetensi": [],
+      "klaimKompetensiWempat": [
+        "W.4.1.3",
+        "W.4.1.5",
+        "W.4.3.4",
+        "W.4.4.4"
+      ]
+    }
+  ],
+  "form_v_tiga": [
+    {
+      "key": "H3DLIH2W2vOUtEEGCrVHd",
+      "namaSeminar": "Seminar TA Gregorius Yudho Baskoro",
+      "namaPenyelenggara": "Gregorius Yudho Baskoro",
+      "kota": "Semarang",
+      "provinsi": "Jawa Tengah",
+      "negara": "Indonesia",
+      "bulanPenyelenggaraSeminar": "Desember",
+      "tahunPenyelenggaraSeminar": "20233",
+      "uraianSingkatMateriSeminar": "Uraian Singkat Materi Seminar Lokakarya",
+      "tingkatKesulitan": "rendah",
+      "klaimKompetensi": [],
+      "klaimKompetensiWdua": [
+        "W.2.1.3",
+        "W.2.1.4",
+        "W.2.3.2"
+      ]
+    }
+  ],
+  "form_v_empat": [
+    {
+      "key": "NIP31EPOCfXDT-n9AAEsW",
+      "namaInovasi": "Satelit Pencari Lahan Parkir Kosong",
+      "bulan": "Januari",
+      "tahun": "2021",
+      "mediaPublikasi": "Bintang Kejora",
+      "uraianSingkatInovasi": "Mencari Lahan Parkir dalam ruang lingkup area gedung",
+      "tingkatKesulitanInovasi": "sangatluas",
+      "klaimKompetensi": [],
+      "klaimKompetensiPenam": [
+        "P.6.1.1",
+        "P.6.4.1",
+        "P.6.3.3",
+        "P.6.4.4",
+        "P.6.5.1",
+        "P.6.5.4"
+      ]
+    }
+  ],
+  "form_vi": [
+    {
+      "key": "mt0p9P16sTIbIoQiPmRr-",
+      "namaBahasa": "American Sign Language",
+      "jenisBahasa": "asing",
+      "kemampuanVerbalBahasa": "aktif",
+      "jenisTulisan": "laporan",
+      "klaimKompetensi": [],
+      "klaimKompetensiWempat": [
+        "W.4.1.1",
+        "W.4.1.5",
+        "W.4.3.1"
+      ]
+    },
+    {
+      "key": "Zmyh8ZU66uyulpnx3h_cs",
+      "namaBahasa": "Python",
+      "jenisBahasa": "asing",
+      "kemampuanVerbalBahasa": "pasif",
+      "jenisTulisan": "laporan",
+      "klaimKompetensi": [],
+      "klaimKompetensiWempat": [
+        "W.4.1.1",
+        "W.4.3.4",
+        "W.4.5.9"
+      ]
+    },
+    {
+      "key": "IImrgo8oCT3_kz29izVCm",
+      "namaBahasa": "Sunda",
+      "jenisBahasa": "daerah",
+      "kemampuanVerbalBahasa": "aktif",
+      "jenisTulisan": "makalah",
+      "klaimKompetensi": [],
+      "klaimKompetensiWempat": [
+        "W.4.1.2",
+        "W.4.4.5",
+        "W.4.5.9"
+      ]
+    }
+  ],
+  "form_vii": {},
+  "last_updated": {
+    "$date": "2024-11-25T17:22:51.522Z"
+  },
+  "last_change": "TERKIRIM",
+  "status": "111-2",
+  "status_assesor": "113-1",
+  "dosen_penilai_faip": [
+    "1998200345678",
+    "2444333222111",
+    "1998200345677"
+  ]
+}
