@@ -11,9 +11,9 @@ import time
 import pymongo
 from pymongo import MongoClient
 
-#Akun
-username = "yosua@live.undip.ac.id"
-password = "insinyurj4y4"
+#Akun // Diisi dengan akun yang akan digunakan
+username = ""
+password = ""
 
 #Driver
 driver = webdriver.Chrome()
@@ -292,6 +292,8 @@ def FormI1():
         ID_Count_Phone_I1 += 1
         print("\nRow " + Phone_Row_I1 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN I2
 def FormI2():
     driver.find_element(By.LINK_TEXT, "I.2").click()
@@ -449,6 +451,8 @@ def FormI2():
         DB_Count_I2 += 1
         ID_Count_I2 += 1
         print("\nRow " + Row_I2 + " telah diisi")
+
+    driver.refresh() 
 
 #PENGISIAN I3   
 def FormI3():
@@ -660,6 +664,8 @@ def FormI3():
         ID_Count_I3 += 1
         print("\nRow " + Row_I3 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN I4
 def FormI4():
     driver.find_element(By.LINK_TEXT, "I.4").click()
@@ -825,6 +831,8 @@ def FormI4():
         DB_Count_I4 += 1
         ID_Count_I4 += 1
         print("Row " + Row_I4 + " telah diisi")
+
+    driver.refresh() 
 
 #PENGISIAN I5
 def FormI5():
@@ -1049,6 +1057,8 @@ def FormI5():
         ID_Count_I5 += 1
         print("Row " + Row_I5 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN I6
 def FormI6():
     driver.find_element(By.LINK_TEXT, "I.6").click()
@@ -1272,6 +1282,8 @@ def FormI6():
         ID_Count_I6 += 1
         print("Row " + Row_I6 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN II1
 def FormII1():
     driver.find_element(By.LINK_TEXT, "II.1").click()
@@ -1398,6 +1410,8 @@ def FormII1():
         ID_Count_II1 += 1
         print("Row " + Row_II1 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN II2
 def FormII2():
     driver.find_element(By.LINK_TEXT, "II.2").click()
@@ -1455,6 +1469,8 @@ def FormII2():
         Counter_II2 += 1
         ID_Count_II2 += 1
         print("Row " + Row_II2 + " telah diisi")
+
+    driver.refresh() 
 
 #PENGISIAN III
 def FormIII():
@@ -1845,6 +1861,8 @@ def FormIII():
         ID_Count_III += 1
         print("Row " + Row_III + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN IV
 def FormIV():
     driver.find_element(By.LINK_TEXT, "IV").click()
@@ -2000,6 +2018,8 @@ def FormIV():
         Counter_IV += 1
         ID_Count_IV += 1
         print("Row " + Row_IV + " telah diisi")
+
+    driver.refresh() 
 
 #PENGISIAN V1
 def FormV1():
@@ -2162,6 +2182,8 @@ def FormV1():
         Counter_V1 += 1
         ID_Count_V1 += 1
         print("Row " + Row_V1 + " telah diisi")
+
+    driver.refresh() 
 
 #PENGISIAN V2
 def FormV2():
@@ -2333,6 +2355,8 @@ def FormV2():
         ID_Count_V2 += 1
         print("Row " + Row_V2 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN V3
 def FormV3():
     driver.find_element(By.LINK_TEXT, "V.3").click()
@@ -2496,6 +2520,8 @@ def FormV3():
         ID_Count_V3 += 1
         print("Row " + Row_V3 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN V4
 def FormV4():
     driver.find_element(By.LINK_TEXT, "V.4").click()
@@ -2634,6 +2660,8 @@ def FormV4():
         ID_Count_V4 += 1
         print("Row " + Row_V4 + " telah diisi")
 
+    driver.refresh() 
+
 #PENGISIAN VI
 def FormVI():
     driver.find_element(By.LINK_TEXT, "VI").click()
@@ -2748,6 +2776,8 @@ def FormVI():
         Counter_VI += 1
         ID_Count_VI += 1
         print("Row " + Row_VI + " telah diisi")
+
+    driver.refresh() 
 
 def AllForm():
     FormI1()

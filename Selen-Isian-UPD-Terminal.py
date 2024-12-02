@@ -9,8 +9,9 @@ from selenium.common.exceptions import NoSuchElementException as NSEE
 
 import time
 
-username = "yosua@live.undip.ac.id"
-password = "insinyurj4y4"
+#Akun // Diisi dengan akun yang akan digunakan
+username = ""
+password = ""
 
 driver = webdriver.Chrome()
 action = ActionChains(driver)
@@ -194,6 +195,8 @@ def FormI1(n_Alamat_I1,n_Lembaga_I1,n_Phone_I1):
         print("Row " + Phone_Row_I1 + " telah diisi")
     print("\n") 
 
+    driver.refresh()
+
 #PENGISIAN I2
 def FormI2(n_I2):
     driver.find_element(By.LINK_TEXT, "I.2").click()
@@ -293,6 +296,8 @@ def FormI2(n_I2):
         ID_Count_I2 += 1
         print("Row " + Row_I2 + " telah diisi")
     print("\n")    
+    
+    driver.refresh()
 
 #PENGISIAN I3   
 def FormI3(n_I3):
@@ -416,6 +421,9 @@ def FormI3(n_I3):
         ID_Count_I3 += 1
         print("Row " + Row_I3 + " telah diisi")
     print("\n")
+ 
+    driver.refresh()
+
 
 #PENGISIAN I4
 def FormI4(n_I4):
@@ -518,6 +526,8 @@ def FormI4(n_I4):
         ID_Count_I4 += 1
         print("Row " + Row_I4 + " telah diisi")
     print("\n")
+
+    driver.refresh()
 
 #PENGISIAN I5
 def FormI5(n_I5):
@@ -636,6 +646,8 @@ def FormI5(n_I5):
         print("Row " + Row_I5 + " telah diisi")
     print("\n")
 
+    driver.refresh()
+
 #PENGISIAN I6
 def FormI6(n_I6):
     driver.find_element(By.LINK_TEXT, "I.6").click()
@@ -753,6 +765,8 @@ def FormI6(n_I6):
         print("Row " + Row_I6 + " telah diisi")
     print("\n")
 
+    driver.refresh()
+
 #PENGISIAN II1
 def FormII1(n_II1):
     driver.find_element(By.LINK_TEXT, "II.1").click()
@@ -830,7 +844,9 @@ def FormII1(n_II1):
         Counter_II1 += 1
         ID_Count_II1 += 1
         print("Row " + Row_II1 + " telah diisi")
-    print("\n")   
+    print("\n")
+
+    driver.refresh()   
 
 #PENGISIAN II2
 def FormII2(n_II2):
@@ -876,7 +892,9 @@ def FormII2(n_II2):
         Counter_II2 += 1
         ID_Count_II2 += 1
         print("Row " + Row_II2 + " telah diisi")
-    print("\n")   
+    print("\n")
+    
+    driver.refresh()     
 
 #PENGISIAN III
 def FormIII(n_III):
@@ -1033,7 +1051,9 @@ def FormIII(n_III):
         Counter_III += 1
         ID_Count_III += 1
         print("Row " + Row_III + " telah diisi")
-    print("\n")   
+    print("\n")
+
+    driver.refresh()    
 
 #PENGISIAN IV
 def FormIV(n_IV):
@@ -1132,6 +1152,8 @@ def FormIV(n_IV):
         print("Row " + Row_IV + " telah diisi")
     print("\n")
 
+    driver.refresh() 
+
 #PENGISIAN V1
 def FormV1(n_V1):
     driver.find_element(By.LINK_TEXT, "V.1").click()
@@ -1228,6 +1250,8 @@ def FormV1(n_V1):
         ID_Count_V1 += 1
         print("Row " + Row_V1 + " telah diisi")
     print("\n")
+
+    driver.refresh() 
 
 #PENGISIAN V2
 def FormV2(n_V2):
@@ -1332,6 +1356,8 @@ def FormV2(n_V2):
         print("Row " + Row_V2 + " telah diisi")
     print("\n")
 
+    driver.refresh() 
+
 #PENGISIAN V3
 def FormV3(n_V3):
     driver.find_element(By.LINK_TEXT, "V.3").click()
@@ -1431,6 +1457,8 @@ def FormV3(n_V3):
         print("Row " + Row_V3 + " telah diisi")
     print("\n")
 
+    driver.refresh() 
+
 #PENGISIAN V4
 def FormV4(n_V4):
     driver.find_element(By.LINK_TEXT, "V.4").click()
@@ -1518,6 +1546,8 @@ def FormV4(n_V4):
         print("Row " + Row_V4 + " telah diisi")
     print("\n")
 
+    driver.refresh() 
+
 #PENGISIAN VI
 def FormVI(n_VI):
     driver.find_element(By.LINK_TEXT, "VI").click()
@@ -1592,6 +1622,8 @@ def FormVI(n_VI):
         ID_Count_VI += 1
         print("Row " + Row_VI + " telah diisi")
     print("\n")
+
+    driver.refresh() 
 
 def AllForm():
     FormI1(2,2,2)
