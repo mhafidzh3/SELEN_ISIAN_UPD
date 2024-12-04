@@ -37,6 +37,7 @@ driver.maximize_window()
 #input username
 driver.find_element(By.ID, "email").send_keys(username)
 driver.find_element(By.ID, "password").send_keys(password)
+
 #masuk login
 driver.find_element(By.ID, "m_login_signin_submit").click()
 
@@ -49,8 +50,6 @@ driver.find_element(By.LINK_TEXT, "Edit").click()
 # driver.find_element(By.LINK_TEXT, "BUAT FAIP BARU").click()
 # WebDriverWait(driver, 10).until(EC.alert_is_present())
 # driver.switch_to.alert.accept()
-
-time.sleep(2)
 
 #PENGISIAN I1
 def FormI1():
