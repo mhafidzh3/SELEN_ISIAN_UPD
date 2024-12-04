@@ -3713,7 +3713,8 @@ def trigger_selenium(req: terimaJSON):
         Log_Run = {"Elemen":Elemen, "KeyError":ErrorKey, "NSEE":NSEEn}
 
         # return {"Log Error":Log_Error}
-        return {"Log Run":Log_Run}
+        # return {"Log Run":Log_Run}
+        return {"Log Run":Log_Run, "Log Error":Log_Error}
 
     #Error Form
     except Exception as e:
