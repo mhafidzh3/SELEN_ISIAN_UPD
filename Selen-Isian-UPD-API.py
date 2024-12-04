@@ -188,8 +188,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- AddressType I1: " + AddressType_I1)
                     except NSEE:
                         print("- AddressType I1: NSEE")
+                        Log_Error.update({"AddressType I1":"NSEE"})
                 except KeyError:
                     print("- AddressType I1: KeyError")
+                    Log_Error.update({"AddressType I1":"KeyError"})
 
                 try:
                     AddressDesc_I1 = Isi_Alamat_I1["alamat"]
@@ -198,6 +200,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- AddressDesc I1: " + AddressDesc_I1)
                 except KeyError:
                     print("- AddressDesc I1: KeyError")
+                    Log_Error.update({"AddressDesc I1":"KeyError"})
 
                 try:
                     AddressLoc_I1 = Isi_Alamat_I1["kota"]
@@ -206,6 +209,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- AddressLoc I1: " + AddressLoc_I1)
                 except KeyError:
                     print("- AddressLoc I1: KeyError")
+                    Log_Error.update({"AddressLoc I1":"KeyError"})
 
                 try:
                     AddressZip_I1 = Isi_Alamat_I1["kodePos"]
@@ -214,6 +218,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- AddressZip I1: " + AddressZip_I1)
                 except KeyError:
                     print("- AddressZip I1: KeyError")
+                    Log_Error.update({"AddressZip I1":"KeyError"})
 
                 #End/retry point of loop
                 Counter_Alamat_I1 += 1
@@ -269,6 +274,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- ExpName I1: " + ExpName_I1)
                 except KeyError:
                     print("- ExpName I1: keyError")
+                    Log_Error.update({"ExpName I1":"keyError"})
 
                 try:
                     ExpDesc_I1 = Isi_Lembaga_I1["jabatan"]
@@ -277,6 +283,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- ExpDesc I1: " + ExpDesc_I1)
                 except KeyError:
                     print("- ExpDesc I1: KeyError")
+                    Log_Error.update({"ExpDesc I1":"KeyError"})
 
                 try:
                     ExpLoc_I1 = Isi_Lembaga_I1["kota"]
@@ -285,6 +292,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- ExpLoc I1: " + ExpLoc_I1)
                 except KeyError:
                     print("- ExpLoc I1: KeyError")
+                    Log_Error.update({"ExpLoc I1":"KeyError"})
 
                 try:
                     ExpZip_I1 = Isi_Lembaga_I1["kodePos"]
@@ -293,6 +301,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- ExpZip I1: " + ExpZip_I1)
                 except KeyError:
                     print("- ExpZip I1: KeyError")
+                    Log_Error.update({"ExpZip I1":"KeyError"})
 
                 #End/retry point of loop
                 Counter_Lembaga_I1 += 1
@@ -350,8 +359,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- PhoneType I1: " + PhoneType_I1)
                     except NSEE:
                         print("- PhoneType I1: NSEE")
+                        Log_Error.update({"PhoneType I1":"NSEE"})
                 except KeyError:
                     print("- PhoneType I1: KeyError")
+                    Log_Error.update({"PhoneType I1":"KeyError"})
 
                 try:
                     PhoneValue_I1 = Isi_Phone_I1["nomor"]
@@ -360,6 +371,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- PhoneValue I1: " + PhoneValue_I1)
                 except KeyError:
                     print("- PhoneValue I1: KeyError")
+                    Log_Error.update({"PhoneValue I1":"KeyError"})
 
                 #End/retry point of loop
                 Counter_Phone_I1 += 1
@@ -422,6 +434,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Universitas I2: " + Universitas_I2)
                 except KeyError:
                     print("- Universitas I2: KeyError")
+                    Log_Error.update({"Universitas I2":"KeyError"})
                 
                 try:
                     Tingkat_I2 = Isi_I2["tingkatPendidikan"]
@@ -432,8 +445,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tingkat I2: " + Tingkat_I2)
                     except NSEE:
                         print("- Tingkat I2: NSEE")
+                        Log_Error.update({"Tingkat I2":"NSEE"})
                 except KeyError:
                     print("- Tingkat I2: KeyError")
+                    Log_Error.update({"Tingkat I2":"KeyError"})
 
                 try:
                     Fakultas_I2 = Isi_I2["fakultas"]
@@ -442,6 +457,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Fakultas I2: " + Fakultas_I2)
                 except KeyError:
                     print("- Fakultas I2: KeyError")
+                    Log_Error.update({"Fakultas I2":"KeyError"})
 
                 try:
                     Jurusan_I2 = Isi_I2["jurusan"]
@@ -450,6 +466,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Jurusan I2: " + Jurusan_I2)
                 except KeyError:
                     print("- Jurusan I2: KeyError")
+                    Log_Error.update({"":"KeyError"})
 
                 try:
                     Kota_I2 = Isi_I2["kotaPerguruan"]
@@ -457,7 +474,8 @@ def trigger_selenium(req: terimaJSON):
                     driver.find_element(By.ID, ID_Kota_I2).send_keys(Kota_I2)   
                     print("- Kota I2: " + Kota_I2)
                 except KeyError:
-                    print("- Kota I2: KeyError")  
+                    print("- Kota I2: KeyError")
+                    Log_Error.update({"Kota I2":"KeyError"})  
 
                 try:
                     Provinsi_I2 = Isi_I2["provinsi"]
@@ -466,6 +484,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi I2: " + Provinsi_I2)
                 except KeyError:
                     print("- Provinsi I2: KeyError")
+                    Log_Error.update({"Provinsi I2":"KeyError"})
 
                 try:
                     Negara_I2 = Isi_I2["negara"]
@@ -474,6 +493,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara: " + Negara_I2)
                 except KeyError:
                     print("- Negara I2: KeyError")
+                    Log_Error.update({"Negara I2":"KeyError"})
 
                 try:
                     TahunLulus_I2 = Isi_I2["tahunLulus"]
@@ -482,6 +502,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Tahun Lulus I2: " + TahunLulus_I2)
                 except KeyError:
                     print("- Tahun Lulus I2: KeyError")
+                    Log_Error.update({"Tahun Lulus I2:":"KeyError"})
 
                 try:
                     Gelar_I2 = Isi_I2["gelar"]
@@ -490,6 +511,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Gelar I2: " + Gelar_I2)
                 except KeyError:
                     print("- Gelar I2: KeyError")
+                    Log_Error.update({"Gelar I2":"KeyError"})
 
                 try:
                     JudulTA_I2 = Isi_I2["judulTa"]
@@ -500,6 +522,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Judul TA I2: " + JudulTA_I2)
                 except KeyError:
                     print("- Judul TA I2: KeyError")
+                    Log_Error.update({"Judul TA":"KeyError"})
 
                 try:
                     UraianTA_I2 = Isi_I2["uraianSingkat"]
@@ -510,6 +533,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian TA I2: " + UraianTA_I2)
                 except KeyError:
                     print("- Uraian TA I2: KeyError")
+                    Log_Error.update({"Uraian TA I2":"KeyError"})
 
                 try:
                     Nilai_I2 = Isi_I2["nilaiAkademikRata"]
@@ -520,6 +544,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Nilai I2: " + Nilai_I2)
                 except KeyError:
                     print("- Nilai I2: KeyError")
+                    Log_Error.update({"Nilai I2":"KeyError"})
                 
                 #End/retry point of loop
                 Counter_I2 += 1
@@ -582,6 +607,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Nama Organisasi: " + Organisasi_I3)
                 except KeyError:
                     print("- Nama Organisasi I3: KeyError")
+                    Log_Error.update({"Nama Organisasi I3":"KeyError"})
                 
                 try:
                     Jenis_I3 = Isi_I3["jenisOrganisasi"]
@@ -591,9 +617,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Jenis_I3.select_by_visible_text(Jenis_I3)
                         print("- Jenis I3: " + Jenis_I3)
                     except NSEE:
-                        ("- Jenis I3: NSEE")
+                        print("- Jenis I3: NSEE")
+                        Log_Error.update({"Jenis I3":"NSEE"})
                 except KeyError:
                     print("- Jenis I3: KeyError")
+                    Log_Error.update({"Jenis I3":"KeyError"})
 
                 try:
                     Kota_I3 = Isi_I3["kotaAsal"]
@@ -602,6 +630,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota I3: " + Kota_I3)
                 except KeyError:
                     print("- Kota I3: KeyError")
+                    Log_Error.update({"Kota I3":"KeyError"})
 
                 try:
                     Provinsi_I3 = Isi_I3["provinsiAsal"]
@@ -610,6 +639,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi I3: " + Provinsi_I3)
                 except KeyError:
                     print("- Provinsi I3: KeyError")
+                    Log_Error.update({"Provinsi I3":"KeyError"})
 
                 try:
                     Negara_I3 = Isi_I3["negaraAsal"]
@@ -618,6 +648,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara I3: " + Negara_I3)
                 except KeyError:
                     print("- Negara I3: KeyError")
+                    Log_Error.update({"Negara I3":"KeyError"})
                 
                 try:
                     BulanMulai_I3 = Isi_I3["bulanMulai"]
@@ -628,8 +659,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Bulan Mulai I3: " + BulanMulai_I3)
                     except NSEE:
                         print("- Bulan Mulai I3: NSEE")
+                        Log_Error.update({"Bulan Mulai I3":"KeyError"})
                 except KeyError:
                     print("- Bulan Mulai I3: KeyError")
+                    Log_Error.update({"Bulan Mulai I3":"KeyError"})
 
                 try:
                     TahunMulai_I3 = Isi_I3["tahunMulai"]
@@ -638,6 +671,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Tahun Mulai I3: " + TahunMulai_I3)
                 except KeyError:
                     print("- Tahun Mulai I3: KeyError")
+                    Log_Error.update({"Tahun Mulai I3":"KeyError"})
 
                 ID_Anggota_I3 = "13_work" + Row_I3
                 Angggota_I3 = driver.find_element(By.ID, ID_Anggota_I3)
@@ -653,6 +687,7 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tahun Selesai I3: " + TahunSelesai_I3)
                     except KeyError:
                         print("- Tahun Selesai I3: KeyError")
+                        Log_Error.update({"Tahun Selesai I3":"KeyError"})
 
                     try:
                         BulanSelesai_I3 = Isi_I3["bulan"]
@@ -663,8 +698,10 @@ def trigger_selenium(req: terimaJSON):
                             print("- Bulan Selesai I3: " + BulanSelesai_I3)
                         except NSEE:
                             print("- Bulan Selesai I3: NSEE")
+                            Log_Error.update({"Bulan Selesai I3":"KeyError"})
                     except KeyError:
                         print("- Bulan Selesai I3: KeyError")
+                        Log_Error.update({"Bulan Selesai I3":"KeyError"})
                 
                 try:
                     Jabatan_I3 = Isi_I3["jabatanOrganisasi"]
@@ -675,8 +712,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Jabatan I3: " + Jabatan_I3)
                     except NSEE:
                         print("- Jabatan I3: NSEE")
+                        Log_Error.update({"Jabatan I3":"NSEE"})
                 except KeyError:
                     print("- Jabatan I3: KeyError")
+                    Log_Error.update({"Jabatan I3":"KeyError"})
 
                 try:
                     Tingkat_I3 = Isi_I3["tingkatanOrganisasi"]
@@ -687,8 +726,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tingkat I3: " + Tingkat_I3)
                     except NSEE:
                         print("- Tingkat I3: NSEE")
+                        Log_Error.update({"Tingkat I3":"NSEE"})
                 except KeyError:
                     print("- Tingkat I3: KeyError")
+                    Log_Error.update({"Tingkat I3":"KeyError"})
 
                 try:
                     Lingkup_I3 = Isi_I3["kegiatanOrganisasi"]
@@ -701,8 +742,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Lingkup I3: " + Lingkup_I3)
                     except NSEE:
                         print("- Lingkup I3: NSEE")
+                        Log_Error.update({"Lingkup I3":"NSEE"})
                 except KeyError:
                     print("- Lingkup I3: KeyError")
+                    Log_Error.update({"Lingkup I3":"KeyError"})
                 
                 try:
                     Uraian_I3 = Isi_I3["uraianTugas"]
@@ -713,6 +756,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian I3: " + Uraian_I3)
                 except KeyError:
                     print("- Uraian I3: KeyError")
+                    Log_Error.update({"Uraian I3":"KeyError"})
                 
                 # Kompetisi I3 
                 ID_Komp_I3 = "13_komp" + Row_I3
@@ -730,8 +774,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_I3)
                     except NSEE:
                         print("- Komp W1 I3: NSEE")
+                        Log_Error.update({"Komp W1 I3":"NSEE"})
                 except KeyError:
                     print("- Komp W1 I3: KeyError")
+                    Log_Error.update({"Komp W1 I3":"KeyError"})
 
                 #End/retry point of loop
                 Counter_I3 += 1
@@ -794,6 +840,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Penghargaan I4: " + Penghargaan_I4)
                 except KeyError:
                     print("- Penghargaan I4: KeyError")
+                    Log_Error.update({"Penghargaan I4":"KeyError"})
 
                 try:
                     Lembaga_I4 = Isi_I4["namaTandaPenghargaan"]
@@ -802,6 +849,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Lembaga I4: " + Lembaga_I4)
                 except KeyError:
                     print("- Lembaga I4: KeyError")
+                    Log_Error.update({"Lembaga I4":"KeyError"})
 
                 try:
                     Kota_I4 = Isi_I4["kotaAsal"]
@@ -810,6 +858,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota I4: " + Kota_I4)
                 except KeyError:
                     print("- Kota I4: KeyError")
+                    Log_Error.update({"Kota I4":"KeyError"})
 
                 try:
                     Provinsi_I4 = Isi_I4["provinsiAsal"]
@@ -818,6 +867,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi I4: " + Provinsi_I4)
                 except KeyError:
                     print("- Provinsi I4: KeyError")
+                    Log_Error.update({"Provinsi I4":"KeyError"})
                     
                 try:
                     Negara_I4 = Isi_I4["negaraAsal"]
@@ -826,6 +876,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara I4: " + Negara_I4)
                 except KeyError:
                     print("- Negara I4: KeyError")
+                    Log_Error.update({"Negara I4":"KeyError"})
 
                 try:
                     BulanTerbit_I4 = Isi_I4["bulanTerbit"]
@@ -836,8 +887,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Bulan Terbit I4: " + BulanTerbit_I4)
                     except NSEE:
                         print("- Bulan Terbit I4: NSEE")
+                        Log_Error.update({"Bulan Terbit I4":"NSEE"})
                 except KeyError:
                     print("- Bulan Terbit I4: KeyError")
+                    Log_Error.update({"Bulan Terbit I4":"KeyError"})
 
                 try:
                     Tahun_I4 = Isi_I4["tahunTerbit"]
@@ -846,6 +899,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Tahun I4: " + Tahun_I4)
                 except KeyError:
                     print("- Tahun I4: KeyError")
+                    Log_Error.update({"Tahun I4":"KeyError"})
 
                 try:
                     Tingkat_I4 = Isi_I4["tingkatPenghargaan"]
@@ -856,8 +910,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tingkat I4: " + Tingkat_I4)
                     except NSEE:
                         print("- Tingkat I4: NSEE")
+                        Log_Error.update({"Tingkat I4":"KeyError"})
                 except KeyError:
                     print("- Tingkat I4: KeyError")
+                    Log_Error.update({"Tingkat I4":"KeyError"})
 
                 try:
                     Lembaga_I4 = Isi_I4["jenisLembagaPenghargaan"]
@@ -868,8 +924,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Lembaga I4: " + Lembaga_I4)
                     except NSEE:
                         print("- Lembaga I4: NSEE")
+                        Log_Error.update({"Lembaga I4":"NSEE"})
                 except KeyError:
                     print("- Lembaga I4: KeyError")
+                    Log_Error.update({"Lembaga I4":"KeyError"})
                 
                 try:
                     Uraian_I4 = Isi_I4["uraianSingkatAktifitas"]
@@ -880,6 +938,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian I4: " + Uraian_I4)
                 except KeyError:
                     print("- Uraian I4: KeyError")
+                    Log_Error.update({"Uraian I4":"KeyError"})
 
                 # Kompetisi I4 
                 ID_Komp_I4 = "14_komp" + Row_I4
@@ -897,9 +956,11 @@ def trigger_selenium(req: terimaJSON):
                             action.move_to_element_with_offset(Komp_Find_I4, 0, -15).click().perform()
                             print("-", Komp_Value_I4)
                     except NSEE:
-                        print("- Komp W1 I4: NSEE")   
+                        print("- Komp W1 I4: NSEE") 
+                        Log_Error.update({"Komp W1 I4":"KeyError"})  
                 except KeyError:
                     print("- Komp W1 I4: KeyError")
+                    Log_Error.update({"Komp W1 I4":"KeyError"})
                     
                 #End/retry point of loop
                 Counter_I4 += 1
@@ -962,6 +1023,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Pendidikan I5: " + Pendidikan_I5)
                 except KeyError:
                     print("- Pendidikan I5: KeyError")
+                    Log_Error.update({"Pendidikan I5":"KeyError"})
 
                 try:
                     Lembaga_I5 = Isi_I5["penyelenggara"]
@@ -970,6 +1032,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Lembaga I5: " + "")
                 except KeyError:
                     print("- Lembaga I5: KeyError")
+                    Log_Error.update({"Lembaga I5":"KeyError"})
 
                 try:
                     Kota_I5 = Isi_I5["kotaAsal"]
@@ -978,6 +1041,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota I5: " + Kota_I5)
                 except KeyError:
                     print("- Kota I5: KeyError")
+                    Log_Error.update({"Kota I5":"KeyError"})
 
                 try:
                     Provinsi_I5 = Isi_I5["provinsiAsal"]
@@ -986,6 +1050,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi I5: " + Provinsi_I5)
                 except KeyError:
                     print("- Provinsi I5: KeyError")
+                    Log_Error.update({"Provinsi I5":"KeyError"})
 
                 try:
                     Negara_I5 = Isi_I5["negaraAsal"]
@@ -994,6 +1059,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara I5: " + Negara_I5)
                 except KeyError:
                     print("- Negara I5: KeyError")
+                    Log_Error.update({"Negara I5":"KeyError"})
 
                 try:
                     BulanMulai_I5 = Isi_I5["bulanMulai"]
@@ -1004,8 +1070,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Bulan Mulai I5: " + BulanMulai_I5)
                     except NSEE:
                         print("- Bulan Mulai I5: NSEE")
+                        Log_Error.update({"Bulan Mulai I5":"NSEE"})
                 except KeyError:
                     print("- Bulan Mulai I5: KeyError")
+                    Log_Error.update({"Bulan Mulai I5":"KeyError"})
 
                 try:
                     TahunMulai_I5 = Isi_I5["tahunMulai"]
@@ -1014,6 +1082,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Tahun Mulai I5: " + TahunMulai_I5)
                 except KeyError:
                     print("- Tahun Mulai I5: KeyError")
+                    Log_Error.update({"Tahun Mulai I5":"KeyError"})
 
                 ID_Anggota_I5 = "15_work" + Row_I5
                 Angggota_I5 = driver.find_element(By.ID, ID_Anggota_I5)
@@ -1029,6 +1098,7 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tahun Selesai I5: " + TahunSelesai_I5)
                     except KeyError:
                         print("- Tahun Selesai I5: KeyError")
+                        Log_Error.update({"Tahun Selesai I5":"KeyError"})
 
                     try:
                         BulanSelesai_I5 = Isi_I5["bulan"]
@@ -1039,8 +1109,10 @@ def trigger_selenium(req: terimaJSON):
                             print("- Bulan Selesai I5: " + BulanSelesai_I5)
                         except NSEE:
                             print("- Bulan Selesai I5: NSEE")
+                            Log_Error.update({"Bulan Selesai I5":"NSEE"})
                     except KeyError:
                         print("- Bulan Selesai I5: KeyError")
+                        Log_Error.update({"Bulan Selesai I5":"KeyError"})
 
                 try:
                     Tingkat_I5 = Isi_I5["tingkatanMateriPelatihan"]
@@ -1051,8 +1123,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tingkat I5: " + Tingkat_I5)
                     except NSEE:
                             print("- Tingkat I5: NSEE")
+                            Log_Error.update({"Tingkat I5":"NSEE"})
                 except KeyError:
                     print("- Tingkat I5: KeyError")
+                    Log_Error.update({"Tingkat I5":"KeyError"})
 
                 try:
                     Jam_I5 = Isi_I5["jamPendidikanTeknik"]
@@ -1063,8 +1137,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Jam I5: " + Jam_I5)
                     except NSEE:
                             print("- Jam I5: NSEE")
+                            Log_Error.update({"Jam I5":"NSEE"})
                 except KeyError:
                     print("- Jam I5: KeyError")
+                    Log_Error.update({"Jam I5":"KeyError"})
 
                 try:
                     Uraian_I5 = Isi_I5["uraianSingkatAktifitas"]
@@ -1075,6 +1151,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian I5: " + Uraian_I5)
                 except KeyError:
                     print("- Uraian I5: KeyError")
+                    Log_Error.update({"Uraian I5":"KeyError"})
 
             # Kompetisi I5 
                 ID_Komp_I5 = "15_komp" + Row_I5
@@ -1093,8 +1170,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W2_I5)
                     except NSEE:
                         print("- Komp W2 I5: NSEE")
+                        Log_Error.update({"Komp W2 I5":"NSEE"})
                 except KeyError:
                     print("- Komp W2 I5: KeyError")
+                    Log_Error.update({"Komp W2 I5":"KeyError"})
 
                 try:
                     Komp_W4_I5 = Isi_I5["klaimKompetensiWempat"]
@@ -1108,8 +1187,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W4_I5) 
                     except NSEE:
                         print("- Komp W4 I5: NSEE")
+                        Log_Error.update({"Komp W4 I5":"NSEE"})
                 except KeyError:
                     print("- Komp W4 I5: KeyError")
+                    Log_Error.update({"Komp W4 I5":"KeyError"})
 
                 try:
                     Komp_P10_I5 = Isi_I5["klaimKompetensiPsepuluh"]
@@ -1123,8 +1204,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P10_I5) 
                     except NSEE:
                         print("- Komp P10 I5: NSEE") 
+                        Log_Error.update({"Komp P10 I5":"NSEE"})
                 except KeyError:
                     print("- Komp P10 I5: KeyError")
+                    Log_Error.update({"Komp P10 I5":"KeyError"})
 
                 #End/retry point of loop
                 Counter_I5 += 1
@@ -1187,6 +1270,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Pelatihan I6: " + Pelatihan_I6)
                 except KeyError:
                     print("- Pelatihan I6: KeyError")
+                    Log_Error.update({"Pelatihan I6":"KeyError"})
 
                 try:
                     Lembaga_I6 = Isi_I6["penyelenggara"]
@@ -1195,6 +1279,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Lembaga I6: " +Lembaga_I6)
                 except KeyError:
                     print("- Lembaga I6: KeyError")
+                    Log_Error.update({"Lembaga I6":"KeyError"})
 
                 try:
                     Kota_I6 = Isi_I6["kotaAsal"]
@@ -1203,6 +1288,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota I6: " + Kota_I6)
                 except KeyError:
                     print("- Kota I6: KeyError")
+                    Log_Error.update({"Kota I6":"KeyError"})
 
                 try:
                     Provinsi_I6 = Isi_I6["provinsiAsal"]
@@ -1211,6 +1297,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi I6: " + Provinsi_I6)
                 except KeyError:
                     print("- Provinsi I6: KeyError")
+                    Log_Error.update({"Provinsi I6":"KeyError"})
 
                 try:
                     Negara_I6 = Isi_I6["negaraAsal"]
@@ -1219,6 +1306,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara I6: " + Negara_I6)
                 except KeyError:
                     print("- Negara I6: KeyError")
+                    Log_Error.update({"Negara I6":"KeyError"})
 
                 try:
                     BulanMulai_I6 = Isi_I6["bulanMulai"]
@@ -1229,8 +1317,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Bulan Mulai I6: " + BulanMulai_I6)
                     except NSEE:
                         print("- Bulan Mulai I6: NSEE")
+                        Log_Error.update({"Bulan Mulai I6":"NSEE"})
                 except KeyError:
                     print("- Bulan Mulai I6: KeyError")
+                    Log_Error.update({"Bulan Mulai I6":"KeyError"})
 
                 try:
                     TahunMulai_I6 = Isi_I6["tahunMulai"]
@@ -1239,6 +1329,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Tahun Mulai I6: " + TahunMulai_I6)
                 except KeyError:
                     print("- Tahun Mulai I6: KeyError")
+                    Log_Error.update({"Tahun Mulai I6":"KeyError"})
 
                 ID_Anggota_I6 = "16_work" + Row_I6
                 Angggota_I6 = driver.find_element(By.ID, ID_Anggota_I6)
@@ -1254,6 +1345,7 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tahun Selesai I6: " + TahunSelesai_I6)
                     except KeyError:
                         print("- Tahun Selesai I6: KeyError")
+                        Log_Error.update({"Tahun Selesai I6":"KeyError"})
 
                     try:
                         BulanSelesai_I6 = Isi_I6["bulan"]
@@ -1264,8 +1356,10 @@ def trigger_selenium(req: terimaJSON):
                             print("- Bulan Selesai I6: " + BulanSelesai_I6)
                         except NSEE:
                             print("- Bulan Selesai I6: NSEE")
+                            Log_Error.update({"Bulan Selesai I6":"NSEE"})
                     except KeyError:
                         print("- Bulan Selesai I6: KeyError")
+                        Log_Error.update({"Bulan Selesai I6":"KeyError"})
 
                 try:
                     Tingkat_I6 = Isi_I6["tingkatanMateriPendidikanManajemen"]
@@ -1276,8 +1370,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Tingkat I6: " + Tingkat_I6)
                     except NSEE:
                         print("- Tingkat I6: NSEE")
+                        Log_Error.update({"Tingkat I6":"NSEE"})
                 except KeyError:
                     print("- Tingkat I6: KeyError")
+                    Log_Error.update({"Tingkat I6":"KeyError"})
 
                 try:
                     Jam_I6 = Isi_I6["jamPendidikanTeknikManajemen"]
@@ -1288,8 +1384,10 @@ def trigger_selenium(req: terimaJSON):
                         print("- Jam I6: " + Jam_I6)
                     except NSEE:
                         print("- Jam I6: NSEE")
+                        Log_Error.update({"Jam I6":"NSEE"})
                 except KeyError:
                     print("- Jam I6: KeyError")
+                    Log_Error.update({"Jam I6":"KeyError"})
 
                 try:
                     Uraian_I6 = Isi_I6["uraianSingkatAktifitas"]
@@ -1300,6 +1398,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian I6: " + Uraian_I6)
                 except KeyError:
                     print("- Uraian I6: KeyError")
+                    Log_Error.update({"Uraian I6":"KeyError"})
 
             # Kompetisi I6 
                 ID_Komp_I6 = "16_komp" + Row_I6
@@ -1318,8 +1417,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W1_I6)
                     except NSEE:
                         print("- Komp W1 I6: NSEE")
+                        Log_Error.update({"Komp W1 I6":"NSEE"})
                 except KeyError:
-                    print("- Komp W1 I6: KeyError")           
+                    print("- Komp W1 I6: KeyError") 
+                    Log_Error.update({"Komp W1 I6":"KeyError"})          
 
                 try:
                     Komp_W4_I6 = Isi_I6["klaimKompetensiWempat"]
@@ -1332,9 +1433,11 @@ def trigger_selenium(req: terimaJSON):
                             action.move_to_element_with_offset(Komp_Find_W4_I6, 0, -15).click().perform()
                             print("-", Komp_Value_W4_I6) 
                     except NSEE:
-                        print("- Komp W4 I6: NSEE") 
+                        print("- Komp W4 I6: NSEE")
+                        Log_Error.update({"Komp W4 I6":"NSEE"}) 
                 except KeyError:
                     print("- Komp W4 I6: KeyError") 
+                    Log_Error.update({"Komp W4 I6":"KeyError"})
 
                 try:
                     Komp_P10_I6 = Isi_I6["klaimKompetensiPsepuluh"]
@@ -1348,8 +1451,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P10_I6)  
                     except NSEE:
                         print("- Komp P10 I6: NSEE")
+                        Log_Error.update({"Komp P10 I6":"NSEE"})
                 except KeyError:
                     print("- Komp P10 I6: KeyError") 
+                    Log_Error.update({"Komp P10 I6":"KeyError"})
 
                 #End/retry point of loop
                 Counter_I6 += 1
@@ -1411,6 +1516,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Nama II1: " + Nama_II1)
                 except KeyError:
                     print("- Nama II1: KeyError")
+                    Log_Error.update({"Nama II1":"KeyError"})
 
                 try:
                     Lembaga_II1 = Isi_II1["lembaga"] 
@@ -1419,6 +1525,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Lembaga II1: " + Lembaga_II1)
                 except KeyError:
                     print("- Lembaga II1: KeyError")
+                    Log_Error.update({"Lembaga II1":"KeyError"})
 
                 try:
                     Alamat_II1 = Isi_II1["alamat"] 
@@ -1427,6 +1534,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Alamat II1: " + Alamat_II1)
                 except KeyError:
                     print("- Alamat II1: KeyError")
+                    Log_Error.update({"Alamat II1":"KeyError"})
 
                 try:
                     Kota_II1 = Isi_II1["kota"] 
@@ -1435,6 +1543,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota II1: " + Kota_II1)
                 except KeyError:
                     print("- Kota II1: KeyError")
+                    Log_Error.update({"Kota II1":"KeyError"})
 
                 try:
                     Provinsi_II1 = Isi_II1["provinsi"] 
@@ -1443,6 +1552,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi II1: " + Provinsi_II1)
                 except KeyError:
                     print("- Provinsi II1: KeyError")
+                    Log_Error.update({"Provinsi II1":"KeyError"})
 
                 try:
                     Negara_II1 = Isi_II1["negara"]     
@@ -1451,6 +1561,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara II1: " + Negara_II1)
                 except KeyError:
                     print("- Negara II1: KeyError")
+                    Log_Error.update({"Negara II1":"KeyError"})
                 
                 try:
                     NoTelp_II1 = Isi_II1["noTelp"] 
@@ -1459,6 +1570,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- NoTelp II1: " + NoTelp_II1)
                 except KeyError:
                     print("- NoTelp II1: KeyError")
+                    Log_Error.update({"NoTelp II1":"KeyError"})
 
                 try:
                     Email_II1 = Isi_II1["email"] 
@@ -1467,6 +1579,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Email II1: " + Email_II1)
                 except KeyError:
                     print("- Email II1: KeyError")
+                    Log_Error.update({"Email II1":"KeyError"})
 
                 try:
                     Hubungan_II1 = Isi_II1["hubungan"] 
@@ -1476,9 +1589,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Hubungan_II1.select_by_visible_text(Hubungan_II1)
                         print("- Hubungan II1: " + Hubungan_II1)
                     except NSEE:
-                        ("- Hubungan II1: NSEE")
+                        print("- Hubungan II1: NSEE")
+                        Log_Error.update({"Hubungan II1":"KeyError"})
                 except KeyError:
                     print("- Hubungan II1: KeyError")
+                    Log_Error.update({"Hubungan II1":"KeyError"})
 
                 #End/retry point of loop
                 Counter_II1 += 1
@@ -1539,6 +1654,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian II2: " + Uraian_II2)
                 except KeyError:
                     print("- Uraian II2: KeyError")
+                    Log_Error.update({"Uraian II2":"KeyError"})
 
                 #End/retry point of loop
                 Counter_II2 += 1
@@ -1598,19 +1714,22 @@ def trigger_selenium(req: terimaJSON):
                     Select_BulanMulai_III = Select(driver.find_element(By.ID, ID_BulanMulai_III))
                     try:
                         Select_BulanMulai_III.select_by_visible_text(BulanMulai_III)
-                        print("- BulanMulai III: " + BulanMulai_III)
+                        print("- Bulan Mulai III: " + BulanMulai_III)
                     except NSEE:
-                        ("- BulanMulai III: NSEE")
+                        print("- Bulan Mulai III: NSEE")
+                        Log_Error.update({"Bulan Mulai III":"KeyError"})
                 except KeyError:
-                    print("- BulanMulai III: KeyError")
+                    print("- Bulan Mulai III: KeyError")
+                    Log_Error.update({"Bulan Mulai III":"KeyError"})
 
                 try:
                     TahunMulai_III = Isi_III["tahunMulai"]  
                     ID_TahunMulai_III = "3_startyear" + Row_III
                     driver.find_element(By.ID, ID_TahunMulai_III).send_keys(TahunMulai_III)
-                    print("- TahunMulai III: " + TahunMulai_III)
+                    print("- Tahun Mulai III: " + TahunMulai_III)
                 except KeyError:
-                    print("- TahunMulai III: KeyError")
+                    print("- Tahun Mulai III: KeyError")
+                    Log_Error.update({"Tahu nMulai III":"KeyError"})
 
                 ID_Anggota_III = "3_work" + Row_III
                 Angggota_III = driver.find_element(By.ID, ID_Anggota_III)
@@ -1627,17 +1746,20 @@ def trigger_selenium(req: terimaJSON):
                             Select_BulanSelesai_III.select_by_visible_text(BulanSelesai_III)
                             print("- BulanSelesai III: " + BulanSelesai_III)
                         except NSEE:
-                            ("- BulanSelesai III: NSEE")
+                            print("- BulanSelesai III: NSEE")
+                            Log_Error.update({"Bulan Selesai III":"NSEE"})
                     except KeyError:
-                        print("- BulanSelesai III: KeyError")    
+                        print("- BulanSelesai III: KeyError") 
+                        Log_Error.update({"Bulan Selesai III":"KeyError"})   
 
                     try:
                         TahunSelesai_III = Isi_III["tahunBerakhir"]  
                         ID_TahunSelesai_III = "3_endyear" + Row_III
                         driver.find_element(By.ID, ID_TahunSelesai_III).send_keys(TahunSelesai_III)
-                        print("- TahunSelesai III: " + TahunSelesai_III)
+                        print("- Tahun Selesai III: " + TahunSelesai_III)
                     except KeyError:
-                        print("- TahunSelesai III: KeyError")
+                        print("- Tahun Selesai III: KeyError")
+                        Log_Error.update({"Tahun Selesai III":"KeyError"})
 
                 try:
                     Instansi_III = Isi_III["namaInstansi"]  
@@ -1646,6 +1768,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Instansi III: " + Instansi_III)
                 except KeyError:
                     print("- Instansi III: KeyError")
+                    Log_Error.update({"Instansi III":"KeyError"})
 
                 try:
                     Jabatan_III = Isi_III["jabatandiInstansi"]  
@@ -1654,6 +1777,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Jabatan III: " + Jabatan_III)
                 except KeyError:
                     print("- Jabatan III: KeyError")
+                    Log_Error.update({"Jabatan III":"KeyError"})
 
                 try:        
                     Proyek_III = Isi_III["namaProyek"]  
@@ -1662,6 +1786,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Proyek III: " + Proyek_III)
                 except KeyError:
                     print("- Proyek III: KeyError")
+                    Log_Error.update({"Proyek III":"KeyError"})
 
                 try:
                     Penugas_III = Isi_III["pemberiTugas"]  
@@ -1670,6 +1795,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Penugas III: " + Penugas_III)
                 except KeyError:
                     print("- Penugas III: KeyError")
+                    Log_Error.update({"Penugas III":"KeyError"})
 
                 try:
                     Kota_III = Isi_III["kotaProyek"]  
@@ -1678,6 +1804,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota III: " + Kota_III)
                 except KeyError:
                     print("- Kota III: KeyError")
+                    Log_Error.update({"Kota III":"KeyError"})
 
                 try:
                     Provinsi_III = Isi_III["provinsiProyek"]  
@@ -1686,6 +1813,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi III: " +  Provinsi_III)
                 except KeyError:
                     print("- Provinsi III: KeyError")
+                    Log_Error.update({"Provinsi III":"KeyError"})
 
                 try:
                     Negara_III = Isi_III["negaraProyek"]  
@@ -1694,6 +1822,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara III : " + Negara_III)
                 except KeyError:
                     print("- Negara III: KeyError")
+                    Log_Error.update({"Negara III":"KeyError"})
 
                 try:
                     Periode_III = Isi_III["durasi"]  
@@ -1701,11 +1830,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_Periode_III = Select(driver.find_element(By.ID, ID_Periode_III))
                     try:
                         Select_Periode_III.select_by_visible_text(Periode_III)
-                        print("- Periode_III: " + Periode_III)
+                        print("- Periode III: " + Periode_III)
                     except NSEE:
-                        ("- Periode_III: NSEE")
+                        print("- Periode III: NSEE")
+                        Log_Error.update({"Periode III":"NSEE"})
                 except KeyError:
-                    print("- Periode_III: KeyError")
+                    print("- Periode III: KeyError")
+                    Log_Error.update({"Periode III":"KeyError"})
 
                 try:        
                     Posisi_III = Isi_III["jabatan"]  
@@ -1713,11 +1844,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_Posisi_III = Select(driver.find_element(By.ID, ID_Posisi_III))
                     try:
                         Select_Posisi_III.select_by_visible_text(Posisi_III)
-                        print("- Posisi_III: " + Posisi_III)
+                        print("- Posisi III: " + Posisi_III)
                     except NSEE:
-                        ("- Posisi_III: NSEE")
+                        print("- Posisi III: NSEE")
+                        Log_Error.update({"Posisi III":"NSEE"})
                 except KeyError:
-                    print("- Posisi_III: KeyError")
+                    print("- Posisi III: KeyError")
+                    Log_Error.update({"Posisi III":"KeyError"})
 
                 try:
                     Nilai_III = Isi_III["nilaiProyek"]  
@@ -1728,6 +1861,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Nilai III: " + Nilai_III)
                 except KeyError:
                     print("- Nilai III: KeyError")
+                    Log_Error.update({"Nilai III":"KeyError"})
 
                 try:
                     TanggungJawab_III = Isi_III["nilaiTanggungJawab"]  
@@ -1735,9 +1869,10 @@ def trigger_selenium(req: terimaJSON):
                     Scroll_TanggungJawab_III = driver.find_element(By.ID, ID_TanggungJawab_III)
                     driver.execute_script("arguments[0].scrollIntoView();", Scroll_TanggungJawab_III)
                     driver.find_element(By.ID, ID_TanggungJawab_III).send_keys(TanggungJawab_III)
-                    print("- TanggungJawab III: " + TanggungJawab_III)
+                    print("- Tanggung Jawab III: " + TanggungJawab_III)
                 except KeyError:
-                    print("- TanggungJawab III: KeyError")
+                    print("- Tanggung Jawab III: KeyError")
+                    Log_Error.update({"Tanggung Jawab III":"KeyError"})
                 
                 try:
                     SDM_III = Isi_III["sdmyangTerlibat"]  
@@ -1747,11 +1882,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_SDM_III = Select(driver.find_element(By.ID, ID_SDM_III))
                     try:
                         Select_SDM_III.select_by_visible_text(SDM_III)
-                        print("- SDM_III: " + SDM_III)
+                        print("- SDM III: " + SDM_III)
                     except NSEE:
-                        ("- SDM_III: NSEE")
+                        print("- SDM III: NSEE")
+                        Log_Error.update({"SDM III":"NSEE"})
                 except KeyError:
-                    print("- SDM_III: KeyError")
+                    print("- SDM III: KeyError")
+                    Log_Error.update({"SDM III":"KeyError"})
 
                 try:
                     TingkatSulit_III = Isi_III["tingkatKesulitan"]  
@@ -1761,11 +1898,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_TingkatSulit_III = Select(driver.find_element(By.ID, ID_TingkatSulit_III))
                     try:
                         Select_TingkatSulit_III.select_by_visible_text(TingkatSulit_III)
-                        print("- TingkatSulit III: " + TingkatSulit_III)
+                        print("- Tingkat Sulit III: " + TingkatSulit_III)
                     except NSEE:
-                        ("- TingkatSulit III: NSEE")
+                        print("- Tingkat Sulit III: NSEE")
+                        Log_Error.update({"Tingkat Sulit III":"NSEE"})
                 except KeyError:
-                    print("- TingkatSulit III: KeyError")
+                    print("- Tingkat Sulit III: KeyError")
+                    Log_Error.update({"Tingkat Sulit III":"KeyError"})
 
                 try:
                     NilaiProyek_III = Isi_III["skalaProyek"]  
@@ -1775,11 +1914,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_NilaiProyek_III = Select(driver.find_element(By.ID, ID_NilaiProyek_III))
                     try:
                         Select_NilaiProyek_III.select_by_visible_text(NilaiProyek_III)
-                        print("- NilaiProyek III: " + NilaiProyek_III)
+                        print("- Nilai Proyek III: " + NilaiProyek_III)
                     except NSEE:
-                        ("- NilaiProyek III: NSEE")
+                        print("- Nilai Proyek III: NSEE")
+                        Log_Error.update({"Nilai Proyek III":"NSEE"})
                 except KeyError:
-                    print("- NilaiProyek III: KeyError")
+                    print("- Nilai Proyek III: KeyError")
+                    Log_Error.update({"Nilai Proyek III":"KeyError"})
 
                 try:
                     Uraian_III = Isi_III["uraianSingkatNSPK"]
@@ -1790,6 +1931,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian III: " + Uraian_III)
                 except KeyError:
                     print("- Uraian III: KeyError")
+                    Log_Error.update({"Uraian III":"KeyError"})
 
                 # Kompetisi III 
                 ID_Komp_III = "3_komp" + Row_III
@@ -1808,8 +1950,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W2_III)
                     except NSEE:
                         print("- Komp W2 III: NSEE")
+                        Log_Error.update({"Komp W2 III":"NSEE"})
                 except KeyError:
                     print("- Komp W2 III: KeyError") 
+                    Log_Error.update({"Komp W2 III":"KeyError"})
                 
                 try:
                     Komp_W3_III = Isi_III["klaimKompetensiWtiga"]
@@ -1823,8 +1967,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W3_III)
                     except NSEE:
                         print("- Komp W3 III: NSEE")
+                        Log_Error.update({"Komp W3 III":"NSEE"})
                 except KeyError:
                     print("- Komp W3 III: KeyError") 
+                    Log_Error.update({"Komp W3 III":"KeyError"})
 
                 try:
                     Komp_W4_III = Isi_III["klaimKompetensiWempat"]
@@ -1838,8 +1984,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W4_III)
                     except NSEE:
                         print("- Komp W4 III: NSEE")
+                        Log_Error.update({"Komp W4 III":"NSEE"})
                 except KeyError:
                     print("- Komp W4 III: KeyError") 
+                    Log_Error.update({"Komp W4 III":"KeyError"})
 
                 try:
                     Komp_P6_III = Isi_III["klaimKompetensiPenam"]
@@ -1853,8 +2001,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P6_III)
                     except NSEE:
                         print("- Komp P6 III: NSEE")
+                        Log_Error.update({"Komp P6 III":"NSEE"})
                 except KeyError:
                     print("- Komp P6 III: KeyError") 
+                    Log_Error.update({"Komp P6 III":"KeyError"})
 
                 try:
                     Komp_P7_III = Isi_III["klaimKompetensiPtujuh"]
@@ -1868,8 +2018,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P7_III)
                     except NSEE:
                         print("- Komp P7 III: NSEE")
+                        Log_Error.update({"Komp P7 III":"NSEE"})
                 except KeyError:
                     print("- Komp P7 III: KeyError") 
+                    Log_Error.update({"Komp P7 III":"KeyError"})
 
                 try:
                     Komp_P8_III = Isi_III["klaimKompetensiPdelapan"]
@@ -1883,8 +2035,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P8_III)
                     except NSEE:
                         print("- Komp P8 III: NSEE")
+                        Log_Error.update({"Komp P8 III":"NSEE"})
                 except KeyError:
                     print("- Komp P8 III: KeyError") 
+                    Log_Error.update({"Komp P8 III":"KeyError"})
 
                 try:
                     Komp_P9_III = Isi_III["klaimKompetensiPsembilan"]
@@ -1898,8 +2052,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P9_III)
                     except NSEE:
                         print("- Komp P9 III: NSEE")
+                        Log_Error.update({"Komp P9  III":"NSEE"})
                 except KeyError:
                     print("- Komp P9 III: KeyError") 
+                    Log_Error.update({"Komp P9 III":"KeyError"})
 
                 try:
                     Komp_P10_III = Isi_III["klaimKompetensiPsepuluh"]
@@ -1912,9 +2068,11 @@ def trigger_selenium(req: terimaJSON):
                             action.move_to_element_with_offset(Komp_Find_P10_III, 0, -15).click().perform()
                             print("-", Komp_Value_P10_III)
                     except NSEE:
-                        print("- Komp P10 III: NSEE")    
+                        print("- Komp P10 III: NSEE")  
+                        Log_Error.update({"Komp P10 III":"NSEE"})  
                 except KeyError:
                     print("- Komp P10 III: KeyError") 
+                    Log_Error.update({"Komp P10 III":"KeyError"})
 
                 try:
                     Komp_P11_III = Isi_III["klaimKompetensiPsebelas"]
@@ -1928,8 +2086,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P11_III)
                     except NSEE:
                         print("- Komp P11 III: NSEE")
+                        Log_Error.update({"Komp P11 III":"NSEEE"})
                 except KeyError:
                     print("- Komp P11 III: KeyError") 
+                    Log_Error.update({"Komp P11 III":"KeyError"})
 
                 #End/retry point of loop
                 Counter_III += 1
@@ -1990,14 +2150,16 @@ def trigger_selenium(req: terimaJSON):
                     print("- Instansi IV: " + Instansi_IV)
                 except KeyError:
                     print("- Instansi IV: KeyError")
+                    Log_Error.update({"Instansi IV":"KeyError"})
 
                 try:
                     NamaProyek_IV = Isi_IV["namaMataAjaran"]  
                     ID_NamaProyek_IV = "4_namaproyek" + Row_IV
                     driver.find_element(By.ID, ID_NamaProyek_IV).send_keys(NamaProyek_IV)
-                    print("- NamaProyek IV: " + NamaProyek_IV)
+                    print("- Nama Proyek IV: " + NamaProyek_IV)
                 except KeyError:
-                    print("- NamaProyek IV: KeyError")
+                    print("- Nama Proyek IV: KeyError")
+                    Log_Error.update({"Nama Proyek IV":"KeyError"})
                 
                 try:
                     Kota_IV = Isi_IV["kota"]  
@@ -2006,14 +2168,16 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota IV: " + Kota_IV)
                 except KeyError:
                     print("- Kota IV: KeyError")
+                    Log_Error.update({"Kota IV":"KeyError"})
 
                 try:
                     Provinsi_IV = Isi_IV["provinsi"]  
                     ID_Provinsi_IV = "4_provinsi" + Row_IV
                     driver.find_element(By.ID, ID_Provinsi_IV).send_keys(Provinsi_IV)
-                    print("- Provinsi I: " + Provinsi_IV)
+                    print("- Provinsi IV: " + Provinsi_IV)
                 except KeyError:
                     print("- Provinsi IV: KeyError")
+                    Log_Error.update({"Provinsi IV":"KeyError"})
 
                 try:
                     Negara_IV = Isi_IV["negara"]  
@@ -2022,6 +2186,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara IV: " + Negara_IV)
                 except KeyError:
                     print("- Negara IV: KeyError")
+                    Log_Error.update({"Negara IV":"KeyError"})
 
                 try:
                     Periode_IV = Isi_IV["perioda"]  
@@ -2031,9 +2196,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Periode_IV.select_by_visible_text(Periode_IV)
                         print("- Periode IV: " + Periode_IV)
                     except NSEE:
-                        ("- Periode IV: NSEE")
+                        print("- Periode IV: NSEE")
+                        Log_Error.update({"Periode IV":"NSEE"})
                 except KeyError:
                     print("- Periode IV: KeyError")
+                    Log_Error.update({"Periode IV":"KeyError"})
 
                 try:
                     Posisi_IV = Isi_IV["jabatandiPerguruan"]  
@@ -2043,9 +2210,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Posisi_IV.select_by_visible_text(Posisi_IV)
                         print("- Posisi IV: " + Posisi_IV)
                     except NSEE:
-                        ("- Posisi IV: NSEE")
+                        print("- Posisi IV: NSEE")
+                        Log_Error.update({"Posisi IV":"NSEE"})
                 except KeyError:
                     print("- Posisi IV: KeyError")
+                    Log_Error.update({"Posisi IV":"KeyError"})
 
                 try:
                     JumlahSKS_IV = Isi_IV["jumlahWaktu"]  
@@ -2053,11 +2222,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_JumlahSKS_IV = Select(driver.find_element(By.ID, ID_JumlahSKS_IV))
                     try:
                         Select_JumlahSKS_IV.select_by_visible_text(JumlahSKS_IV)
-                        print("- JumlahSKS IV: " + JumlahSKS_IV)
+                        print("- Jumlah SKS IV: " + JumlahSKS_IV)
                     except NSEE:
-                        ("- JumlahSKS IV: NSEE")
+                        print("- Jumlah SKS IV: NSEE")
+                        Log_Error.update({"Jumlah SKS IV":"NSEE"})
                 except KeyError:
-                    print("- JumlahSKS IV: KeyError")
+                    print("- Jumlah SKS IV: KeyError")
+                    Log_Error.update({"Jumlah SKS IV":"KeyError"})
 
                 try:
                     Uraian_IV = Isi_IV["uraianSingkatAktifitas"]  
@@ -2068,6 +2239,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian IV: " + Uraian_IV)
                 except KeyError:
                     print("- Uraian IV: KeyError")
+                    Log_Error.update({"Uraian IV":"KeyError"})
 
                 # Kompetisi IV 
                 ID_Komp_IV = "4_komp" + Row_IV
@@ -2086,8 +2258,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P5_IV)
                     except NSEE:
                         print("- Komp P5 IV: NSEE")
+                        Log_Error.update({"Komp P5 IV":"NSEE"})
                 except KeyError:
                     print("- Komp P5 IV: KeyError") 
+                    Log_Error.update({"Komp P5 IV":"KeyError"})
 
                 #End/retry point of loop
                 Counter_IV += 1
@@ -2148,6 +2322,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Judul V1: " + Judul_V1)
                 except KeyError:
                     print("- Judul V1: KeyError")
+                    Log_Error.update({"Judul V1":"KeyError"})
 
                 try:
                     Media_V1 = Isi_V1["namaMedia"]  
@@ -2156,6 +2331,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Media V1: " + Media_V1)
                 except KeyError:
                     print("- Media V1: KeyError")
+                    Log_Error.update({"Media V1":"KeyError"})
 
                 try:
                     Kota_V1 = Isi_V1["kota"]  
@@ -2164,6 +2340,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota V1: " + Kota_V1)
                 except KeyError:
                     print("- Kota V1: KeyError")
+                    Log_Error.update({"Kota V1":"KeyError"})
 
                 try:
                     Provinsi_V1 = Isi_V1["provinsi"]  
@@ -2172,6 +2349,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi V1: " + Provinsi_V1)
                 except KeyError:
                     print("- Provinsi V1: KeyError")
+                    Log_Error.update({"Provinsi V1":"KeyError"})
 
                 try:
                     Negara_V1 = Isi_V1["negara"]  
@@ -2180,6 +2358,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara V1: " + Negara_V1)
                 except KeyError:
                     print("- Negara V1: KeyError")
+                    Log_Error.update({"Negara V1":"KeyError"})
 
                 try:
                     BulanPublikasi_V1 = Isi_V1["bulanTerbit"]  
@@ -2187,11 +2366,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_BulanPublikasi_V1 = Select(driver.find_element(By.ID, ID_BulanPublikasi_V1))
                     try:
                         Select_BulanPublikasi_V1.select_by_visible_text(BulanPublikasi_V1)
-                        print("- BulanPublikasi_V1: " + BulanPublikasi_V1)
+                        print("- Bulan Publikasi V1: " + BulanPublikasi_V1)
                     except NSEE:
-                        ("- BulanPublikasi_V1: NSEE")
+                        print("- Bulan Publikasi V1: NSEE")
+                        Log_Error.update({"Bulan Publikasi V1":"NSEE"})
                 except KeyError:
-                    print("- BulanPublikasi_V1: KeyError")
+                    print("- Bulan Publikasi: KeyError")
+                    Log_Error.update({"Bulan Publikasi V1":"KeyError"})
 
                 try:
                     TahunPublikasi_V1 = Isi_V1["tahunTerbit"]  
@@ -2200,6 +2381,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- TahunPublikasi V1: " + TahunPublikasi_V1)
                 except KeyError:
                     print("- Tahun Publikasi V1: KeyError")
+                    Log_Error.update({"Tahun Publikasi V1":"KeyError"})
 
                 try:
                     TingkatMedia_V1 = Isi_V1["tingkatMediaPublikasi"]  
@@ -2207,11 +2389,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_TingkatMedia_V1 = Select(driver.find_element(By.ID, ID_TingkatMedia_V1))
                     try:   
                         Select_TingkatMedia_V1.select_by_visible_text(TingkatMedia_V1)
-                        print("- TingkatMedia V1: " + TingkatMedia_V1)
+                        print("- Tingkat Media V1: " + TingkatMedia_V1)
                     except NSEE:
-                        ("- TingkatMedia V1: NSEE")
+                        print("- Tingkat Media V1: NSEE")
+                        Log_Error.update({"Tingkat Media V1":"NSEE"})
                 except KeyError:
-                    print("- TingkatMedia V1: KeyError")
+                    print("- Tingkat Media V1: KeyError")
+                    Log_Error.update({"Tingkat Media V1":"KeyError"})
 
                 try:
                     Uraian_V1 = Isi_V1["uraianSingkatMateriPublikasi"]  
@@ -2220,6 +2404,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian V1: " + Uraian_V1)
                 except KeyError:
                     print("- Uraian V1: KeyError")
+                    Log_Error.update({"Uraian V1":"KeyError"})
 
                 try:        
                     Tingkat_V1 = Isi_V1["tingkatKesulitanPublikasi"]  
@@ -2229,9 +2414,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Tingkat_V1.select_by_visible_text(Tingkat_V1)
                         print("- Tingkat V1: " + Tingkat_V1)
                     except NSEE:
-                        ("- Tingkat V1: NSEE")
+                        print("- Tingkat V1: NSEE")
+                        Log_Error.update({"Tingkat V1":"NSEE"})
                 except KeyError:
                     print("- Tingkat V1: KeyError")
+                    Log_Error.update({"Tingkat V1":"KeyError"})
 
                 # Kompetisi V1 
                 ID_Komp_V1 = "51_komp" + Row_V1
@@ -2250,8 +2437,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W4_V1)
                     except NSEE:
                         print("- Komp W4 V1: NSEE")
+                        Log_Error.update({"Komp W4 V1":"NSEE"})
                 except KeyError:
                     print("- Komp W4 V1: KeyError") 
+                    Log_Error.update({"Komp W4 V1":"KeyError"})
 
                 #End/retry point of loop
                 Counter_V1 += 1
@@ -2312,6 +2501,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Judul V2: " + Judul_V2)
                 except KeyError:
                     print("- Judul V2: KeyError")
+                    Log_Error.update({"Judul V2":"KeyError"})
 
                 try:
                     Seminar_V2 = Isi_V2["namaSeminar"] 
@@ -2320,6 +2510,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Seminar V2: " + Seminar_V2)
                 except KeyError:
                     print("- Seminar V2: KeyError")
+                    Log_Error.update({"Seminar V2":"KeyError"})
 
                 try:
                     Penyelenggara_V2 = Isi_V2[""] 
@@ -2328,6 +2519,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Penyelenggara V2: " + Penyelenggara_V2)
                 except KeyError:
                     print("- Penyelenggara: KeyError")
+                    Log_Error.update({"Penyelenggara V2":"KeyError"})
                 
                 try:
                     Kota_V2 = Isi_V2["kota"] 
@@ -2336,6 +2528,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota V2: " + Kota_V2)
                 except KeyError:
                     print("- Kota V2: KeyError")
+                    Log_Error.update({"Kota V2":"KeyError"})
 
                 try:
                     Provinsi_V2 = Isi_V2["provinsi"] 
@@ -2344,6 +2537,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi V2: " + Provinsi_V2)
                 except KeyError:
                     print("- Provinsi V2: KeyError")
+                    Log_Error.update({"Provinsi V2":"KeyError"})
 
                 try:
                     Negara_V2 = Isi_V2["negara"] 
@@ -2352,6 +2546,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara V2: " + Negara_V2)
                 except KeyError:
                     print("- Negara V2: KeyError")
+                    Log_Error.update({"Negara V2":"KeyError"})
 
                 try:        
                     BulanSeminar_V2 = Isi_V2["bulanPenyelenggaraSeminar"] 
@@ -2359,19 +2554,22 @@ def trigger_selenium(req: terimaJSON):
                     Select_BulanSeminar_V2 = Select(driver.find_element(By.ID, ID_BulanSeminar_V2))
                     try:
                         Select_BulanSeminar_V2.select_by_visible_text(BulanSeminar_V2)
-                        print("- BulanSeminar_V2: " + BulanSeminar_V2)
+                        print("- Bulan Seminar V2: " + BulanSeminar_V2)
                     except NSEE:
-                        ("- BulanSeminar_V2: NSEE")
+                        print("- Bulan Seminar V2: NSEE")
+                        Log_Error.update({"Bulan Seminar V2":"NSEE"})
                 except KeyError:
-                    print("- BulanSeminar_V2: KeyError")
+                    print("- Bulan Seminar V2: KeyError")
+                    Log_Error.update({"Bulan Seminar V2":"KeyError"})
 
                 try:
                     TahunSeminar_V2 = Isi_V2["tahunPenyelenggaraSeminar"] 
                     ID_TahunSeminar_V2 = "52_startyear" + Row_V2
                     driver.find_element(By.ID, ID_TahunSeminar_V2).send_keys(TahunSeminar_V2)
-                    print("- TahunSeminar V2: " + TahunSeminar_V2)
+                    print("- Tahun Seminar V2: " + TahunSeminar_V2)
                 except KeyError:
-                    print("- TahunSeminar V2: KeyError")
+                    print("- Tahun Seminar V2: KeyError")
+                    Log_Error.update({"Tahun Seminar V2":"KeyError"})
                 
                 try:
                     TingkatSeminar_V2 = Isi_V2["tingkatSeminar"] 
@@ -2381,9 +2579,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_TingkatSeminar_V2.select_by_visible_text(TingkatSeminar_V2)
                         print("- TingkatSeminar V2: " + TingkatSeminar_V2)
                     except NSEE:
-                        ("- TingkatSeminar V2: NSEE")
+                        print("- TingkatSeminar V2: NSEE")
+                        Log_Error.update({"Tingkat Seminar V2":"NSEE"})
                 except KeyError:
-                    print("- TingkatSeminar V2: KeyError")
+                    print("- Tingkat Seminar V2: KeyError")
+                    Log_Error.update({"Tingkat Seminar V2":"KeyError"})
 
                 try:
                     Uraian_V2 = Isi_V2["uraianSingkatMateriSeminar"] 
@@ -2392,6 +2592,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian V2: " + Uraian_V2)
                 except KeyError:
                     print("- Uraian V2: KeyError")
+                    Log_Error.update({"Uraian V2":"KeyError"})
 
                 try:        
                     Tingkat_V2 = Isi_V2["tingkatKesulitan"] 
@@ -2401,9 +2602,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Tingkat_V2.select_by_visible_text(Tingkat_V2)
                         print("- Tingkat V2: " + Tingkat_V2)
                     except NSEE:
-                        ("- Tingkat V2: NSEE")
+                        print("- Tingkat V2: NSEE")
+                        Log_Error.update({"Tingkat V2":"NSEE"})
                 except KeyError:
                     print("- Tingkat V2: KeyError")
+                    Log_Error.update({"Tingkat V2":"KeyError"})
 
                 # Kompetisi V2 
                 ID_Komp_V2 = "52_komp" + Row_V2
@@ -2422,8 +2625,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W4_V2)
                     except NSEE:
                         print("- Komp W4 V2: NSEE")
+                        Log_Error.update({"Komp W4 V2":"NSEE"})
                 except KeyError:
                     print("- Komp W4 V2: KeyError")
+                    Log_Error.update({"Komp W4 V2":"KeyError"})
 
                 #End/retry point of loop
                 Counter_V2 += 1
@@ -2481,9 +2686,10 @@ def trigger_selenium(req: terimaJSON):
                     NamaSeminar_V3 = Isi_V3["namaSeminar"] 
                     ID_NamaSeminar_V3 = "53_nama" + Row_V3
                     driver.find_element(By.ID, ID_NamaSeminar_V3).send_keys(NamaSeminar_V3)
-                    print("- NamaSeminar V3: " + NamaSeminar_V3)
+                    print("- Nama Seminar V3: " + NamaSeminar_V3)
                 except KeyError:
-                    print("- NamaSeminar V3: KeyError")
+                    print("- Nama Seminar V3: KeyError")
+                    Log_Error.update({"Nama Seminar V3":"KeyError"})
 
                 try:        
                     Penyelenggara_V3 = Isi_V3["namaPenyelenggara"] 
@@ -2492,6 +2698,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Penyelenggara V3: " + Penyelenggara_V3)
                 except KeyError:
                     print("- Penyelenggara V3: KeyError")
+                    Log_Error.update({"Penyelenggara V3":"KeyError"})
 
                 try:
                     Kota_V3 = Isi_V3["kota"] 
@@ -2500,6 +2707,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Kota V3: " + Kota_V3)
                 except KeyError:
                     print("- Kota V3: KeyError")
+                    Log_Error.update({"Kota V3":"KeyError"})
 
                 try:
                     Provinsi_V3 = Isi_V3["provinsi"] 
@@ -2508,6 +2716,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Provinsi V3: " + Provinsi_V3)
                 except KeyError:
                     print("- Provinsi V3: KeyError")
+                    Log_Error.update({"Provinsi V3":"KeyError"})
 
                 try:
                     Negara_V3 = Isi_V3["negara"] 
@@ -2516,6 +2725,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Negara V3: " + Negara_V3)
                 except KeyError:
                     print("- Negara V3: KeyError")
+                    Log_Error.update({"Negara V3":"KeyError"})
 
                 try:        
                     BulanSeminar_V3 = Isi_V3["bulanPenyelenggaraSeminar"] 
@@ -2523,19 +2733,22 @@ def trigger_selenium(req: terimaJSON):
                     Select_BulanSeminar_V3 = Select(driver.find_element(By.ID, ID_BulanSeminar_V3))
                     try:
                         Select_BulanSeminar_V3.select_by_visible_text(BulanSeminar_V3)
-                        print("- BulanSeminar V3: " + BulanSeminar_V3)
+                        print("- Bulan Seminar V3: " + BulanSeminar_V3)
                     except NSEE:
-                        ("- BulanSeminar V3: NSEE")
+                        print("- Bulan Seminar V3: NSEE")
+                        Log_Error.update({"Bulan Seminar V3":"NSEE"})
                 except KeyError:
-                    print("- BulanSeminar V3: KeyError")
+                    print("- Bulan Seminar V3: KeyError")
+                    Log_Error.update({"Bulan Seminar V3":"KeyError"})
 
                 try:        
                     TahunSeminar_V3 = Isi_V3["tahunPenyelenggaraSeminar"] 
                     ID_TahunSeminar_V3 = "53_startyear" + Row_V3
                     driver.find_element(By.ID, ID_TahunSeminar_V3).send_keys(TahunSeminar_V3)
-                    print("- TahunSeminar V3: " + TahunSeminar_V3)
+                    print("- Tahun Seminar V3: " + TahunSeminar_V3)
                 except KeyError:
-                    print("- TahunSeminar V3: KeyError")
+                    print("- Tahun Seminar V3: KeyError")
+                    Log_Error.update({"Tahun Seminar V3":"KeyError"})
 
                 try:        
                     TingkatSeminar_V3 = Isi_V3[""] 
@@ -2543,11 +2756,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_TingkatSeminar_V3 = Select(driver.find_element(By.ID, ID_TingkatSeminar_V3))
                     try:
                         Select_TingkatSeminar_V3.select_by_visible_text(TingkatSeminar_V3)
-                        print("- TingkatSeminar V3: " + TingkatSeminar_V3)
+                        print("- Tingkat Seminar V3: " + TingkatSeminar_V3)
                     except NSEE:
-                        ("- TingkatSeminar V3: NSEE")
+                        print("- Tingkat Seminar V3: NSEE")
+                        Log_Error.update({"Tingkat Seminar V3":"NSEE"})
                 except KeyError:
-                    print("- TingkatSeminar V3: KeyError")
+                    print("- Tingkat Seminar V3: KeyError")
+                    Log_Error.update({"Tingkat Seminar V3":"KeyError"})
 
                 try:
                     Uraian_V3 = Isi_V3["uraianSingkatMateriSeminar"] 
@@ -2556,6 +2771,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian V3: " + Uraian_V3)
                 except KeyError:
                     print("- Uraian V3: KeyError")
+                    Log_Error.update({"Uraian V3":"KeyError"})
 
                 try:        
                     Tingkat_V3 = Isi_V3["tingkatKesulitan"] 
@@ -2565,9 +2781,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Tingkat_V3.select_by_visible_text(Tingkat_V3)
                         print("- Tingkat V3: " + Tingkat_V3)
                     except NSEE:
-                        ("- Tingkat V3: NSEE")
+                        print("- Tingkat V3: NSEE")
+                        Log_Error.update({"Tingkat V3":"NSEE"})
                 except KeyError:
                     print("- Tingkat V3: KeyError")
+                    Log_Error.update({"Tingkat V3":"NSEE"})
 
                 # Kompetisi V3 
                 
@@ -2587,8 +2805,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W2_V3)
                     except NSEE:
                         print("- Komp W2 V3: NSEE")  
+                        Log_Error.update({"Komp W2 V3":"NSEE"})
                 except KeyError:
                     print("- Komp W2 V3: KeyError")
+                    Log_Error.update({"Komp W2 V3":"KeyError"})
 
                 #End/retry point of loop
                 Counter_V3 += 1
@@ -2649,6 +2869,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Judul V4: " + Judul_V4)
                 except KeyError:
                     print("- Judul V4: KeyError")
+                    Log_Error.update({"Judul V4":"KeyError"})
         
                 try:        
                     Bulan_V4 = Isi_V4["bulan"] 
@@ -2658,9 +2879,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Bulan_V4.select_by_visible_text(Bulan_V4)
                         print("- Bulan V4: " + Bulan_V4)
                     except NSEE:
-                        ("- Bulan V4: NSEE")
+                        print("- Bulan V4: NSEE")
+                        Log_Error.update({"Bulan V4":"NSEE"})
                 except KeyError:
                     print("- Bulan V4: KeyError")
+                    Log_Error.update({"Bulan V4":"KeyError"})
 
                 try:
                     Tahun_V4 = Isi_V4["tahun"] 
@@ -2669,14 +2892,16 @@ def trigger_selenium(req: terimaJSON):
                     print("- Tahun V4: " + Tahun_V4)
                 except KeyError:
                     print("- Tahun V4: KeyError")
+                    Log_Error.update({"Tahun V4":"KeyError"})
 
                 try:
                     MediaPublikasi_V4 = Isi_V4["mediaPublikasi"]
                     ID_MediaPublikasi_V4 = "54_media_publikasi" + Row_V4
                     driver.find_element(By.ID, ID_MediaPublikasi_V4).send_keys(MediaPublikasi_V4)
-                    print("- MediaPublikasi V4: " + MediaPublikasi_V4)
+                    print("- Media Publikasi V4: " + MediaPublikasi_V4)
                 except KeyError:
-                    print("- MediaPublikasi V4: KeyError")
+                    print("- Media Publikasi V4: KeyError")
+                    Log_Error.update({"Media Publikasi V4":"KeyError"})
 
                 try:        
                     TingkatMedia_V4 = Isi_V4[""] 
@@ -2684,11 +2909,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_TingkatMedia_V4 = Select(driver.find_element(By.ID, ID_TingkatMedia_V4))
                     try:    
                         Select_TingkatMedia_V4.select_by_visible_text(TingkatMedia_V4)
-                        print("- TingkatMedia V4: " + TingkatMedia_V4)
+                        print("- Tingkat Media V4: " + TingkatMedia_V4)
                     except NSEE:
-                        ("- TingkatMedia V4: NSEE")
+                        print("- Tingkat Media V4: NSEE")
+                        Log_Error.update({"Tingkat Media V4":"NSEE"})
                 except KeyError:
-                    print("- TingkatMedia V4: KeyError")
+                    print("- Tingkat Media V4: KeyError")
+                    Log_Error.update({"Tingkat Media V4":"KeyError"})
 
                 try:
                     Uraian_V4 = Isi_V4["uraianSingkatInovasi"] 
@@ -2697,6 +2924,7 @@ def trigger_selenium(req: terimaJSON):
                     print("- Uraian V4: " + Uraian_V4)
                 except KeyError:
                     print("- Uraian V4: KeyError")
+                    Log_Error.update({"Uraian V4":"KeyError"})
 
                 try:        
                     Tingkat_V4 = Isi_V4["tingkatKesulitanInovasi"] 
@@ -2706,9 +2934,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Tingkat_V4.select_by_visible_text(Tingkat_V4)
                         print("- Tingkat V4: " + Tingkat_V4)
                     except NSEE:
-                        ("- Tingkat V4: NSEE")
+                        print("- Tingkat V4: NSEE")
+                        Log_Error.update({"Tingkat V4":"NSEE"})
                 except KeyError:
                     print("- Tingkat V4: KeyError")
+                    Log_Error.update({"Tingkat V4":"KeyError"})
 
                 # Kompetisi V4 
                 ID_Komp_V4 = "54_komp" + Row_V4
@@ -2727,8 +2957,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_P6_V4)
                     except NSEE:
                         print("- Komp P6 V4: NSEE")
+                        Log_Error.update({"Komp P6 V4":"NSEE"})
                 except KeyError:
                     print("- Komp P6 V4: KeyError")
+                    Log_Error.update({"Komp P6 V4":"KeyError"})
 
                 #End/retry point of loop
                 Counter_V4 += 1
@@ -2789,18 +3021,20 @@ def trigger_selenium(req: terimaJSON):
                     print("- Bahasa VI: " + Bahasa_VI)
                 except KeyError:
                     print("- Bahasa VI: KeyError")
-
+                    Log_Error.update({"Bahasa VI":"KeyError"})
                 try:        
                     JenisBahasa_VI = Isi_VI["jenisBahasa"] 
                     ID_JenisBahasa_VI = "6_jenisbahasa" + Row_VI
                     Select_JenisBahasa_VI = Select(driver.find_element(By.ID, ID_JenisBahasa_VI))
                     try:
                         Select_JenisBahasa_VI.select_by_visible_text(JenisBahasa_VI)
-                        print("- JenisBahasa VI: " + JenisBahasa_VI)
+                        print("- Jenis Bahasa VI: " + JenisBahasa_VI)
                     except NSEE:
-                        ("- JenisBahasa VI: NSEE")
+                        print("- Jenis Bahasa VI: NSEE")
+                        Log_Error.update({"Jenis Bahasa VI":"KeyError"})
                 except KeyError:
-                    print("- JenisBahasa VI: KeyError")
+                    print("- Jenis Bahasa VI: KeyError")
+                    Log_Error.update({"Jenis Bahasa VI":"KeyError"})
 
                 try:        
                     Verbal_VI = Isi_VI["kemampuanVerbalBahasa"] 
@@ -2810,9 +3044,11 @@ def trigger_selenium(req: terimaJSON):
                         Select_Verbal_VI.select_by_visible_text(Verbal_VI)
                         print("- Verbal VI: " + Verbal_VI)
                     except NSEE:
-                        ("- Verbal VI: NSEE")
+                        print("- Verbal VI: NSEE")
+                        Log_Error.update({"Verbal VI":"NSEE"})
                 except KeyError:
                     print("- Verbal VI: KeyError")
+                    Log_Error.update({"Verbal VI":"KeyError"})
 
                 try:
                     JenisTulisan_VI = Isi_VI["jenisTulisan"] 
@@ -2820,11 +3056,13 @@ def trigger_selenium(req: terimaJSON):
                     Select_JenisTulisan_VI = Select(driver.find_element(By.ID, ID_JenisTulisan_VI))
                     try:
                         Select_JenisTulisan_VI.select_by_visible_text(JenisTulisan_VI)
-                        print("- JenisTulisan VI: " + JenisTulisan_VI)
+                        print("- Jenis Tulisan VI: " + JenisTulisan_VI)
                     except NSEE:
-                        ("- JenisTulisan VI: NSEE")
+                        print("- Jenis Tulisan VI: NSEE")
+                        Log_Error.update({"Jenis Tulisan VI":"NSEE"})
                 except KeyError:
-                    print("- JenisTulisan VI: KeyError")
+                    print("- Jenis Tulisan VI: KeyError")
+                    Log_Error.update({"Jenis Tulisan VI":"KeyError"})
                 
 
                 # Kompetisi VI 
@@ -2844,8 +3082,10 @@ def trigger_selenium(req: terimaJSON):
                             print("-", Komp_Value_W4_VI)
                     except NSEE:
                         print("- Komp W4 VI: NSEE")
+                        Log_Error.update({"Komp W4 VI":"NSEE"})
                 except KeyError:
                     print("- Komp W4 VI: KeyError")
+                    Log_Error.update({"Komp W4 VI":"KeyError"})
 
                 #End/retry point of loop
                 Counter_VI += 1
@@ -2884,7 +3124,6 @@ def trigger_selenium(req: terimaJSON):
         print("TypeError:",str(e))
         error_message = "Error Occured = " + str(e)
         raise HTTPException(status_code=400, detail=error_message)
-        # return {"Error:": "Error Occured"}
     
 #uvicorn Selen-Isian-UPD-API:app --reload
 

@@ -516,7 +516,7 @@ def FormI3():
                 Select_Jenis_I3.select_by_visible_text(Jenis_I3)
                 print("- Jenis I3: " + Jenis_I3)
             except NSEE:
-                ("- Jenis I3: NSEE")
+                print("- Jenis I3: NSEE")
         except KeyError:
             print("- Jenis I3: KeyError")
 
@@ -1401,7 +1401,7 @@ def FormII1():
                 Select_Hubungan_II1.select_by_visible_text(Hubungan_II1)
                 print("- Hubungan II1: " + Hubungan_II1)
             except NSEE:
-                ("- Hubungan II1: NSEE")
+                print("- Hubungan II1: NSEE")
         except KeyError:
             print("- Hubungan II1: KeyError")
 
@@ -1525,7 +1525,7 @@ def FormIII():
                 Select_BulanMulai_III.select_by_visible_text(BulanMulai_III)
                 print("- BulanMulai III: " + BulanMulai_III)
             except NSEE:
-                ("- BulanMulai III: NSEE")
+                print("- BulanMulai III: NSEE")
         except KeyError:
             print("- BulanMulai III: KeyError")
 
@@ -1552,7 +1552,7 @@ def FormIII():
                     Select_BulanSelesai_III.select_by_visible_text(BulanSelesai_III)
                     print("- BulanSelesai III: " + BulanSelesai_III)
                 except NSEE:
-                    ("- BulanSelesai III: NSEE")
+                    print("- BulanSelesai III: NSEE")
             except KeyError:
                 print("- BulanSelesai III: KeyError")    
 
@@ -1628,7 +1628,7 @@ def FormIII():
                 Select_Periode_III.select_by_visible_text(Periode_III)
                 print("- Periode_III: " + Periode_III)
             except NSEE:
-                ("- Periode_III: NSEE")
+                print("- Periode_III: NSEE")
         except KeyError:
             print("- Periode_III: KeyError")
 
@@ -1640,7 +1640,7 @@ def FormIII():
                 Select_Posisi_III.select_by_visible_text(Posisi_III)
                 print("- Posisi_III: " + Posisi_III)
             except NSEE:
-                ("- Posisi_III: NSEE")
+                print("- Posisi_III: NSEE")
         except KeyError:
             print("- Posisi_III: KeyError")
 
@@ -1674,7 +1674,7 @@ def FormIII():
                 Select_SDM_III.select_by_visible_text(SDM_III)
                 print("- SDM_III: " + SDM_III)
             except NSEE:
-                ("- SDM_III: NSEE")
+                print("- SDM_III: NSEE")
         except KeyError:
             print("- SDM_III: KeyError")
 
@@ -1688,7 +1688,7 @@ def FormIII():
                 Select_TingkatSulit_III.select_by_visible_text(TingkatSulit_III)
                 print("- TingkatSulit III: " + TingkatSulit_III)
             except NSEE:
-                ("- TingkatSulit III: NSEE")
+                print("- TingkatSulit III: NSEE")
         except KeyError:
             print("- TingkatSulit III: KeyError")
 
@@ -1702,7 +1702,7 @@ def FormIII():
                 Select_NilaiProyek_III.select_by_visible_text(NilaiProyek_III)
                 print("- NilaiProyek III: " + NilaiProyek_III)
             except NSEE:
-                ("- NilaiProyek III: NSEE")
+                print("- NilaiProyek III: NSEE")
         except KeyError:
             print("- NilaiProyek III: KeyError")
 
@@ -1956,7 +1956,7 @@ def FormIV():
                 Select_Periode_IV.select_by_visible_text(Periode_IV)
                 print("- Periode IV: " + Periode_IV)
             except NSEE:
-                ("- Periode IV: NSEE")
+                print("- Periode IV: NSEE")
         except KeyError:
             print("- Periode IV: KeyError")
 
@@ -1968,7 +1968,7 @@ def FormIV():
                 Select_Posisi_IV.select_by_visible_text(Posisi_IV)
                 print("- Posisi IV: " + Posisi_IV)
             except NSEE:
-                ("- Posisi IV: NSEE")
+                print("- Posisi IV: NSEE")
         except KeyError:
             print("- Posisi IV: KeyError")
 
@@ -1980,7 +1980,7 @@ def FormIV():
                 Select_JumlahSKS_IV.select_by_visible_text(JumlahSKS_IV)
                 print("- JumlahSKS IV: " + JumlahSKS_IV)
             except NSEE:
-                ("- JumlahSKS IV: NSEE")
+                print("- JumlahSKS IV: NSEE")
         except KeyError:
             print("- JumlahSKS IV: KeyError")
 
@@ -2114,7 +2114,7 @@ def FormV1():
                 Select_BulanPublikasi_V1.select_by_visible_text(BulanPublikasi_V1)
                 print("- BulanPublikasi_V1: " + BulanPublikasi_V1)
             except NSEE:
-                ("- BulanPublikasi_V1: NSEE")
+                print("- BulanPublikasi_V1: NSEE")
         except KeyError:
             print("- BulanPublikasi_V1: KeyError")
 
@@ -2134,7 +2134,7 @@ def FormV1():
                 Select_TingkatMedia_V1.select_by_visible_text(TingkatMedia_V1)
                 print("- TingkatMedia V1: " + TingkatMedia_V1)
             except NSEE:
-                ("- TingkatMedia V1: NSEE")
+                print("- TingkatMedia V1: NSEE")
         except KeyError:
             print("- TingkatMedia V1: KeyError")
 
@@ -2154,7 +2154,7 @@ def FormV1():
                 Select_Tingkat_V1.select_by_visible_text(Tingkat_V1)
                 print("- Tingkat V1: " + Tingkat_V1)
             except NSEE:
-                ("- Tingkat V1: NSEE")
+                print("- Tingkat V1: NSEE")
         except KeyError:
             print("- Tingkat V1: KeyError")
 
@@ -2286,7 +2286,7 @@ def FormV2():
                 Select_BulanSeminar_V2.select_by_visible_text(BulanSeminar_V2)
                 print("- BulanSeminar_V2: " + BulanSeminar_V2)
             except NSEE:
-                ("- BulanSeminar_V2: NSEE")
+                print("- BulanSeminar_V2: NSEE")
         except KeyError:
             print("- BulanSeminar_V2: KeyError")
 
@@ -2306,7 +2306,7 @@ def FormV2():
                 Select_TingkatSeminar_V2.select_by_visible_text(TingkatSeminar_V2)
                 print("- TingkatSeminar V2: " + TingkatSeminar_V2)
             except NSEE:
-                ("- TingkatSeminar V2: NSEE")
+                print("- TingkatSeminar V2: NSEE")
         except KeyError:
             print("- TingkatSeminar V2: KeyError")
 
@@ -2326,7 +2326,7 @@ def FormV2():
                 Select_Tingkat_V2.select_by_visible_text(Tingkat_V2)
                 print("- Tingkat V2: " + Tingkat_V2)
             except NSEE:
-                ("- Tingkat V2: NSEE")
+                print("- Tingkat V2: NSEE")
         except KeyError:
             print("- Tingkat V2: KeyError")
 
@@ -2450,7 +2450,7 @@ def FormV3():
                 Select_BulanSeminar_V3.select_by_visible_text(BulanSeminar_V3)
                 print("- BulanSeminar V3: " + BulanSeminar_V3)
             except NSEE:
-                ("- BulanSeminar V3: NSEE")
+                print("- BulanSeminar V3: NSEE")
         except KeyError:
             print("- BulanSeminar V3: KeyError")
 
@@ -2470,7 +2470,7 @@ def FormV3():
                 Select_TingkatSeminar_V3.select_by_visible_text(TingkatSeminar_V3)
                 print("- TingkatSeminar V3: " + TingkatSeminar_V3)
             except NSEE:
-                ("- TingkatSeminar V3: NSEE")
+                print("- TingkatSeminar V3: NSEE")
         except KeyError:
             print("- TingkatSeminar V3: KeyError")
 
@@ -2490,7 +2490,7 @@ def FormV3():
                 Select_Tingkat_V3.select_by_visible_text(Tingkat_V3)
                 print("- Tingkat V3: " + Tingkat_V3)
             except NSEE:
-                ("- Tingkat V3: NSEE")
+                print("- Tingkat V3: NSEE")
         except KeyError:
             print("- Tingkat V3: KeyError")
 
@@ -2583,7 +2583,7 @@ def FormV4():
                 Select_Bulan_V4.select_by_visible_text(Bulan_V4)
                 print("- Bulan V4: " + Bulan_V4)
             except NSEE:
-                ("- Bulan V4: NSEE")
+                print("- Bulan V4: NSEE")
         except KeyError:
             print("- Bulan V4: KeyError")
 
@@ -2611,7 +2611,7 @@ def FormV4():
                 Select_TingkatMedia_V4.select_by_visible_text(TingkatMedia_V4)
                 print("- TingkatMedia V4: " + TingkatMedia_V4)
             except NSEE:
-                ("- TingkatMedia V4: NSEE")
+                print("- TingkatMedia V4: NSEE")
         except KeyError:
             print("- TingkatMedia V4: KeyError")
 
@@ -2631,7 +2631,7 @@ def FormV4():
                 Select_Tingkat_V4.select_by_visible_text(Tingkat_V4)
                 print("- Tingkat V4: " + Tingkat_V4)
             except NSEE:
-                ("- Tingkat V4: NSEE")
+                print("- Tingkat V4: NSEE")
         except KeyError:
             print("- Tingkat V4: KeyError")
 
@@ -2723,7 +2723,7 @@ def FormVI():
                 Select_JenisBahasa_VI.select_by_visible_text(JenisBahasa_VI)
                 print("- JenisBahasa VI: " + JenisBahasa_VI)
             except NSEE:
-                ("- JenisBahasa VI: NSEE")
+                print("- JenisBahasa VI: NSEE")
         except KeyError:
             print("- JenisBahasa VI: KeyError")
 
@@ -2735,7 +2735,7 @@ def FormVI():
                 Select_Verbal_VI.select_by_visible_text(Verbal_VI)
                 print("- Verbal VI: " + Verbal_VI)
             except NSEE:
-                ("- Verbal VI: NSEE")
+                print("- Verbal VI: NSEE")
         except KeyError:
             print("- Verbal VI: KeyError")
 
@@ -2747,7 +2747,7 @@ def FormVI():
                 Select_JenisTulisan_VI.select_by_visible_text(JenisTulisan_VI)
                 print("- JenisTulisan VI: " + JenisTulisan_VI)
             except NSEE:
-                ("- JenisTulisan VI: NSEE")
+                print("- JenisTulisan VI: NSEE")
         except KeyError:
             print("- JenisTulisan VI: KeyError")
         
