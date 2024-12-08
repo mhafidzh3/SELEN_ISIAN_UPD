@@ -29,11 +29,12 @@ driver.implicitly_wait(2)
 
 driver.find_element(By.LINK_TEXT, "FAIP").click()
 
-driver.find_element(By.LINK_TEXT, "Edit").click()
+# driver.find_element(By.LINK_TEXT, "Edit").click()
 
-# driver.find_element(By.LINK_TEXT, "BUAT FAIP BARU").click()
-# WebDriverWait(driver, 10).until(EC.alert_is_present())
-# driver.switch_to.alert.accept()
+driver.find_element(By.LINK_TEXT, "BUAT FAIP BARU").click()
+WebDriverWait(driver, 10).until(EC.alert_is_present())
+time.sleep(5)
+driver.switch_to.alert.accept()
 
 time.sleep(2)
 Null = "no value"
@@ -297,7 +298,7 @@ def FormI2(n_I2):
         print("Row " + Row_I2 + " telah diisi")
     print("\n")    
     
-    driver.refresh()
+    # driver.refresh()
 
 #PENGISIAN I3   
 def FormI3(n_I3):
@@ -1641,11 +1642,11 @@ def AllForm():
     FormV3(2)
     FormV4(2)
     FormVI(2)
-    # FormVII()
-    # FormL1(2)
-    # FormR()
 
-# AllForm()
-FormVI(2)
+AllForm()
+
+
+
+
 
     
